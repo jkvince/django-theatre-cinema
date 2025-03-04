@@ -11,4 +11,4 @@ class CustomUser(AbstractUser):
     premium = models.BooleanField(
         default=False
     )
-    profile_pic = models.ImageField()
+    profile_pic = models.ImageField(upload_to="media/profile_pic", max_length=200)
