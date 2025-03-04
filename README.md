@@ -1,2 +1,7 @@
 # django-theatre-cinema
-This is sample text.
+- x00215902 (Vincenzo Joyce)
+- x00199349 (Eoin Teves)
+- x00214986 (Cillian Reidy)
+
+# Models
+![Models](docs/models.png)
