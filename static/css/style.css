@@ -1,0 +1,40 @@
+body{
+    background-color: blanchedalmond
+}
+
+.navbar{
+    background-color: rgb(104, 184, 138);
+    padding: 1em;
+}
+
+.navbar ul{
+    list-style-type: none;
+}
+
+.navbar a{
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navlist{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#imgdiv{
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+}
+
+img{
+    width: 45%;
+    height: 45%;
+}
+
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    padding-left: .5em;
+}
