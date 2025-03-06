@@ -8,6 +8,7 @@ class CustomUser(AbstractUser):
     # password
     # email
     # is_staff
+    phone = models.IntegerField()
     premium = models.BooleanField(
         default=False
     )
