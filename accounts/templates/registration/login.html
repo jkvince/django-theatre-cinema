@@ -1,0 +1,23 @@
+{% extends "registration/base.html" %}
+{% block title %}Log In{% endblock title %}
+
+{% block content %}
+<article>
+    {% if user.is_authenticated %}
+        <p>You are currently logged in as <span style="font-weight: bold;">{{user.username}}</span></p>
+
+    {% else %}
+        <h1>Log In</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Login</button>
+        </form>
+        <p>
+            <a href="{% url 'accounts:signup' %}">Don't have an account?</a>
+        </p>
+
+    {% endif %}
+    
+</article>
+{% endblock %}

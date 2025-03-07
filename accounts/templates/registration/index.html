@@ -1,0 +1,11 @@
+{% extends "registration/base.html" %}
+{% block title %}Home{% endblock title %}
+
+{% block content %}
+<article>
+    <h1>Welcome to our website!</h1>
+    {% if user.is_authenticated %}
+        <p>Hello, {{user.username}}</p>
+    {% endif %}
+</article>
+{% endblock %}

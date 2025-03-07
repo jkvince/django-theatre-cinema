@@ -7,9 +7,8 @@ class CustomUser(AbstractUser):
     # username
     # password
     # email
-    # is_staff
-    phone = models.IntegerField()
-    premium = models.BooleanField(
+    phone = models.CharField(max_length=15)
+    is_premium = models.BooleanField(
         default=False
     )
     profile_pic = models.ImageField(upload_to="media/profile_pic", max_length=200)
