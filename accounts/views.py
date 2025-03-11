@@ -34,3 +34,6 @@ class SignUpView(CreateView):
 
 class HomePageView(TemplateView):
 	template_name = 'registration/index.html'
+
+class VenuesView(TemplateView):
+	template_name = 'registration/venues.html'

@@ -1,23 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Venues</title>
+{% extends "registration/base.html" %}
+{% block title %}Sign up{% endblock title %}
 
-    <link rel="stylesheet" href="{% static 'css/style.css'%}">
-</head>
-<body>
-    <div>
-        <nav class="navbar">
-           <ul class="navlist">
-               <li><a href="index.html">Home</a></li>
-               <li><a href="venues.html">Venues</a></li>
-               <li><a href="trending.html">Trending</a></li>
-               <li><a href="account.html">Account</a></li>
-           </ul>
-        </nav>
-    </div>
-    <h1>Venues</h1>
-</body>
-</html>
+{% block content %}
+<h2>Venues</h2>
+<p>Rows: <input type="number" value="30" min="0" onchange="changeSize('rows');"></p>
+<p>Columns: <input type="number" value="30" min="0" onchange="changeSize('columns');"></p>
+
+{% endblock content %}

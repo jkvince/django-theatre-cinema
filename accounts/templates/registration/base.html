@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <script src="{% static 'js/script.js' %}"></script>
 </head>
 <body>
     <div id="imgdiv">
@@ -15,7 +16,7 @@
         <nav class="navbar">
            <ul class="navlist">
                <li><a href="{% url 'accounts:home' %}">Home</a></li>
-               <li><a href="">Venues</a></li>
+               <li><a href="{% url 'accounts:venues' %}">Venues</a></li>
                <li><a href="">Trending</a></li>
                <li><a href="{% url 'accounts:login' %}">Account</a></li>
            </ul>

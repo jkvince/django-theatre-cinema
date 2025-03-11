@@ -1,0 +1,18 @@
+{
+    "num_rows": 30,
+    "num_columns": 30,
+    "seats_info": [
+        {
+            "seat_number": "1A",
+            "position_row": 2,
+            "position_column": 5,
+            "accessible": false
+        },
+        {
+            "seat_number": "2B",
+            "position_row": 1,
+            "position_column": 4,
+            "accessible": true
+        }
+    ]
+}
