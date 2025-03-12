@@ -8,15 +8,6 @@ from django.contrib.auth import login
 from django.urls import reverse_lazy
 from .forms import CustomUserCreationForm
 
-	
-class LoginPageView(CreateView):
-	template_name = 'registration/login.html'
-	model = CustomUser
-	fields = [
-		'username',
-		'password',
-		]
-		
 
 class SignUpView(CreateView):
 	model = CustomUser
