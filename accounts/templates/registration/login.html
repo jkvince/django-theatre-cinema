@@ -1,11 +1,14 @@
-{% extends "registration/base.html" %}
+{% extends "base.html" %}
 {% block title %}Log In{% endblock title %}
 
 {% block content %}
 <article>
     {% if user.is_authenticated %}
+        <h1>Profile page</h1>
         <p>You are currently logged in as <span style="font-weight: bold;">{{user.username}}</span></p>
-
+        {% if user.is_staff %}
+            <p>You are staff</p>
+        {% endif %}
     {% else %}
         <h1>Log In</h1>
         <form method="POST">

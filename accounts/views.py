@@ -8,21 +8,12 @@ from django.contrib.auth import login
 from django.urls import reverse_lazy
 from .forms import CustomUserCreationForm
 
-	
-class LoginPageView(CreateView):
-	template_name = 'registration/login.html'
-	model = CustomUser
-	fields = [
-		'username',
-		'password',
-		]
-		
 
 class SignUpView(CreateView):
 	model = CustomUser
 	form_class = CustomUserCreationForm
-	template_name = 'registration/signup.html'
-	success_url = reverse_lazy('accounts:home')
+	template_name = 'signup.html'
+	success_url = reverse_lazy('shopapp:home')
 
 	def form_valid(self, form):
 		# Save the new user
@@ -30,7 +21,3 @@ class SignUpView(CreateView):
 		# Log the user in after signup
 		login(self.request, self.object)
 		return response # Redirect to success URL
-
-
-class HomePageView(TemplateView):
-	template_name = 'registration/index.html'
