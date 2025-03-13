@@ -2,7 +2,7 @@
 {% block title %}Log In{% endblock title %}
 
 {% block content %}
-<article>
+<article style="margin-top: 2em; border-radius: 1em; border: solid;">
     {% if user.is_authenticated %}
         <h1>Your Account</h1>
         <p>Username: <span style="font-weight: bold;">{{user.username}}</span>
