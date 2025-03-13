@@ -14,6 +14,11 @@
         <p>Phone: <span style="font-weight: bold;">{{user.phone}}</span></p>
         <p>Premium: <span style="font-weight: bold;">{{user.is_premium}}</span></p>
 
+        <form action="{% url 'accounts:logout' %}" method="POST" style="margin: auto; width: min-content;">
+            {% csrf_token %}
+            <h2><button type="submit">Logout</button></h2>
+        </form>
+
     {% else %}
         <h1>Log In</h1>
         <form method="POST">
