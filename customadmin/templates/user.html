@@ -1,0 +1,11 @@
+{% extends "base_admin.html" %}
+
+{% block content %}
+
+<h1>User admin</h1>
+
+{% for luser in user_list %}
+    <p>{{ luser.username }}</p>
+{% endfor %}
+
+{% endblock content %}

@@ -1,7 +1,8 @@
 from django.urls import path
-from .views import AdminMainPage
+from .views import AdminMainView, AdminUserView
 app_name = 'customadmin'
 
 urlpatterns = [
-    path('', AdminMainPage.as_view(), name='admin_main'),
+    path('', AdminMainView.as_view(), name='admin_main'),
+    path('users', AdminUserView.as_view(), name='admin_user'),
 ]
