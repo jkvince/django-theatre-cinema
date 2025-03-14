@@ -21,3 +21,8 @@ class SignUpView(CreateView):
 		# Log the user in after signup
 		login(self.request, self.object)
 		return response # Redirect to success URL
+
+
+class ProfileView(LoginRequiredMixin, TemplateView):
+	model = CustomUser
+	template_name = 'profile.html'
