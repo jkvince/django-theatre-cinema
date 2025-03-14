@@ -10,3 +10,6 @@
 
 # Models
 ![Models](docs/models.png)
+
+# Resources
+- flaticon.com: Free Vector Icons
