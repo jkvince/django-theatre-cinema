@@ -2,17 +2,26 @@
 {% block title %}Log In{% endblock title %}
 
 {% block content %}
+{% load static %}
 <article style="margin-top: 2em; border-radius: 1em; border: solid;">
     {% if user.is_authenticated %}
-        <h1>Your Account</h1>
-        <p>Username: <span style="font-weight: bold;">{{user.username}}</span>
+        <h1 style="font-weight: bold;">{{user.username}}
             {% if user.is_staff %}
-                <a href="{% url 'customadmin:admin_main' %}">(Admin)</a>
+                (<a href="{% url 'customadmin:admin_main' %}">Admin</a>)
             {% endif %}
+            {% if user.is_premium %}
+                <img src="{% static 'interface/premium.svg' %}" alt="email-icon" style="height: 100%;">
+            {% endif %}
+        </h1>
+
+        <p>
+            <img src="{% static 'interface/email.svg' %}" alt="email-icon" style="height: 100%;">
+            <span style="font-weight: bold;">{{user.email}}</span>
         </p>
-        <p>Email: <span style="font-weight: bold;">{{user.email}}</span></p>
-        <p>Phone: <span style="font-weight: bold;">{{user.phone}}</span></p>
-        <p>Premium: <span style="font-weight: bold;">{{user.is_premium}}</span></p>
+        <p>
+            <img src="{% static 'interface/phone.svg' %}" alt="email-icon" style="height: 100%;">
+            <span style="font-weight: bold;">{{user.phone}}</span>
+        </p>
 
         <form action="{% url 'accounts:logout' %}" method="POST" style="margin: auto; width: min-content;">
             {% csrf_token %}
