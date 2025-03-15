@@ -9,7 +9,6 @@ from accounts.models import CustomUser
 class AdminBaseView(PermissionRequiredMixin, TemplateView):
 	# Abstract class for admin pages
 	permission_required = 'accounts.CustomUser'
-	login_url = 'accounts:login' # should redirect to profile first
 
 
 class AdminMainView(AdminBaseView):
