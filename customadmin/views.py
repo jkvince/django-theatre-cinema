@@ -1,7 +1,7 @@
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.urls import reverse_lazy
-from django.db.models import Q
+from django.shortcuts import render
 
 from accounts.models import CustomUser
 
@@ -9,27 +9,17 @@ from accounts.models import CustomUser
 class AdminBaseView(PermissionRequiredMixin):
 	# Abstract class for admin pages
 	permission_required = 'accounts.CustomUser'
-	raise_exception = True
-	login_url = 'accounts/login'
+	login_url = 'accounts:login' # should redirect to profile first
 
 
 class AdminMainView(AdminBaseView, TemplateView):
 	template_name = 'main.html'
 
-class AdminUserView(AdminBaseView, TemplateView):
+class AdminUserView(AdminBaseView, ListView):
 	template_name = 'user.html'
 	model = CustomUser
 	context_object_name = 'user_list'
 
-	#def get_queryset(self):
-	#	query = self.request.GET.get('q')
-	#	if query:  # Ensure query is not None or empty
-	#	    return CustomUser.objects.filter(
-	#	        Q(name__icontains=query) | Q(description__icontains=query)
-	#	    )
-	#	return CustomUser.objects.all()
-	#
-	#def get_context_data(self, **kwargs):
-	#	context = super(AdminUserView,self).get_context_data(**kwargs)
-	#	context['query'] = self.request.GET.get('q')
-	#	return context
+	def get(self, request):
+		context = {'users': CustomUser.objects.all()}
+		return render(request, 'user.html', context)
