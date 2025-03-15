@@ -3,6 +3,11 @@
 {% block content %}
 
 <style>
+    article {
+        width: 50em;
+        margin: auto;
+        text-align: center;
+    }
     table {
         width: 100%;
     }
@@ -11,34 +16,23 @@
     }
 </style>
 
-<h1>Users Management</h1>
 
-<table>
-    <tr>
-        <th>Profile Pic</th>
-        <th>Username</th>
-        <th>Email</th>
-        <th>Phone</th>
-        <th>Premium</th>
-        <th>Admin</th>
-        <th>Last Login</th>
-        <th>Date Joined</th>
-        <th>Options</th>
-    </tr>
+<p><a href="{% url 'customadmin:admin_user_list' %}">Go Back</a></p>
 
-    {% for user in users %}
-        <tr>
-            <td>{{ user.profile_pic }}</td>
-            <td><a href="">{{ user.username }}</a></td>
-            <td>{{ user.email }}</td>
-            <td>{{ user.phone }}</td>
-            <td>{{ user.is_premium }}</td>
-            <td>{{ user.is_staff }}</td>
-            <td>{{ user.last_login }}</td>
-            <td>{{ user.date_joined }}</td>
-            <td><a href="">Delete</a></td>
-        </tr>
-    {% endfor %}
-</table>
+<article>
 
+    <h1>{{ current_user.username }}</h1>
+    {{ current_user.profile_pic }}
+    <table>
+        <tr><td><span style="font-weight: bold;">Email: </span></td><td>{{ current_user.email }}</td><td>Edit</td></tr>
+        <tr><td><span style="font-weight: bold;">Premium: </span></td><td>{{ current_user.is_premium }}</td><td>Edit</td></tr>
+        <tr><td><span style="font-weight: bold;">Phone: </span></td><td>{{ current_user.phone }}</td><td>Edit</td></tr>
+        <tr><td><span style="font-weight: bold;">Staff: </span></td><td>{{ current_user.is_staff }}</td><td>Edit</td></tr>
+        <tr><td><span style="font-weight: bold;">Last Login: </span></td><td>{{ current_user.last_login }}</td><td>Edit</td></tr>
+        <tr><td><span style="font-weight: bold;">Date Joined: </span></td><td>{{ current_user.date_joined }}</td><td>Edit</td></tr>
+    </table>
+    <p><a href="">Delete</a></p>
+
+
+</article>
 {% endblock content %}
