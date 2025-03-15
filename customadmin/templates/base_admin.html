@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Admin</title>
 </head>
 <body>
     <a href="{% url 'shopapp:home' %}">Return to website</a>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'customadmin:admin_main' %}">Stats</a></li>
+            <li><a href="{% url 'customadmin:admin_user_list' %}">Users</a></li>
+            <li><a href="">Venues</a></li>
+            <li><a href="">Shows</a></li>
+            <li><a href="">Show Members</a></li>
+            <li><a href="">Bookings</a></li>
+        </ul>
+    </nav>
 
     {% block content %}
     {% endblock %}
