@@ -1,0 +1,38 @@
+{% extends "base_admin.html" %}
+
+{% block content %}
+
+<style>
+    article {
+        width: 50em;
+        margin: auto;
+        text-align: center;
+    }
+    table {
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid black;
+    }
+</style>
+
+
+<p><a href="{% url 'customadmin:admin_user_list' %}">Go Back</a></p>
+
+<article>
+
+    <h1>{{ current_user.username }}</h1>
+    {{ current_user.profile_pic }}
+    <table>
+        <tr><td><span style="font-weight: bold;">Email: </span></td><td>{{ current_user.email }}</td><td>Edit</td></tr>
+        <tr><td><span style="font-weight: bold;">Premium: </span></td><td>{{ current_user.is_premium }}</td><td>Edit</td></tr>
+        <tr><td><span style="font-weight: bold;">Phone: </span></td><td>{{ current_user.phone }}</td><td>Edit</td></tr>
+        <tr><td><span style="font-weight: bold;">Staff: </span></td><td>{{ current_user.is_staff }}</td><td>Edit</td></tr>
+        <tr><td><span style="font-weight: bold;">Last Login: </span></td><td>{{ current_user.last_login }}</td><td>Edit</td></tr>
+        <tr><td><span style="font-weight: bold;">Date Joined: </span></td><td>{{ current_user.date_joined }}</td><td>Edit</td></tr>
+    </table>
+    <p><a href="">Delete</a></p>
+
+
+</article>
+{% endblock content %}

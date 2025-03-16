@@ -1,0 +1,44 @@
+{% extends "base_admin.html" %}
+
+{% block content %}
+
+<style>
+    table {
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid black;
+    }
+</style>
+
+<h1>Users Management</h1>
+
+<table>
+    <tr>
+        <th>Profile Pic</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Premium</th>
+        <th>Admin</th>
+        <th>Last Login</th>
+        <th>Date Joined</th>
+        <th>Options</th>
+    </tr>
+
+    {% for user in users %}
+        <tr>
+            <td>{{ user.profile_pic }}</td>
+            <td><a href="{% url 'customadmin:admin_user' user.id %}">{{ user.username }}</a></td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phone }}</td>
+            <td>{{ user.is_premium }}</td>
+            <td>{{ user.is_staff }}</td>
+            <td>{{ user.last_login }}</td>
+            <td>{{ user.date_joined }}</td>
+            <td><a href="">Delete</a></td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

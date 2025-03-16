@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Sign up{% endblock title %}
+
+{% block content %}
+<article style="margin-top: 2em; border-radius: 1em; border: solid;">
+    {% if not user.is_authenticated %}
+        <h1>Sign Up</h1>
+        <form action="" method="POST">
+            <p>{{ form }}</p>
+            {% csrf_token %} 
+            <button type="submit">Register Account</button>
+        </form>
+
+        <p>
+            <a href="{% url 'accounts:login' %}">Already have an account?</a>
+        </p>
+    {% else %}
+        <p>You are already logged in.</p>
+    {% endif %}
+</article>
+{% endblock content %}

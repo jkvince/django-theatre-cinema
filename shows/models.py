@@ -1,27 +1,41 @@
 from django.db import models
 import uuid
 
+from accounts.models import CustomUser
+
 class Show(models.Model):
     
     show_id = models.SlugField(
         primary_key=True
     )
-    show_name = models.CharField()
-    show_type = models.CharField()
+    show_name = models.CharField(
+        max_length=200
+    )
+    show_type = models.CharField(
+        max_length=30
+    )
     show_duration = models.IntegerField()
     show_description = models.TextField()
-    show_agerating = models.CharField()
+    show_agerating = models.CharField(
+        max_length=20
+    )
     show_release_date = models.DateField()
-    show_language = models.CharField()
-    show_barrier = models.ImageField()
+    show_language = models.CharField(
+        max_length=20
+    )
+    show_banner = models.ImageField()
 
 
 class ShowMember(models.Model):
     show_member_id = models.SlugField(
         primary_key=True
     )
-    show_member_type = models.CharField()
-    show_member_name = models.CharField()
+    show_member_type = models.CharField(
+        max_length=20
+    )
+    show_member_name = models.CharField(
+        max_length=50
+    )
     show_member_banner = models.ImageField()
 
 
