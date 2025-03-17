@@ -53,7 +53,7 @@ class Comment(models.Model):
     )
     comment_content = models.TextField()
     show_id = models.ForeignKey(Show, on_delete=models.CASCADE)
-    user_name = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
 
 
 class Rating(models.Model):
@@ -62,7 +62,7 @@ class Rating(models.Model):
     )
     rating_value = models.IntegerField()
     show_id = models.ForeignKey(Show, on_delete=models.CASCADE)
-    user_name = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
 
 
 class Following(models.Model):
@@ -70,5 +70,5 @@ class Following(models.Model):
         primary_key=True
     )
     show_id = models.ForeignKey(Show, on_delete=models.CASCADE)
-    user_name = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+    user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     

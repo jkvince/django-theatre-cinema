@@ -4,6 +4,7 @@ from django.urls import reverse_lazy
 from django.shortcuts import render
 
 from accounts.models import CustomUser
+from shows.models import Show, ShowMember, MemberJunction, Comment, Rating, Following
 
 
 class AdminBaseView(PermissionRequiredMixin, TemplateView):
@@ -17,9 +18,25 @@ class AdminMainView(AdminBaseView):
 class AdminUserListView(AdminBaseView):
 	def get(self, request):
 		context = {'users': CustomUser.objects.all()}
-		return render(request, 'user_list.html', context)
+		return render(request, 'user/list.html', context)
 
 class AdminUserView(AdminBaseView):
 	def get(self, request, pk):
-		context = {'current_user': CustomUser.objects.get(pk=pk)}
-		return render(request, 'user.html', context)
+		context = {
+			'current_user': CustomUser.objects.get(pk=pk),
+			'user_comments': Comment.objects.filter(user_id=pk)
+			}
+		return render(request, 'user/user.html', context)
+
+class AdminShowListView(AdminBaseView):
+	def get(self, request):
+		context = {'shows': Show.objects.all()}
+		return render(request, 'show/list.html', context)
+
+class AdminShowView(AdminBaseView):
+	def get(self, request, pk):
+		context = {
+			'current_show': Show.objects.get(pk=pk),
+			'show_comments': Comment.objects.filter(show_id=pk)
+			}
+		return render(request, 'show/show.html', context)

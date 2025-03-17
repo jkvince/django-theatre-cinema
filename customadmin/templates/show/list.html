@@ -1,0 +1,46 @@
+{% extends "base_admin.html" %}
+
+{% block content %}
+
+<style>
+    table {
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid black;
+    }
+</style>
+
+<h1>Shows Management</h1>
+
+<p><a href="">New Show+</a></p>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Id</th>
+        <th>Type</th>
+        <th>Duration</th>
+        <th>Description</th>
+        <th>Age Rating</th>
+        <th>Release Date</th>
+        <th>Language</th>
+        <th>Options</th>
+    </tr>
+
+    {% for show in shows %}
+        <tr>
+            <td><a href="{% url 'customadmin:admin_show' show.show_id %}">{{ show.show_name }}</a></td>
+            <td>{{ show.show_id }}</td>
+            <td>{{ show.show_type }}</td>
+            <td>{{ show.show_duration }}</td>
+            <td>{{ show.show_description }}</td>
+            <td>{{ show.age_rating }}</td>
+            <td>{{ show.release_date }}</td>
+            <td>{{ show.language }}</td>
+            <td><a href="">Delete</a></td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

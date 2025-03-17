@@ -10,10 +10,10 @@
 
     <nav>
         <ul>
-            <li><a href="{% url 'customadmin:admin_main' %}">Stats</a></li>
+            <li><a href="{% url 'customadmin:admin_main' %}">Main Page</a></li>
             <li><a href="{% url 'customadmin:admin_user_list' %}">Users</a></li>
             <li><a href="">Venues</a></li>
-            <li><a href="">Shows</a></li>
+            <li><a href="{% url 'customadmin:admin_show_list' %}">Shows</a></li>
             <li><a href="">Show Members</a></li>
             <li><a href="">Bookings</a></li>
         </ul>

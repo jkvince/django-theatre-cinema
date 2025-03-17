@@ -33,6 +33,28 @@
     </table>
     <p><a href="">Delete</a></p>
 
+    
+    <h1>Comments</h1>
+    {% if user_comments %}
+        <table>
+            <tr>
+                <th>Show</th>
+                <th>Content</th>
+                <th>Comment Id</th>
+                <th>Options</th>
+            </tr>
+            {% for comment in user_comments %}
+                <tr>
+                    <td><a href="{% url 'customadmin:admin_show' 'inception' %}">{{ comment.show_id }}</a></td>
+                    <td>{{ comment.comment_content }}</td>
+                    <td>{{ comment.comment_id }}</td>
+                    <td><a href="">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No comments made by this user.</p>
+    {% endif %}
 
 </article>
 {% endblock content %}

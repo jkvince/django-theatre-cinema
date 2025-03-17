@@ -1,0 +1,60 @@
+{% extends "base_admin.html" %}
+
+{% block content %}
+
+<style>
+    article {
+        width: 50em;
+        margin: auto;
+        text-align: center;
+    }
+    table {
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid black;
+    }
+</style>
+
+
+<p><a href="{% url 'customadmin:admin_show_list' %}">Go Back</a></p>
+
+<article>
+
+    <h1>{{ current_show.show_name }}</h1>
+    {{ current_show.show_description }}
+    {{ current_show.show_banner }}
+    <table>
+        <tr><td><span style="font-weight: bold;">Id: </span></td><td>{{ current_show.show_id }}</td><td>Edit</td></tr>
+        <tr><td><span style="font-weight: bold;">Type: </span></td><td>{{ current_show.show_type }}</td><td>Edit</td></tr>
+        <tr><td><span style="font-weight: bold;">Duration (min): </span></td><td>{{ current_show.show_duration }}</td><td>Edit</td></tr>
+        <tr><td><span style="font-weight: bold;">Age Rating: </span></td><td>{{ current_show.show_rating }}</td><td>Edit</td></tr>
+        <tr><td><span style="font-weight: bold;">Release Date: </span></td><td>{{ current_show.release_date }}</td><td>Edit</td></tr>
+        <tr><td><span style="font-weight: bold;">Language: </span></td><td>{{ current_show.show_language }}</td><td>Edit</td></tr>
+    </table>
+    <p><a href="">Delete</a></p>
+    
+    <h1>Comments</h1>
+    {% if show_comments %}
+        <table>
+            <tr>
+                <th>User</th>
+                <th>Content</th>
+                <th>Comment Id</th>
+                <th>Options</th>
+            </tr>
+            {% for comment in show_comments %}
+                <tr>
+                    <td><a href="{% url 'customadmin:admin_user' comment.user %}">{{ comment.username }}</a></td>
+                    <td>{{ comment.comment_content }}</td>
+                    <td>{{ comment.comment_id }}</td>
+                    <td><a href="">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No comments on this show.</p>
+    {% endif %}
+
+</article>
+{% endblock content %}
