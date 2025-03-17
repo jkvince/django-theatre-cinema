@@ -1,0 +1,86 @@
+[
+    {
+        "model": "accounts.customuser",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$9WZDf3lXDyuJZNpTnzZw30$dHyQaBolTLgqblqmiIVhMzE5iTOv+kq9rCUICWzkFmQ=",
+            "last_login": "2025-03-17T20:23:08.747Z",
+            "is_superuser": true,
+            "username": "supervin",
+            "first_name": "",
+            "last_name": "",
+            "email": "x00215902@mytudublin.ie",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-03-08T00:06:24.020Z",
+            "phone": "",
+            "is_premium": false,
+            "profile_pic": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "accounts.customuser",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$q7uWUCc22hv1SOa1HUpYDy$dTG0AN7yDrj+jjuaUUvef8PS8O4SAgSEhGZZCmjW+gw=",
+            "last_login": null,
+            "is_superuser": true,
+            "username": "supercillian",
+            "first_name": "",
+            "last_name": "",
+            "email": "x00214986@mytudublin.ie",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-03-08T00:07:47.166Z",
+            "phone": "",
+            "is_premium": false,
+            "profile_pic": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "accounts.customuser",
+        "pk": 3,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$xt2TadBDPHx6ZaP3yBWysj$BnF2i/Bfq7um/Fwru0sDQ1kTsASOjZLazCj+yXs96WM=",
+            "last_login": null,
+            "is_superuser": true,
+            "username": "supereoin",
+            "first_name": "",
+            "last_name": "",
+            "email": "x00199349@mytudublin.ie",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-03-08T00:08:30.758Z",
+            "phone": "",
+            "is_premium": false,
+            "profile_pic": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "accounts.customuser",
+        "pk": 4,
+        "fields": {
+            "password": "pbkdf2_sha256$870000$aWGOExuTJkuJoCxVdi2u04$ZRDIEFeILZIRYrZou3yLYRsWDP2lYbdCbAggc8n81lA=",
+            "last_login": "2025-03-14T12:53:11.744Z",
+            "is_superuser": false,
+            "username": "vin",
+            "first_name": "",
+            "last_name": "",
+            "email": "vin@vin.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-03-14T12:49:57.355Z",
+            "phone": "1234567",
+            "is_premium": true,
+            "profile_pic": "",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]

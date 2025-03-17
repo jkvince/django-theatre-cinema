@@ -25,6 +25,14 @@ class Show(models.Model):
     )
     show_banner = models.ImageField()
 
+    class Meta:
+        ordering = ('show_name',)
+        verbose_name = 'warehouse'
+        verbose_name_plural = 'warehouses'
+
+    def __str__(self):
+        return self.show_id
+
 
 class ShowMember(models.Model):
     show_member_id = models.SlugField(
@@ -54,6 +62,14 @@ class Comment(models.Model):
     comment_content = models.TextField()
     show_id = models.ForeignKey(Show, on_delete=models.CASCADE)
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ('show_id',)
+        verbose_name = 'comment'
+        verbose_name_plural = 'comments'
+
+    def __str__(self):
+        return self.comment_id
 
 
 class Rating(models.Model):

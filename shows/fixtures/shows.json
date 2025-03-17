@@ -1,0 +1,25 @@
+[
+    {
+        "model": "shows.show",
+        "pk": "inception",
+        "fields": {
+            "show_name": "Inception",
+            "show_type": "Action",
+            "show_duration": 90,
+            "show_description": "This is the description",
+            "show_agerating": "15",
+            "show_release_date": null,
+            "show_language": "English",
+            "show_banner": ""
+        }
+    },
+    {
+        "model": "shows.comment",
+        "pk": "58e25f8e-31e8-43a7-97d5-5e7ec4f5b3e2",
+        "fields": {
+            "comment_content": "This is a comment.",
+            "show_id": "inception",
+            "user": 2
+        }
+    }
+]

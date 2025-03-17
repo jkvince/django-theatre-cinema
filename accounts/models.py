@@ -12,3 +12,11 @@ class CustomUser(AbstractUser):
         default=False
     )
     profile_pic = models.ImageField(upload_to="media/profile_pic", max_length=200)
+
+    class Meta:
+        ordering = ('username',)
+        verbose_name = 'user'
+        verbose_name_plural = 'users'
+
+    def __str__(self):
+        return str(self.id)
