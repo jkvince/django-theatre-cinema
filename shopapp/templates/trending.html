@@ -1,23 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trending</title>
+{% extends "base.html" %}
+{% block title %}Trending{% endblock title %}
 
-    <link rel="stylesheet" href="{% static 'css/style.css'%}">
-</head>
-<body>
-    <div>
-        <nav class="navbar">
-           <ul class="navlist">
-               <li><a href="index.html">Home</a></li>
-               <li><a href="venues.html">Venues</a></li>
-               <li><a href="trending.html">Trending</a></li>
-               <li><a href="account.html">Account</a></li>
-           </ul>
-        </nav>
+{% block content %}
+<article>
+    <h1>This is the trending page</h1>
+
+    <!-- for now show all shows, later on only popular ones -->
+
+    <div style="display: flex; justify-content: space-around;">
+        {% for show in shows %}
+            <div>
+                <p><a href="{% url 'shows:show_page' show.show_id %}">{{ show.show_name }}</a></p>
+            </div>
+        {% endfor %}
     </div>
-    <h1>Trending</h1>
-</body>
-</html>
+</article>
+{% endblock %}

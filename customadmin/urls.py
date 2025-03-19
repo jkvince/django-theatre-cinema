@@ -14,5 +14,5 @@ urlpatterns = [
     path('users/', AdminUserListView.as_view(), name='admin_user_list'),
     path('users/<int:pk>/', AdminUserView.as_view(), name='admin_user'),
     path('shows/', AdminShowListView.as_view(), name='admin_show_list'),
-    path('shows/<pk>', AdminShowView.as_view(), name='admin_show')
+    path('shows/<str:pk>', AdminShowView.as_view(), name='admin_show')
 ]

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}{{ current_show.show_name }}{% endblock title %}
+
+{% block content %}
+<article>
+    <p>{{ current_show.show_name }}</p>
+    <p>{{ current_show.show_type }}</p>
+    <p>{{ current_show.show_duration }}</p>
+    <p>{{ current_show.show_description }}</p>
+    <p>{{ current_show.show_agerating }}</p>
+    <p>{{ current_show.show_release_date }}</p>
+    <p>{{ current_show.show_language }}</p>
+
+    
+</article>
+{% endblock %}
