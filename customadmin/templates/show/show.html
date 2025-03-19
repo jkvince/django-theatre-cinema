@@ -22,8 +22,9 @@
 <article>
 
     <h1>{{ current_show.show_name }}</h1>
+    <img src="{{ current_show.show_banner.url }}" alt="{{ current_show.show_id }}" style="width: 25%;">
+    <br>
     {{ current_show.show_description }}
-    {{ current_show.show_banner }}
     <table>
         <tr><td><span style="font-weight: bold;">Id: </span></td><td>{{ current_show.show_id }}</td><td>Edit</td></tr>
         <tr><td><span style="font-weight: bold;">Type: </span></td><td>{{ current_show.show_type }}</td><td>Edit</td></tr>
@@ -54,6 +55,49 @@
         </table>
     {% else %}
         <p>No comments on this show.</p>
+    {% endif %}
+
+    <h1>Followers: {{ followers_amount }}</h1>
+    {% if show_followers %}
+        <table>
+            <tr>
+                <th>User Id</th>
+                <th>Follow Id</th>
+                <th>Options</th>
+            </tr>
+            {% for follower in show_followers %}
+                <tr>
+                    <td><a href="{% url 'customadmin:admin_user' follower.user_id %}">{{ follower.user_id }}</a></td>
+                    <td>{{ follower.following_id }}</td>
+                    <td><a href="">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No followers.</p>
+    {% endif %}
+
+    <h1>Ratings</h1>
+    {% if ratings %}
+        <p>Average rating: {{ average_rating }}</p>
+        <table>
+            <tr>
+                <th>User Id</th>
+                <th>Rating Id</th>
+                <th>Rating Value</th>
+                <th>Options</th>
+            </tr>
+            {% for rating in ratings %}
+                <tr>
+                    <td><a href="{% url 'customadmin:admin_user' rating.user_id %}">{{ rating.user_id }}</a></td>
+                    <td>{{ rating.rating_id }}</td>
+                    <td>{{ rating.rating_value }}</td>
+                    <td><a href="">Delete</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No ratings.</p>
     {% endif %}
 
 </article>

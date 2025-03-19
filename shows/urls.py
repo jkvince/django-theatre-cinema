@@ -7,8 +7,3 @@ urlpatterns = [
     path('<str:pk>', show_page, name='show_page')
 ]
 
-
-
-
-
-

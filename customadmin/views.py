@@ -2,6 +2,7 @@ from django.views.generic import TemplateView
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.urls import reverse_lazy
 from django.shortcuts import render
+from django.db.models import Avg
 
 from accounts.models import CustomUser
 from shows.models import Show, ShowMember, MemberJunction, Comment, Rating, Following
@@ -37,6 +38,11 @@ class AdminShowView(AdminBaseView):
 	def get(self, request, pk):
 		context = {
 			'current_show': Show.objects.get(pk=pk),
-			'show_comments': Comment.objects.filter(show_id=pk)
+			'show_comments': Comment.objects.filter(show_id=pk),
+			'show_followers': Following.objects.filter(show_id=pk),
+			'ratings': Rating.objects.filter(show_id=pk),
+
+			'followers_amount': Following.objects.filter(show_id=pk).count(),
+			'average_rating': Rating.objects.filter(show_id=pk).aggregate(Avg('rating_value'))['rating_value__avg']
 			}
 		return render(request, 'show/show.html', context)
