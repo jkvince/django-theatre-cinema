@@ -2,20 +2,77 @@
 {% block title %}{{ current_show.show_name }}{% endblock title %}
 
 {% block content %}
-<h1>{{ current_show.show_name }}</h1>
-<article style="display: flex;">
-    <div style="width: 75%;">
-        <img src="{{ current_show.show_banner.url }}" alt="{{ current_show.show_id }}" style="width: 100%;">
-    </div>
-    <div>
-        <p>{{ current_show.show_type }}</p>
-        <p>{{ current_show.show_duration }}</p>
-        <p>{{ current_show.show_description }}</p>
-        <p>{{ current_show.show_agerating }}</p>
-        <p>{{ current_show.show_release_date }}</p>
-        <p>{{ current_show.show_language }}</p>    
-    </div>
+{% load static %}
 
+<style>
+    article {
+        display: flex;
+        width: 50%;
+    }
+
+    aside {
+        margin-right: 7em;
+    }
+
+    aside img {
+        width: 20rem;
+    }
+
+    main {
+        text-align: left;
+    }
+
+    main h1 {
+        font-size: 10ch;
+        margin-top: 0;
+    }
+
+    main div {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    main div div {
+        border: solid;
+        padding: 0.5rem;
+    }
+
+    main div div img {
+        height: 1em;
+        margin-right: 0.5rem;
+    }
+
+
+</style>
+
+<article>
+    <aside>
+        <img src="{{ current_show.show_banner.url }}" alt="{{ current_show.show_id }}">
+    </aside>
+    
+    <main>
+        <h1>{{ current_show.show_name }}</h1>
+
+        <p>{{ current_show.show_description }}</p>
+
+        <p>Rating: {{ current_show.show_agerating }}</p>
+        <p>{{ current_show.show_type }}</p>
+        
+        <div>
+            <div>
+                <img src="{% static 'interface/duration.svg' %}" alt="duration-icon">
+                {{ current_show.show_duration }}min
+            </div>
+            <div>
+                <img src="{% static 'interface/date.svg' %}" alt="date-icon">
+                {{ current_show.show_release_date }}
+            </div>
+            <div>
+                <img src="{% static 'interface/language.svg' %}" alt="language-icon">
+                {{ current_show.show_language }}
+            </div>
+        </div>
+    </main>
     
 </article>
 {% endblock %}

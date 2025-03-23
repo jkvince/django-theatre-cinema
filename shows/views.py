@@ -1,10 +1,17 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
 
 from .models import Show
 
 def show_page(request, pk):
-	context = {
-		'current_show': Show.objects.get(pk=pk),
-		}
-	return render(request, 'show.html', context)
+	try:
+		query = Show.objects.get(pk=pk)
+		if query.public == True:
+			context = {
+				'current_show': query,
+			}
+			return render(request, 'show.html', context)
+		else:
+			return render(request, '404.html')
+			
+	except:
+		return render(request, '404.html')

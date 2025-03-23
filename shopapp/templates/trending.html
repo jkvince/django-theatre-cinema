@@ -10,7 +10,9 @@
     <div style="display: flex; justify-content: space-around;">
         {% for show in shows %}
             <div>
-                <p><a href="{% url 'shows:show_page' show.show_id %}">{{ show.show_name }}</a></p>
+                <a href="{% url 'shows:show_page' show.show_id %}">
+                    <img src="{{ show.show_banner.url }}" alt="{{ show.show_name }}" style="width: 10rem;">
+                </a>
             </div>
         {% endfor %}
     </div>

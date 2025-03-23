@@ -8,5 +8,7 @@ class HomePageView(TemplateView):
 
 class TrendingPageView(TemplateView):
 	def get(self, request):
-		context = {'shows': Show.objects.all()}
+		context = {
+			'shows': Show.objects.filter(public=1)
+		}
 		return render(request, 'trending.html', context)
