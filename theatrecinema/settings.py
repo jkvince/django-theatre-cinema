@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'customadmin',
     'shopapp',
     'shows',
+    'venues',
 ]
 
 MIDDLEWARE = [
