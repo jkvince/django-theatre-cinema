@@ -23,7 +23,6 @@
         <th>Admin</th>
         <th>Last Login</th>
         <th>Date Joined</th>
-        <th>Options</th>
     </tr>
 
     {% for user in users %}
@@ -36,7 +35,6 @@
             <td>{{ user.is_staff }}</td>
             <td>{{ user.last_login }}</td>
             <td>{{ user.date_joined }}</td>
-            <td><a href="">Delete</a></td>
         </tr>
     {% endfor %}
 </table>

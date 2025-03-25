@@ -68,7 +68,7 @@
             </tr>
             {% for comment in show_comments %}
                 <tr>
-                    <td><a href="{% url 'customadmin:admin_user' comment.user %}">{{ comment.user }}</a></td>
+                    <td><a href="{% url 'customadmin:admin_user' comment.user %}">{{ comment.user.username }}</a></td>
                     <td>{{ comment.comment_content }}</td>
                     <td>{{ comment.comment_id }}</td>
                     <td><a href="">Delete</a></td>

@@ -25,7 +25,6 @@
         <th>Age Rating</th>
         <th>Release Date</th>
         <th>Language</th>
-        <th>Options</th>
     </tr>
 
     {% for show in shows %}
@@ -35,10 +34,9 @@
             <td>{{ show.show_type }}</td>
             <td>{{ show.show_duration }}</td>
             <td>{{ show.show_description }}</td>
-            <td>{{ show.age_rating }}</td>
-            <td>{{ show.release_date }}</td>
-            <td>{{ show.language }}</td>
-            <td><a href="">Delete</a></td>
+            <td>{{ show.show_agerating }}</td>
+            <td>{{ show.show_release_date }}</td>
+            <td>{{ show.show_language }}</td>
         </tr>
     {% endfor %}
 </table>

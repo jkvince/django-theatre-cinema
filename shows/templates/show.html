@@ -5,9 +5,10 @@
 {% load static %}
 
 <style>
-    article {
+    article div {
         display: flex;
-        width: 50%;
+        justify-content: center;
+        align-items: center;
     }
 
     aside {
@@ -15,15 +16,16 @@
     }
 
     aside img {
-        width: 20rem;
+        width: 25rem;
     }
 
     main {
         text-align: left;
+        width: 25rem;
     }
 
     main h1 {
-        font-size: 10ch;
+        font-size: 5ch;
         margin-top: 0;
     }
 
@@ -46,33 +48,56 @@
 </style>
 
 <article>
-    <aside>
-        <img src="{{ current_show.show_banner.url }}" alt="{{ current_show.show_id }}">
-    </aside>
-    
-    <main>
-        <h1>{{ current_show.show_name }}</h1>
+    <div>
+        <aside>
+            <img src="{{ current_show.show_banner.url }}" alt="{{ current_show.show_id }}">
+        </aside>
 
-        <p>{{ current_show.show_description }}</p>
+        <main>
+            <h1>{{ current_show.show_name }}</h1>
 
-        <p>Rating: {{ current_show.show_agerating }}</p>
-        <p>{{ current_show.show_type }}</p>
-        
-        <div>
+            <p>{{ current_show.show_description }}</p>
+
+            <p>Rating: {{ current_show.show_agerating }}</p>
+            <p>{{ current_show.show_type }}</p>
+
             <div>
-                <img src="{% static 'interface/duration.svg' %}" alt="duration-icon">
-                {{ current_show.show_duration }}min
+                <div>
+                    <img src="{% static 'interface/duration.svg' %}" alt="duration-icon">
+                    {{ current_show.show_duration }}min
+                </div>
+                <div>
+                    <img src="{% static 'interface/date.svg' %}" alt="date-icon">
+                    {{ current_show.show_release_date }}
+                </div>
+                <div>
+                    <img src="{% static 'interface/language.svg' %}" alt="language-icon">
+                    {{ current_show.show_language }}
+                </div>
             </div>
-            <div>
-                <img src="{% static 'interface/date.svg' %}" alt="date-icon">
-                {{ current_show.show_release_date }}
-            </div>
-            <div>
-                <img src="{% static 'interface/language.svg' %}" alt="language-icon">
-                {{ current_show.show_language }}
-            </div>
-        </div>
-    </main>
-    
+
+            <p>Events:</p>
+            {% if events %}
+                {% for event in events %}
+                    <a href=""><p>
+                        {{ event.event_time }} at {{ event.room_number.venue_id.venue_name }}
+                    </p></a>
+                {% endfor %}
+            {% else %}
+                <p>No events for this show.</p>
+            {% endif %}
+        </main>
+    </div>
+
+    <h1>Comments</h1>
+    {% if comments %}
+        {% for comment in comments %}
+                <p>{{ comment.user.username }}: {{ comment.comment_content }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No comments on this show.</p>
+    {% endif %}
+
+
 </article>
 {% endblock %}

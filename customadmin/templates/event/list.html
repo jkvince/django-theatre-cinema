@@ -21,7 +21,6 @@
         <th>Show Id</th>
         <th>Room Id</th>
         <th>Event Time</th>
-        <th>Options</th>
     </tr>
 
     {% for event in events %}
@@ -30,7 +29,6 @@
             <td>{{ event.show }}</td>
             <td>{{ event.room_number }}</td>
             <td>{{ event.event_time }}</td>
-            <td><a href="">Delete</a></td>
         </tr>
     {% endfor %}
 </table>

@@ -5,7 +5,7 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from accounts.models import CustomUser
 
 class Show(models.Model):
-    
+
     show_id = models.SlugField(
         primary_key=True
     )
