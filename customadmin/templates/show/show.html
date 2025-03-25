@@ -4,9 +4,18 @@
 
 <style>
     article {
-        width: 50em;
-        margin: auto;
         text-align: center;
+    }
+    aside img {
+        width: 25rem;
+    }
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section {
+        width: 30rem;
     }
     table {
         width: 100%;
@@ -17,30 +26,37 @@
 </style>
 
 
-<p><a href="{% url 'customadmin:admin_show_list' %}">Go Back</a></p>
 
 <article>
+    <p><a href="{% url 'customadmin:admin_show_list' %}">Go Back</a></p>
 
     <h1>{{ current_show.show_name }}</h1>
-    {% if current_show.show_banner %}
-        <img src="{{ current_show.show_banner.url }}" alt="{{ current_show.show_id }}" style="width: 25%;">
-    {% else %}
-        <p>No banner has been set.</p>
-    {% endif %}
-    <br>
-    {{ current_show.show_description }}
-    <table>
-        <tr><td><span style="font-weight: bold;">Id: </span></td><td>{{ current_show.show_id }}</td></tr>
-        <tr><td><span style="font-weight: bold;">Type: </span></td><td>{{ current_show.show_type }}</td></tr>
-        <tr><td><span style="font-weight: bold;">Duration (min): </span></td><td>{{ current_show.show_duration }}</td></tr>
-        <tr><td><span style="font-weight: bold;">Age Rating: </span></td><td>{{ current_show.show_rating }}</td></tr>
-        <tr><td><span style="font-weight: bold;">Release Date: </span></td><td>{{ current_show.release_date }}</td></tr>
-        <tr><td><span style="font-weight: bold;">Language: </span></td><td>{{ current_show.show_language }}</td></tr>
-        <tr><td><span style="font-weight: bold;">Public: </span></td><td>{{ current_show.public }}</td></tr>
-    </table>
-    <p><a href="">Edit</a></p>
-    <p><a href="">Delete</a></p>
+
+    <main>
+        <aside>
+            {% if current_show.show_banner %}
+                <img src="{{ current_show.show_banner.url }}" alt="{{ current_show.show_id }}">
+            {% else %}
+                <p>No banner has been set.</p>
+            {% endif %}
+        </aside>
     
+        <section>
+            {{ current_show.show_description }}
+            <table>
+                <tr><td><span style="font-weight: bold;">Id: </span></td><td>{{ current_show.show_id }}</td></tr>
+                <tr><td><span style="font-weight: bold;">Type: </span></td><td>{{ current_show.show_type }}</td></tr>
+                <tr><td><span style="font-weight: bold;">Duration (min): </span></td><td>{{ current_show.show_duration }}</td></tr>
+                <tr><td><span style="font-weight: bold;">Age Rating: </span></td><td>{{ current_show.show_rating }}</td></tr>
+                <tr><td><span style="font-weight: bold;">Release Date: </span></td><td>{{ current_show.release_date }}</td></tr>
+                <tr><td><span style="font-weight: bold;">Language: </span></td><td>{{ current_show.show_language }}</td></tr>
+                <tr><td><span style="font-weight: bold;">Public: </span></td><td>{{ current_show.public }}</td></tr>
+            </table>
+            <p><a href="">Edit</a></p>
+            <p><a href="">Delete</a></p>
+        </section>    
+    </main>
+
     <h1>Comments</h1>
     {% if show_comments %}
         <table>

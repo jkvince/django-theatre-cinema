@@ -1,0 +1,10 @@
+[
+    {
+        "model": "shows.memberjunction",
+        "pk": 1,
+        "fields": {
+            "show_id": "pulp-fiction",
+            "show_member": "quentin-tarantino"
+        }
+    }
+]

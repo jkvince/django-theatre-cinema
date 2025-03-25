@@ -43,58 +43,5 @@
             "show_banner": "shows/pulp-fiction.jpg",
             "public": true
         }
-    },
-    {
-        "model": "shows.showmember",
-        "pk": "quentin-tarantino",
-        "fields": {
-            "show_member_type": "Director",
-            "show_member_name": "Quentin Tarantino",
-            "show_member_banner": "",
-            "public": true
-        }
-    },
-    {
-        "model": "shows.memberjunction",
-        "pk": 1,
-        "fields": {
-            "show_id": "pulp-fiction",
-            "show_member": "quentin-tarantino"
-        }
-    },
-    {
-        "model": "shows.comment",
-        "pk": "58e25f8e-31e8-43a7-97d5-5e7ec4f5b3e2",
-        "fields": {
-            "comment_content": "Amazing film!",
-            "show_id": "inception",
-            "user": 2
-        }
-    },
-    {
-        "model": "shows.comment",
-        "pk": "7e968e29-1b5b-4356-8d9f-8130248a192a",
-        "fields": {
-            "comment_content": "Tarantino's best film!",
-            "show_id": "pulp-fiction",
-            "user": 4
-        }
-    },
-    {
-        "model": "shows.rating",
-        "pk": 1,
-        "fields": {
-            "rating_value": 10,
-            "show_id": "pulp-fiction",
-            "user": 1
-        }
-    },
-    {
-        "model": "shows.following",
-        "pk": 1,
-        "fields": {
-            "show_id": "blade-runner",
-            "user": 4
-        }
     }
 ]

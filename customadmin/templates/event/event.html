@@ -1,0 +1,35 @@
+{% extends "base_admin.html" %}
+
+{% block content %}
+
+<style>
+    article {
+        width: 50em;
+        margin: auto;
+        text-align: center;
+    }
+    table {
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid black;
+    }
+</style>
+
+
+
+<article>
+    <p><a href="{% url 'customadmin:admin_event_list' %}">Go Back</a></p>
+
+    <table>
+        <tr><td><span style="font-weight: bold;">Event Id: </span></td><td>{{ event.event_id }}</td></tr>
+        <tr><td><span style="font-weight: bold;">Show Id: </span></td><td>{{ event.show }}</td></tr>
+        <tr><td><span style="font-weight: bold;">Room Number: </span></td><td>{{ event.room_number }}</td></tr>
+        <tr><td><span style="font-weight: bold;">Event Time: </span></td><td>{{ event.event_time }}</td></tr>
+    </table>
+    <p><a href="">Edit</a></p>
+    <p><a href="">Delete</a></p>
+
+
+</article>
+{% endblock content %}

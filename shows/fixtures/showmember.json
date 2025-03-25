@@ -1,0 +1,12 @@
+[
+    {
+        "model": "shows.showmember",
+        "pk": "quentin-tarantino",
+        "fields": {
+            "show_member_type": "Director",
+            "show_member_name": "Quentin Tarantino",
+            "show_member_banner": "",
+            "public": true
+        }
+    }
+]

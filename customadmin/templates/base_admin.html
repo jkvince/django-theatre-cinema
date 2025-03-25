@@ -6,7 +6,34 @@
     <title>Admin</title>
 </head>
 <body>
-    <a href="{% url 'shopapp:home' %}">Return to website</a>
+    <style>
+        body {
+            background-color: rgb(247, 255, 179);
+        }
+        header {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        nav {
+            border: solid;
+            padding: 1rem;
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        nav a{
+            text-decoration: none;
+            border: solid;
+            padding: 1rem;
+        }
+    </style>
+    <header>
+        <p><a href="{% url 'shopapp:home' %}">Return to website</a></p>
+        <p>You are currently logged in as {{ user.username }}</p>
+    </header>
 
     <nav>
         <ul>
@@ -14,7 +41,7 @@
             <li><a href="{% url 'customadmin:admin_user_list' %}">Users</a></li>
             <li><a href="">Venues</a></li>
             <li><a href="{% url 'customadmin:admin_show_list' %}">Shows</a></li>
-            <li><a href="">Events</a></li>
+            <li><a href="{% url 'customadmin:admin_event_list' %}">Events</a></li>
             <li><a href="">Show Members</a></li>
             <li><a href="">Bookings</a></li>
         </ul>

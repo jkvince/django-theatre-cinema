@@ -1,0 +1,11 @@
+[
+    {
+        "model": "venues.room",
+        "pk": "the-lighthouse-2",
+        "fields": {
+            "room_number": "2",
+            "venue_id": "the-lighthouse",
+            "seat_layout": "room-layout/the-lighthouse-2.json"
+        }
+    }
+]

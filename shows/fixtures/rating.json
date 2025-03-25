@@ -1,0 +1,11 @@
+[
+    {
+        "model": "shows.rating",
+        "pk": 1,
+        "fields": {
+            "rating_value": 10,
+            "show_id": "pulp-fiction",
+            "user": 1
+        }
+    }
+]

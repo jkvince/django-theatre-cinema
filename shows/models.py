@@ -94,3 +94,13 @@ class Following(models.Model):
     
     def __str__(self):
         return self.following_id
+
+
+class Tag(models.Model):
+    tag_name = models.CharField(
+        max_length=30
+    )
+    show = models.ManyToManyField(Show)
+
+    def __str__(self):
+        return self.tag_name

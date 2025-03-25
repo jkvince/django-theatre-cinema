@@ -16,10 +16,8 @@
     }
 </style>
 
-
-<p><a href="{% url 'customadmin:admin_user_list' %}">Go Back</a></p>
-
 <article>
+    <p><a href="{% url 'customadmin:admin_user_list' %}">Go Back</a></p>
 
     <h1>{{ current_user.username }}</h1>
     {{ current_user.profile_pic }}

@@ -1,0 +1,38 @@
+{% extends "base_admin.html" %}
+
+{% block content %}
+
+<style>
+    table {
+        width: 100%;
+    }
+    th, td {
+        border: 1px solid black;
+    }
+</style>
+
+<h1>Events Management</h1>
+
+<p><a href="">New Event+</a></p>
+
+<table>
+    <tr>
+        <th>Event Id</th>
+        <th>Show Id</th>
+        <th>Room Id</th>
+        <th>Event Time</th>
+        <th>Options</th>
+    </tr>
+
+    {% for event in events %}
+        <tr>
+            <td><a href="{% url 'customadmin:admin_event' event.event_id %}">{{ event.event_id }}</a></td>
+            <td>{{ event.show }}</td>
+            <td>{{ event.room_number }}</td>
+            <td>{{ event.event_time }}</td>
+            <td><a href="">Delete</a></td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}

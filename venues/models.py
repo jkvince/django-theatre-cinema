@@ -1,6 +1,8 @@
 from django.db import models
 import uuid
 
+from shows.models import Show
+
 class Venue(models.Model):
     venue_id = models.SlugField(
         primary_key=True
@@ -21,6 +23,9 @@ class Venue(models.Model):
         blank=True
     )
 
+    def __str__(self):
+        return self.venue_id
+
 
 class Room(models.Model):
     room_id = models.SlugField(
@@ -35,6 +40,9 @@ class Room(models.Model):
     class Meta:
         # Compound key
         unique_together = ('room_number', 'venue_id')
+
+    def __str__(self):
+        return self.room_id
 
 
 class Seat(models.Model):
@@ -53,7 +61,15 @@ class Seat(models.Model):
     class Meta:
         # Compound key
         unique_together = ('seat_number', 'room_number')
-    
+
+
+class Event(models.Model):
+    event_id = models.IntegerField(
+        primary_key=True
+    )
+    show = models.ForeignKey(Show, on_delete=models.CASCADE)
+    event_time = models.DateTimeField()
+    room_number = models.ForeignKey(Room, on_delete=models.CASCADE)
 
 #class BookedSeat(models.Model):
 #    booking_id = models.UUIDField(

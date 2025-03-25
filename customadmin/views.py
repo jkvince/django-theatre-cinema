@@ -6,6 +6,7 @@ from django.db.models import Avg
 
 from accounts.models import CustomUser
 from shows.models import Show, ShowMember, MemberJunction, Comment, Rating, Following
+from venues.models import Event
 
 
 class AdminBaseView(PermissionRequiredMixin, TemplateView):
@@ -46,3 +47,15 @@ class AdminShowView(AdminBaseView):
 			'average_rating': Rating.objects.filter(show_id=pk).aggregate(Avg('rating_value'))['rating_value__avg']
 			}
 		return render(request, 'show/show.html', context)
+
+class AdminEventListView(AdminBaseView):
+	def get(self, request):
+		context = {'events': Event.objects.all()}
+		return render(request, 'event/list.html', context)
+
+class AdminEventView(AdminBaseView):
+	def get(self, request, pk):
+		context = {
+			'event': Event.objects.get(pk=pk)
+		}
+		return render(request, 'event/event.html', context)

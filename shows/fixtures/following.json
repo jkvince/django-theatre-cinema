@@ -1,0 +1,10 @@
+[
+    {
+        "model": "shows.following",
+        "pk": 1,
+        "fields": {
+            "show_id": "blade-runner",
+            "user": 4
+        }
+    }
+]
