@@ -8,7 +8,7 @@
             "show_duration": 117,
             "show_description": "A blade runner must pursue and terminate four replicants who stole a ship in space and have returned to Earth to find their creator.",
             "show_agerating": "15",
-            "show_release_date": "1980-01-01",
+            "show_release_date": "1982-01-01",
             "show_language": "English",
             "show_banner": "shows/blade-runner.jpg",
             "public": true
@@ -16,16 +16,16 @@
     },
     {
         "model": "shows.show",
-        "pk": "inception",
+        "pk": "the-shawshank-redemption",
         "fields": {
-            "show_name": "Inception",
-            "show_type": "Action",
-            "show_duration": 90,
-            "show_description": "This is the description",
+            "show_name": "The Shawshank Redemption",
+            "show_type": "Drama",
+            "show_duration": 142,
+            "show_description": "A banker convicted of uxoricide forms a friendship over a quarter century with a hardened convict, while maintaining his innocence and trying to remain hopeful through simple compassion.",
             "show_agerating": "15",
-            "show_release_date": "2012-01-01",
+            "show_release_date": "1994-09-23",
             "show_language": "English",
-            "show_banner": "shows/inception.jpg",
+            "show_banner": "shows/the-shawshank-redemption.jpg",
             "public": true
         }
     },
@@ -38,10 +38,550 @@
             "show_duration": 154,
             "show_description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",
             "show_agerating": "18",
-            "show_release_date": "1990-01-01",
+            "show_release_date": "1994-10-14",
             "show_language": "English",
             "show_banner": "shows/pulp-fiction.jpg",
             "public": true
         }
-    }
+    },
+    {
+        "model": "shows.show",
+        "pk": "inception",
+        "fields": {
+            "show_name": "Inception",
+            "show_type": "Action",
+            "show_duration": 148,
+            "show_description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O., but his tragic past may doom the project and his team to disaster.",
+            "show_agerating": "12A",
+            "show_release_date": "2010-07-16",
+            "show_language": "English",
+            "show_banner": "shows/inception.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "the-godfather",
+        "fields": {
+            "show_name": "The Godfather",
+            "show_type": "Drama",
+            "show_duration": 185,
+            "show_description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+            "show_agerating": "18",
+            "show_release_date": "1972-03-24",
+            "show_language": "English",
+            "show_banner": "shows/the-godfather.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "forrest-gump",
+        "fields": {
+            "show_name": "Forrest Gump",
+            "show_type": "Drama",
+            "show_duration": 142,
+            "show_description": "The history of the United States from the 1950s to the '70s unfolds from the perspective of an Alabama man with an IQ of 75, who yearns to be reunited with his childhood sweetheart.",
+            "show_agerating": "12",
+            "show_release_date": "1994-07-06",
+            "show_language": "English",
+            "show_banner": "shows/forrest-gump.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "interstellar",
+        "fields": {
+            "show_name": "Interstellar",
+            "show_type": "Sci-Fi",
+            "show_duration": 209,
+            "show_description": "When Earth becomes uninhabitable in the future, a farmer and ex-NASA pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team of researchers, to find a new planet for humans.",
+            "show_agerating": "12A",
+            "show_release_date": "2014-11-07",
+            "show_language": "English",
+            "show_banner": "shows/interstellar.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "wall-e",
+        "fields": {
+            "show_name": "WALL-E",
+            "show_type": "Adventure",
+            "show_duration": 98,
+            "show_description": "A robot who is responsible for cleaning a waste-covered Earth meets another robot and falls in love with her. Together, they set out on a journey that will alter the fate of mankind.",
+            "show_agerating": "G",
+            "show_release_date": "2008-06-27",
+            "show_language": "English",
+            "show_banner": "shows/wall-e.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "the-wolf-of-wall-street",
+        "fields": {
+            "show_name": "The Wolf of Wall Street",
+            "show_type": "Comedy",
+            "show_duration": 142,
+            "show_description": "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
+            "show_agerating": "18",
+            "show_release_date": "2013-12-25",
+            "show_language": "English",
+            "show_banner": "shows/the-wolf-of-wall-street.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "spirited-away",
+        "fields": {
+            "show_name": "Spirited Away",
+            "show_type": "Adventure",
+            "show_duration": 124,
+            "show_description": "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches and spirits, and where humans are changed into beasts.",
+            "show_agerating": "PG",
+            "show_release_date": "2001-07-20",
+            "show_language": "English",
+            "show_banner": "shows/spirited-away.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "shrek",
+        "fields": {
+            "show_name": "Shrek",
+            "show_type": "Comedy",
+            "show_duration": 90,
+            "show_description": "A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess for the lord in order to get his land back.",
+            "show_agerating": "PG",
+            "show_release_date": "2001-05-18",
+            "show_language": "English",
+            "show_banner": "shows/shrek.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "mickey-17",
+        "fields": {
+            "show_name": "Mickey 17",
+            "show_type": "Sci-Fi",
+            "show_duration": 137,
+            "show_description": "Mickey 17, known as an expendable, goes on a dangerous journey to colonize an ice planet.",
+            "show_agerating": "15A",
+            "show_release_date": "2025-03-07",
+            "show_language": "English",
+            "show_banner": "shows/mickey-17.jpg",
+            "public": false
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "space-jam",
+        "fields": {
+            "show_name": "Space Jam",
+            "show_type": "Comedy",
+            "show_duration": 88,
+            "show_description": "In a desperate attempt to win a basketball match and earn their freedom, the Looney Tunes seek the aid of retired basketball champion, Michael Jordan.",
+            "show_agerating": "15A",
+            "show_release_date": "1996-11-15",
+            "show_language": "English",
+            "show_banner": "shows/space-jam.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "back-to-the-future",
+        "fields": {
+            "show_name": "Back to the Future",
+            "show_type": "Comedy",
+            "show_duration": 116,
+            "show_description": "Marty McFly, a 17-year-old high school student, is accidentally sent 30 years into the past in a time-traveling DeLorean invented by his close friend, the maverick scientist Doc Brown.",
+            "show_agerating": "PG",
+            "show_release_date": "1985-07-03",
+            "show_language": "English",
+            "show_banner": "shows/back-to-the-future.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "coco",
+        "fields": {
+            "show_name": "Coco",
+            "show_type": "Adventure",
+            "show_duration": 105,
+            "show_description": "Aspiring musician Miguel, confronted with his family's ancestral ban on music, enters the Land of the Dead to find his great-great-grandfather, a legendary singer.",
+            "show_agerating": "PG",
+            "show_release_date": "2017-11-22",
+            "show_language": "English",
+            "show_banner": "shows/coco.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "the-shining",
+        "fields": {
+            "show_name": "The Shining",
+            "show_type": "Horror",
+            "show_duration": 146,
+            "show_description": "A family heads to an isolated hotel for the winter, where a sinister presence influences the father into violence. At the same time, his psychic son sees horrifying forebodings from both the past and the future.",
+            "show_agerating": "18",
+            "show_release_date": "1980-10-02",
+            "show_language": "English",
+            "show_banner": "shows/the-shining.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "the-lion-king",
+        "fields": {
+            "show_name": "The Lion King",
+            "show_type": "Adventure",
+            "show_duration": 88,
+            "show_description": "Lion prince Simba and his father are targeted by his bitter uncle, who wants to ascend the throne himself.",
+            "show_agerating": "PG",
+            "show_release_date": "1994-06-15",
+            "show_language": "English",
+            "show_banner": "shows/the-lion-king.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "alien",
+        "fields": {
+            "show_name": "Alien",
+            "show_type": "Sci-Fi",
+            "show_duration": 117,
+            "show_description": "After investigating a mysterious transmission of unknown origin, the crew of a commercial spacecraft encounters a deadly lifeform.",
+            "show_agerating": "18",
+            "show_release_date": "1979-09-06",
+            "show_language": "English",
+            "show_banner": "shows/alien.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "joker",
+        "fields": {
+            "show_name": "Joker",
+            "show_type": "",
+            "show_duration": 122,
+            "show_description": "Arthur Fleck, a party clown and a failed stand-up comedian, leads an impoverished life with his ailing mother. However, when society shuns him and brands him as a freak, he decides to embrace the life of chaos in Gotham City.",
+            "show_agerating": "16",
+            "show_release_date": "2019-10-04",
+            "show_language": "English",
+            "show_banner": "shows/joker.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "oppenheimer",
+        "fields": {
+            "show_name": "Oppenheimer",
+            "show_type": "Drama",
+            "show_duration": 180,
+            "show_description": "A dramatization of the life story of J. Robert Oppenheimer, the physicist who had a large hand in the development of the atomic bombs that brought an end to World War II.",
+            "show_agerating": "18",
+            "show_release_date": "2023-07-21",
+            "show_language": "English",
+            "show_banner": "shows/oppenheimer.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "jurassic-park",
+        "fields": {
+            "show_name": "Jurassic Park",
+            "show_type": "Action",
+            "show_duration": 127,
+            "show_description": "An industrialist invites some experts to visit his theme park of cloned dinosaurs. After a power failure, the creatures run loose, putting everyone's lives, including his grandchildren's, in danger.",
+            "show_agerating": "12A",
+            "show_release_date": "1993-06-11",
+            "show_language": "English",
+            "show_banner": "shows/jurassic-park.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "inside-out",
+        "fields": {
+            "show_name": "Inside Out",
+            "show_type": "Adventure",
+            "show_duration": 95,
+            "show_description": "After young Riley is uprooted from her Midwest life and moved to San Francisco, her emotions - Joy, Fear, Anger, Disgust and Sadness - conflict on how best to navigate a new city, house, and school.",
+            "show_agerating": "PG",
+            "show_release_date": "2015-06-19",
+            "show_language": "English",
+            "show_banner": "shows/inside-out.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "trainspotting",
+        "fields": {
+            "show_name": "Trainspotting",
+            "show_type": "Drama",
+            "show_duration": 93,
+            "show_description": "Renton, deeply immersed in the Edinburgh drug scene, tries to clean up and get out despite the allure of drugs and the influence of friends.",
+            "show_agerating": "18",
+            "show_release_date": "1996-02-23",
+            "show_language": "English",
+            "show_banner": "shows/trainspotting.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "monsters-inc",
+        "fields": {
+            "show_name": "Monster's, Inc.",
+            "show_type": "Comedy",
+            "show_duration": 92,
+            "show_description": "In order to power the city, monsters have to scare children so that they scream. However, the children are toxic to the monsters, and after a child gets through, two monsters realize things may not be what they think.",
+            "show_agerating": "PG",
+            "show_release_date": "2001-11-02",
+            "show_language": "English",
+            "show_banner": "shows/monsters-inc.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "ratatouille",
+        "fields": {
+            "show_name": "Ratatouille",
+            "show_type": "Adventure",
+            "show_duration": 111,
+            "show_description": "A rat who can cook makes an unusual alliance with a young kitchen worker at a famous Paris restaurant.",
+            "show_agerating": "PG",
+            "show_release_date": "2007-06-29",
+            "show_language": "English",
+            "show_banner": "shows/ratatouille.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "the-big-lebowski",
+        "fields": {
+            "show_name": "The Big Lebowski",
+            "show_type": "Comedy",
+            "show_duration": 117,
+            "show_description": "Jeff Lebowski, mistaken for a millionaire of the same name, seeks restitution for his ruined rug and enlists his bowling buddies to help get it.",
+            "show_agerating": "18",
+            "show_release_date": "1998-04-24",
+            "show_language": "English",
+            "show_banner": "shows/the-big-lebowski.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "the-exorcist",
+        "fields": {
+            "show_name": "The Exorcist",
+            "show_type": "Horror",
+            "show_duration": 122,
+            "show_description": "When a mysterious entity possesses a young girl, her mother seeks the help of two Catholic priests to save her life.",
+            "show_agerating": "18",
+            "show_release_date": "1973-12-26",
+            "show_language": "English",
+            "show_banner": "shows/the-exorcist.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "the-incredibles",
+        "fields": {
+            "show_name": "The Incredibles",
+            "show_type": "Action",
+            "show_duration": 115,
+            "show_description": "While trying to lead a quiet suburban life, a family of undercover superheroes are forced into action to save the world.",
+            "show_agerating": "PG",
+            "show_release_date": "2004-11-05",
+            "show_language": "English",
+            "show_banner": "shows/the-incredibles.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "the-iron-giant",
+        "fields": {
+            "show_name": "The Iron Giant",
+            "show_type": "Adventure",
+            "show_duration": 86,
+            "show_description": "A young boy befriends a giant robot from outer space that a paranoid government agent wants to destroy.",
+            "show_agerating": "PG",
+            "show_release_date": "1999-08-06",
+            "show_language": "English",
+            "show_banner": "shows/the-iron-giant.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "dog-man",
+        "fields": {
+            "show_name": "Dog Man",
+            "show_type": "Adventure",
+            "show_duration": 89,
+            "show_description": "Dog Man, half dog and half man, he is sworn to protect and serve as he doggedly pursues the feline supervillain Petey the Cat.",
+            "show_agerating": "PG",
+            "show_release_date": "2025-01-31",
+            "show_language": "English",
+            "show_banner": "shows/dog-man.jpg",
+            "public": false
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "up",
+        "fields": {
+            "show_name": "Up",
+            "show_type": "Adventure",
+            "show_duration": 96,
+            "show_description": "78-year-old Carl Fredricksen travels to South America in his house equipped with balloons, inadvertently taking a young stowaway.",
+            "show_agerating": "PG",
+            "show_release_date": "2009-05-29",
+            "show_language": "English",
+            "show_banner": "shows/up.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "die-hard",
+        "fields": {
+            "show_name": "Die Hard",
+            "show_type": "Action",
+            "show_duration": 131,
+            "show_description": "A New York City police officer tries to save his estranged wife and several others taken hostage by terrorists during a Christmas party at the Nakatomi Plaza in Los Angeles.",
+            "show_agerating": "18",
+            "show_release_date": "1988-07-15",
+            "show_language": "English",
+            "show_banner": "shows/die-hard.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "finding-nemo",
+        "fields": {
+            "show_name": "Finding Nemo",
+            "show_type": "Adventure",
+            "show_duration": 100,
+            "show_description": "After his son is captured in the Great Barrier Reef and taken to Sydney, a timid clownfish sets out on a journey to bring him home.",
+            "show_agerating": "G",
+            "show_release_date": "2003-05-30",
+            "show_language": "English",
+            "show_banner": "shows/finding-nemo.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "wicked",
+        "fields": {
+            "show_name": "Wicked",
+            "show_type": "Theatre",
+            "show_duration": 165,
+            "show_description": "Wicked is a prequel to The Wizard of Oz, telling the story of the unlikely friendship between Elphaba, the misunderstood Wicked Witch of the West, and Glinda, the Good Witch, as they navigate love, power, and societal expectations.",
+            "show_agerating": "13",
+            "show_release_date": "2003-05-28",
+            "show_language": "English",
+            "show_banner": "shows/wicked.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "hamilton",
+        "fields": {
+            "show_name": "Hamilton",
+            "show_type": "Theatre",
+            "show_duration": 165,
+            "show_description": "Hamilton is a groundbreaking musical that tells the story of Alexander Hamilton, one of America's founding fathers, through a blend of hip-hop, jazz, and Broadway music, highlighting his rise from an orphan in the Caribbean to a key figure in American history.",
+            "show_agerating": "13",
+            "show_release_date": "2015-01-20",
+            "show_language": "English",
+            "show_banner": "shows/hamilton.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "the-book-of-mormon",
+        "fields": {
+            "show_name": "The Book of Mormon",
+            "show_type": "Theatre",
+            "show_duration": 150,
+            "show_description": "The Book of Mormon musical is a satirical comedy that follows two Mormon missionaries sent to Uganda, where they face challenges that test their faith and understanding of their religion.",
+            "show_agerating": "12A",
+            "show_release_date": "2011-03-24",
+            "show_language": "English",
+            "show_banner": "shows/the-book-of-mormon.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "hadestown",
+        "fields": {
+            "show_name": "Hadestown",
+            "show_type": "Theatre",
+            "show_duration": 150,
+            "show_description": "Hadestown is a musical that reimagines the Greek myth of Orpheus and Eurydice in a Depression-era setting, blending folk, blues, and jazz music to tell a story of love, sacrifice, and the struggle against industrial oppression.",
+            "show_agerating": "PG",
+            "show_release_date": "2016-05-23",
+            "show_language": "English",
+            "show_banner": "shows/hadestown.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "cats",
+        "fields": {
+            "show_name": "Cats",
+            "show_type": "Theatre",
+            "show_duration": 140,
+            "show_description": "A tribe of cats called the Jellicles gather on a moonlit evening to decide which one will ascend to the Heaviside Layer and be reborn into a new life.",
+            "show_agerating": "PG",
+            "show_release_date": "1981-05-11",
+            "show_language": "English",
+            "show_banner": "shows/cats.jpg",
+            "public": true
+        }
+    },
+    {
+        "model": "shows.show",
+        "pk": "les-miserables",
+        "fields": {
+            "show_name": "Les Misérables",
+            "show_type": "Theatre",
+            "show_duration": 170,
+            "show_description": "Les Misérbles follows Jean Valjean, an ex-convict seeking redemption, as he navigates the social and economic injustices of early 19th-century France, while being pursued by the relentless police inspector Javert and caring for the orphaned Cosette.",
+            "show_agerating": "12A",
+            "show_release_date": "1980-09-24",
+            "show_language": "English",
+            "show_banner": "shows/les-miserables.jpg",
+            "public": true
+        }
+    }        
 ]
