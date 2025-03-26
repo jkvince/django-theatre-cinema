@@ -56,7 +56,6 @@ class Seat(models.Model):
 
     seat_premium = models.BooleanField()
     seat_accessible = models.BooleanField()
-    seat_price = models.FloatField()
 
     class Meta:
         # Compound key
@@ -70,6 +69,7 @@ class Event(models.Model):
     show = models.ForeignKey(Show, on_delete=models.CASCADE)
     event_time = models.DateTimeField()
     room_number = models.ForeignKey(Room, on_delete=models.CASCADE)
+    price = models.FloatField()
 
 #class BookedSeat(models.Model):
 #    booking_id = models.UUIDField(

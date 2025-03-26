@@ -79,8 +79,8 @@
             <p>Events:</p>
             {% if events %}
                 {% for event in events %}
-                    <a href=""><p>
-                        {{ event.event_time }} at {{ event.room_number.venue_id.venue_name }}
+                    <a href="{% url 'shopapp:event' event.event_id %}"><p>
+                        {{ event.event_time | date:'d M Y' }} at {{ event.room_number.venue_id.venue_name }}, price € {{ event.price }}
                     </p></a>
                 {% endfor %}
             {% else %}

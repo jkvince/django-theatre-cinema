@@ -5,14 +5,12 @@
         {
             "pos_x": 2,
             "pos_y": 5,
-            "price": 10,
             "premium": false,
             "accessible": true
         },
         {
             "pos_x": 5,
             "pos_y": 4,
-            "price": 10,
             "premium": false,
             "accessible": false
         }

@@ -32,7 +32,7 @@ class AdminUserView(AdminBaseView):
 
 class AdminShowListView(AdminBaseView):
 	def get(self, request):
-		context = {'shows': Show.objects.all()}
+		context = {'shows': Show.objects.all().order_by('-show_release_date')}
 		return render(request, 'show/list.html', context)
 
 class AdminShowView(AdminBaseView):

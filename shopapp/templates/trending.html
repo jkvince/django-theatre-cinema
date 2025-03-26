@@ -2,19 +2,35 @@
 {% block title %}Trending{% endblock title %}
 
 {% block content %}
+
+<style>
+    main {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: flex-end;
+    }
+    main div {
+        margin: 1rem;
+    }
+    main img {
+        width: 10rem;
+    }
+</style>
+
 <article>
     <h1>This is the trending page</h1>
 
     <!-- for now show all shows, later on only popular ones -->
 
-    <div style="display: flex; justify-content: space-around;">
+    <main>
         {% for show in shows %}
             <div>
                 <a href="{% url 'shows:show_page' show.show_id %}">
-                    <img src="{{ show.show_banner.url }}" alt="{{ show.show_name }}" style="width: 10rem;">
+                    <img src="{{ show.show_banner.url }}" alt="{{ show.show_name }}">
                 </a>
             </div>
         {% endfor %}
-    </div>
+    </main>
 </article>
 {% endblock %}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Trending{% endblock title %}
+
+{% block content %}
+
+<article>
+    <h1>{{ event.show.show_name }}</h1>
+    <p>Booking for the showing of {{ event.show.show_name }} on 
+        {{ event.event_time | date:'d M Y' }} at {{ event.room_number.venue_id.venue_name }} for €{{ event.price }}.
+    </p>
+</article>
+
+{% endblock content %}

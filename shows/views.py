@@ -11,7 +11,7 @@ def show_page(request, pk):
 			context = {
 				'current_show': query,
 				'comments': Comment.objects.filter(show_id=pk),
-				'events': Event.objects.filter(show_id=pk)
+				'events': Event.objects.filter(show_id=pk).order_by('price')
 			}
 			return render(request, 'show.html', context)
 		else:
