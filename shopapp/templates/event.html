@@ -2,17 +2,21 @@
 {% load static %}
 {% block title %}Book{% endblock title %}
 
+{% block additional_js %}
+    <script type="text/javascript" src="{% static 'js/booking.js' %}"></script>
+{% endblock additional_js %}
+
 {% block content %}
 
 <style>
     main {
         display: flex;
         justify-content: center;
-
     }
     table {
         table-layout: fixed;
         border: solid;
+        padding: 1rem;
     }
     td {
         width: 2rem;
@@ -41,11 +45,11 @@
                             {% for seat in seats %}
                                 {% if seat.location_row == row and seat.location_column == column %}
                                     {% if seat.seat_premium %}
-                                        <img src="{% static 'booking/premium.png' %}" alt="{{ seat.seat_number }}" class="clickable">
+                                        <img src="{% static 'booking/premium.png' %}" alt="{{ seat.seat_number }}" class="clickable" onclick="seatClick('{{ seat.seat_number }}');">
                                     {% elif seat.seat_accessible %}
-                                        <img src="{% static 'booking/accessible.png' %}" alt="{{ seat.seat_number }}" class="clickable">
+                                        <img src="{% static 'booking/accessible.png' %}" alt="{{ seat.seat_number }}" class="clickable" onclick="seatClick('{{ seat.seat_number }}');">
                                     {% else %}
-                                        <img src="{% static 'booking/base.png' %}" alt="{{ seat.seat_number }}" class="clickable">
+                                        <img src="{% static 'booking/base.png' %}" alt="{{ seat.seat_number }}" class="clickable" onclick="seatClick('{{ seat.seat_number }}');">
                                     {% endif %}
                                 {% endif %}
                             {% endfor %}
@@ -56,6 +60,7 @@
         </table>
         <aside>
             <p>Some text</p>
+            <p id="seat-selected-list"></p>
         </aside>
     </main>
 
