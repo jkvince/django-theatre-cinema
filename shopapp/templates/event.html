@@ -1,13 +1,67 @@
 {% extends "base.html" %}
-{% block title %}Trending{% endblock title %}
+{% load static %}
+{% block title %}Book{% endblock title %}
 
 {% block content %}
 
+<style>
+    main {
+        display: flex;
+        justify-content: center;
+
+    }
+    table {
+        table-layout: fixed;
+        border: solid;
+    }
+    td {
+        width: 2rem;
+        height: 2rem;
+    }
+    td img {
+        width: 2rem;
+        height: 2rem;
+    }
+</style>
+
 <article>
     <h1>{{ event.show.show_name }}</h1>
-    <p>Booking for the showing of {{ event.show.show_name }} on 
-        {{ event.event_time | date:'d M Y' }} at {{ event.room_number.venue_id.venue_name }} for €{{ event.price }}.
-    </p>
+    <p>Location: {{ room.venue_id.venue_name }}</p>
+    <p>Room: {{ room.room_number }}</p>
+    <p>Date: {{ event.event_time | date:'d M Y' }} </p>
+    <p>Time: {{ event.event_time | date:'h:m a' }}</p>
+    for €{{ event.price }}
+    
+    <main>
+        <table>
+            {% for row in rows_list %}
+                <tr>
+                    {% for column in columns_list %}
+                        <td>
+                            {% for seat in seats %}
+                                {% if seat.location_row == row and seat.location_column == column %}
+                                    {% if seat.seat_premium %}
+                                        <img src="{% static 'booking/premium.png' %}" alt="{{ seat.seat_number }}" class="clickable">
+                                    {% elif seat.seat_accessible %}
+                                        <img src="{% static 'booking/accessible.png' %}" alt="{{ seat.seat_number }}" class="clickable">
+                                    {% else %}
+                                        <img src="{% static 'booking/base.png' %}" alt="{{ seat.seat_number }}" class="clickable">
+                                    {% endif %}
+                                {% endif %}
+                            {% endfor %}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+        <aside>
+            <p>Some text</p>
+        </aside>
+    </main>
+
+
+
+
 </article>
 
 {% endblock content %}

@@ -2,7 +2,8 @@ from django.urls import path
 from .views import (
     HomePageView, 
     TrendingPageView,
-    EventPageView
+    EventPageView,
+    VenuesPageView
 )
 
 app_name = 'shopapp'
@@ -10,5 +11,6 @@ app_name = 'shopapp'
 urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
     path('trending/', TrendingPageView.as_view(), name='trending'),
-    path('event/<int:pk>', EventPageView.as_view(), name='event')
+    path('event/<int:pk>', EventPageView.as_view(), name='event'),
+    path('venues', VenuesPageView.as_view(), name='venues')
 ]

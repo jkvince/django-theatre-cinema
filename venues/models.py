@@ -35,7 +35,8 @@ class Room(models.Model):
         max_length=15
     )
     venue_id = models.ForeignKey(Venue, on_delete=models.CASCADE)
-    seat_layout = models.FileField()
+    room_rows = models.IntegerField()
+    room_columns = models.IntegerField()
 
     class Meta:
         # Compound key
@@ -56,6 +57,8 @@ class Seat(models.Model):
 
     seat_premium = models.BooleanField()
     seat_accessible = models.BooleanField()
+    location_row = models.IntegerField()
+    location_column = models.IntegerField()
 
     class Meta:
         # Compound key

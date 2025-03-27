@@ -14,7 +14,7 @@
     <nav>
         <ul>
             <li><a href="{% url 'shopapp:home' %}">Home</a></li>
-            <li><a href="">Venues</a></li>
+            <li><a href="{% url 'shopapp:venues' %}">Venues</a></li>
             <li><a href="{% url 'shopapp:trending' %}">Trending Movies</a></li>
             {% if user.is_authenticated %}
                 <li><a href="{% url 'accounts:profile' %}">{{user.username}}</a></li>
