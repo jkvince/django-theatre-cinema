@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Book{% endblock title %}
+{% block title %}Booking{% endblock title %}
 
 {% block additional_js %}
     <script type="text/javascript" src="{% static 'js/booking.js' %}"></script>
@@ -19,12 +19,12 @@
         padding: 1rem;
     }
     td {
-        width: 2rem;
-        height: 2rem;
+        width: 2.5rem;
+        height: 2.5rem;
     }
     td img {
-        width: 2rem;
-        height: 2rem;
+        width: 2.5rem;
+        height: 2.5rem;
     }
 </style>
 
@@ -34,7 +34,7 @@
     <p>Room: {{ room.room_number }}</p>
     <p>Date: {{ event.event_time | date:'d M Y' }} </p>
     <p>Time: {{ event.event_time | date:'h:m a' }}</p>
-    for €{{ event.price }}
+    <p>Price: <span id="price">{{ event.price }}</span></p>
     
     <main>
         <table>
@@ -45,11 +45,15 @@
                             {% for seat in seats %}
                                 {% if seat.location_row == row and seat.location_column == column %}
                                     {% if seat.seat_premium %}
-                                        <img src="{% static 'booking/premium.png' %}" alt="{{ seat.seat_number }}" class="clickable" onclick="seatClick('{{ seat.seat_number }}');">
+                                        {% if user.is_premium %}
+                                            <img id="{{ seat.seat_number }}" src="{% static 'booking/premium.png' %}" alt="{{ seat.seat_number }}" class="clickable" onclick="seatClick('{{ seat.seat_number }}');">
+                                        {% else %}
+                                            <img id="{{ seat.seat_number }}" src="{% static 'booking/premium_booked.png' %}" alt="{{ seat.seat_number }}">
+                                        {% endif %}
                                     {% elif seat.seat_accessible %}
-                                        <img src="{% static 'booking/accessible.png' %}" alt="{{ seat.seat_number }}" class="clickable" onclick="seatClick('{{ seat.seat_number }}');">
+                                        <img id="{{ seat.seat_number }}" src="{% static 'booking/accessible.png' %}" alt="{{ seat.seat_number }}" class="clickable" onclick="seatClick('{{ seat.seat_number }}');">
                                     {% else %}
-                                        <img src="{% static 'booking/base.png' %}" alt="{{ seat.seat_number }}" class="clickable" onclick="seatClick('{{ seat.seat_number }}');">
+                                        <img id="{{ seat.seat_number }}" src="{% static 'booking/base.png' %}" alt="{{ seat.seat_number }}" class="clickable" onclick="seatClick('{{ seat.seat_number }}');">
                                     {% endif %}
                                 {% endif %}
                             {% endfor %}
@@ -59,8 +63,18 @@
             {% endfor %}
         </table>
         <aside>
-            <p>Some text</p>
+            <p>Seats selected: </p>
             <p id="seat-selected-list"></p>
+            <p>Total:</p>
+            <p id="total-cost"></p>
+            
+            <!--
+            <form action="" method="POST">
+                {% csrf_token %}
+                <button type="submit">Book</button>
+            </form>
+            -->
+            
         </aside>
     </main>
 

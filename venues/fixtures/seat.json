@@ -1,14 +1,218 @@
 [
     {
         "model": "venues.seat",
+        "pk": "the-lighthouse-2-10A",
+        "fields": {
+            "seat_number": "10A",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": true,
+            "location_row": 0,
+            "location_column": 13
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-10B",
+        "fields": {
+            "seat_number": "10B",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 1,
+            "location_column": 13
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-10C",
+        "fields": {
+            "seat_number": "10C",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 2,
+            "location_column": 13
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-10D",
+        "fields": {
+            "seat_number": "10D",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 4,
+            "location_column": 13
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-10E",
+        "fields": {
+            "seat_number": "10E",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 5,
+            "location_column": 13
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-10F",
+        "fields": {
+            "seat_number": "10F",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 6,
+            "location_column": 13
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-11A",
+        "fields": {
+            "seat_number": "11A",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": true,
+            "location_row": 0,
+            "location_column": 14
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-11B",
+        "fields": {
+            "seat_number": "11B",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 1,
+            "location_column": 14
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-11C",
+        "fields": {
+            "seat_number": "11C",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 2,
+            "location_column": 14
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-11D",
+        "fields": {
+            "seat_number": "11D",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 4,
+            "location_column": 14
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-11E",
+        "fields": {
+            "seat_number": "11E",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 5,
+            "location_column": 14
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-11F",
+        "fields": {
+            "seat_number": "11F",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 6,
+            "location_column": 14
+        }
+    },
+    {
+        "model": "venues.seat",
         "pk": "the-lighthouse-2-1A",
         "fields": {
             "seat_number": "1A",
             "room_number": "the-lighthouse-2",
             "seat_premium": false,
+            "seat_accessible": true,
+            "location_row": 0,
+            "location_column": 0
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-1B",
+        "fields": {
+            "seat_number": "1B",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 1,
+            "location_column": 0
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-1C",
+        "fields": {
+            "seat_number": "1C",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
             "seat_accessible": false,
             "location_row": 2,
-            "location_column": 1
+            "location_column": 0
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-1D",
+        "fields": {
+            "seat_number": "1D",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 4,
+            "location_column": 0
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-1E",
+        "fields": {
+            "seat_number": "1E",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 5,
+            "location_column": 0
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-1F",
+        "fields": {
+            "seat_number": "1F",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 6,
+            "location_column": 0
         }
     },
     {
@@ -19,8 +223,68 @@
             "room_number": "the-lighthouse-2",
             "seat_premium": false,
             "seat_accessible": true,
+            "location_row": 0,
+            "location_column": 1
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-2B",
+        "fields": {
+            "seat_number": "2B",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 1,
+            "location_column": 1
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-2C",
+        "fields": {
+            "seat_number": "2C",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 2,
+            "location_column": 1
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-2D",
+        "fields": {
+            "seat_number": "2D",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 4,
+            "location_column": 1
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-2E",
+        "fields": {
+            "seat_number": "2E",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
             "location_row": 5,
-            "location_column": 3
+            "location_column": 1
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-2F",
+        "fields": {
+            "seat_number": "2F",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 6,
+            "location_column": 1
         }
     },
     {
@@ -29,10 +293,70 @@
         "fields": {
             "seat_number": "3A",
             "room_number": "the-lighthouse-2",
-            "seat_premium": true,
+            "seat_premium": false,
+            "seat_accessible": true,
+            "location_row": 0,
+            "location_column": 2
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-3B",
+        "fields": {
+            "seat_number": "3B",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
             "seat_accessible": false,
-            "location_row": 11,
-            "location_column": 10
+            "location_row": 1,
+            "location_column": 2
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-3C",
+        "fields": {
+            "seat_number": "3C",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 2,
+            "location_column": 2
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-3D",
+        "fields": {
+            "seat_number": "3D",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 4,
+            "location_column": 2
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-3E",
+        "fields": {
+            "seat_number": "3E",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 5,
+            "location_column": 2
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-3F",
+        "fields": {
+            "seat_number": "3F",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 6,
+            "location_column": 2
         }
     },
     {
@@ -42,9 +366,69 @@
             "seat_number": "4A",
             "room_number": "the-lighthouse-2",
             "seat_premium": false,
+            "seat_accessible": true,
+            "location_row": 0,
+            "location_column": 3
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-4B",
+        "fields": {
+            "seat_number": "4B",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 1,
+            "location_column": 3
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-4C",
+        "fields": {
+            "seat_number": "4C",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 2,
+            "location_column": 3
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-4D",
+        "fields": {
+            "seat_number": "4D",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 4,
+            "location_column": 3
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-4E",
+        "fields": {
+            "seat_number": "4E",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
             "seat_accessible": false,
             "location_row": 5,
-            "location_column": 4
+            "location_column": 3
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-4F",
+        "fields": {
+            "seat_number": "4F",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 6,
+            "location_column": 3
         }
     },
     {
@@ -54,9 +438,357 @@
             "seat_number": "5A",
             "room_number": "the-lighthouse-2",
             "seat_premium": false,
-            "seat_accessible": false,
+            "seat_accessible": true,
             "location_row": 0,
-            "location_column": 0
+            "location_column": 6
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-5B",
+        "fields": {
+            "seat_number": "5B",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 1,
+            "location_column": 6
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-5C",
+        "fields": {
+            "seat_number": "5C",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 2,
+            "location_column": 6
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-5D",
+        "fields": {
+            "seat_number": "5D",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": true,
+            "seat_accessible": false,
+            "location_row": 4,
+            "location_column": 6
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-5E",
+        "fields": {
+            "seat_number": "5E",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": true,
+            "seat_accessible": false,
+            "location_row": 5,
+            "location_column": 6
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-5F",
+        "fields": {
+            "seat_number": "5F",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 6,
+            "location_column": 6
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-6A",
+        "fields": {
+            "seat_number": "6A",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": true,
+            "location_row": 0,
+            "location_column": 7
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-6B",
+        "fields": {
+            "seat_number": "6B",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 1,
+            "location_column": 7
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-6C",
+        "fields": {
+            "seat_number": "6C",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 2,
+            "location_column": 7
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-6D",
+        "fields": {
+            "seat_number": "6D",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": true,
+            "seat_accessible": false,
+            "location_row": 4,
+            "location_column": 7
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-6E",
+        "fields": {
+            "seat_number": "6E",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": true,
+            "seat_accessible": false,
+            "location_row": 5,
+            "location_column": 7
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-6F",
+        "fields": {
+            "seat_number": "6F",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 6,
+            "location_column": 7
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-7A",
+        "fields": {
+            "seat_number": "7A",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": true,
+            "location_row": 0,
+            "location_column": 8
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-7B",
+        "fields": {
+            "seat_number": "7B",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 1,
+            "location_column": 8
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-7C",
+        "fields": {
+            "seat_number": "7C",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 2,
+            "location_column": 8
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-7D",
+        "fields": {
+            "seat_number": "7D",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": true,
+            "seat_accessible": false,
+            "location_row": 4,
+            "location_column": 8
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-7E",
+        "fields": {
+            "seat_number": "7E",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": true,
+            "seat_accessible": false,
+            "location_row": 5,
+            "location_column": 8
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-7F",
+        "fields": {
+            "seat_number": "7F",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 6,
+            "location_column": 8
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-8A",
+        "fields": {
+            "seat_number": "8A",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": true,
+            "location_row": 0,
+            "location_column": 11
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-8B",
+        "fields": {
+            "seat_number": "8B",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 1,
+            "location_column": 11
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-8C",
+        "fields": {
+            "seat_number": "8C",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 2,
+            "location_column": 11
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-8D",
+        "fields": {
+            "seat_number": "8D",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 4,
+            "location_column": 11
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-8E",
+        "fields": {
+            "seat_number": "8E",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 5,
+            "location_column": 11
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-8F",
+        "fields": {
+            "seat_number": "8F",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 6,
+            "location_column": 11
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-9A",
+        "fields": {
+            "seat_number": "9A",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": true,
+            "location_row": 0,
+            "location_column": 12
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-9B",
+        "fields": {
+            "seat_number": "9B",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 1,
+            "location_column": 12
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-9C",
+        "fields": {
+            "seat_number": "9C",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 2,
+            "location_column": 12
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-9D",
+        "fields": {
+            "seat_number": "9D",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 4,
+            "location_column": 12
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-9E",
+        "fields": {
+            "seat_number": "9E",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 5,
+            "location_column": 12
+        }
+    },
+    {
+        "model": "venues.seat",
+        "pk": "the-lighthouse-2-9F",
+        "fields": {
+            "seat_number": "9F",
+            "room_number": "the-lighthouse-2",
+            "seat_premium": false,
+            "seat_accessible": false,
+            "location_row": 6,
+            "location_column": 12
         }
     }
 ]
