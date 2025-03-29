@@ -5,8 +5,8 @@
         "fields": {
             "room_number": "2",
             "venue_id": "the-lighthouse",
-            "room_rows": 14,
-            "room_columns": 20
+            "room_rows": 7,
+            "room_columns": 15
         }
     }
 ]

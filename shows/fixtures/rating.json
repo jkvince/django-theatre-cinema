@@ -7,5 +7,14 @@
             "show_id": "pulp-fiction",
             "user": 1
         }
+    },
+    {
+        "model": "shows.rating",
+        "pk": 2,
+        "fields": {
+            "rating_value": 7,
+            "show_id": "pulp-fiction",
+            "user": 3
+        }
     }
 ]
