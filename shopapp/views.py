@@ -5,7 +5,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView
 
 from shows.models import Show
-from venues.models import Event, Venue, Seat, Room
+from venues.models import Event, Venue, Seat, Room, BookedSeat
 from .models import Order
 
 from django.http import HttpResponse
@@ -25,15 +25,24 @@ def event_page_view(request, pk):
 	room = Room.objects.get(room_id=event.room_number)
 
 	if request.method == "GET":
+		# generate an empty 2d list of the grid
+		grid = [[None for y in range(room.room_columns)] for x in range(room.room_rows)]
+
 		seats = Seat.objects.filter(room_number=room.room_id)
-		rows_list = [x for x in range(room.room_rows)]
-		columns_list = [x for x in range(room.room_columns)]
+		booked_seats = BookedSeat.objects.filter(event=event, booked_status=True)
+
+		# populate with seat objects
+		for seat in seats:
+			grid[seat.location_row][seat.location_column] = {'seat': seat, 'booking': None}
+
+		# populate with booked seat objects
+		for booked in booked_seats:
+			grid[booked.seat_number.location_row][booked.seat_number.location_column]['booking'] = booked
+
 		context = {
 			'event': event,
 			'room': room,
-			'seats': seats,
-			'rows_list': rows_list,
-			'columns_list': columns_list
+			'grid': grid
 		}
 		return render(request, 'event.html', context)
 	
@@ -61,13 +70,22 @@ def event_page_view(request, pk):
 		# add stripe payment here
 
 		# if payment is successful
-		Order.objects.create(
-			order_id=uuid.uuid4(), 
-			user=request.user.id,
-			total=total,
+		order_id = uuid.uuid4()
+
+		order = Order.objects.create(
+			order_id=order_id, 
+			user=request.user,
+			total=total
 		)
 
-		print(datetime.now().strftime("[%d/%b/%Y %H:%M:%S] ") + "Booking created")
+		for seat in seats:
+			BookedSeat.objects.create(
+				booking_id=uuid.uuid4(),
+				order=order,
+				seat_number=seat,
+				event=event,
+			)
+
 		return HttpResponse(str(seats) + str(total))
 
 

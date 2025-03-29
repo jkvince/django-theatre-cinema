@@ -38,6 +38,43 @@
     
     <main>
         <table>
+            {% for row in grid %}
+                <tr>
+                    {% for cell in row %}
+                        <td>
+                            {% if cell != None %}
+                                {% if cell.seat.seat_premium %}
+                                    
+                                    {% if cell.booking == None and user.is_premium %}
+                                        <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/premium.png' %}" alt="{{ cell.seat.seat_number }}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
+                                    {% else %}
+                                        <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/premium_booked.png' %}" alt="{{ cell.seat.seat_number }}">
+                                    {% endif %}
+
+                                {% elif cell.seat.seat_accessible %}
+
+                                    {% if cell.booking == None %}
+                                        <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/accessible.png' %}" alt="{{ cell.seat.seat_number }}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
+                                    {% else %}
+                                        <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/accessible_booked.png' %}" alt="{{ cell.seat.seat_number }}">
+                                    {% endif %}
+
+                                {% else %}
+
+                                    {% if cell.booking == None %}
+                                        <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/base.png' %}" alt="{{ cell.seat.seat_number }}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
+                                    {% else %}
+                                        <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/base_booked.png' %}" alt="{{ cell.seat.seat_number }}">
+                                    {% endif %}
+
+                                {% endif %}
+                            {% endif %}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+
+            <!--
             {% for row in rows_list %}
                 <tr>
                     {% for column in columns_list %}
@@ -61,6 +98,7 @@
                     {% endfor %}
                 </tr>
             {% endfor %}
+            -->
         </table>
         <aside>
             <p>Seats selected: </p>
@@ -76,7 +114,6 @@
 
         </aside>
     </main>
-
 
 
 

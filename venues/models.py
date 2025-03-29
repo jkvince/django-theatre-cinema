@@ -82,4 +82,4 @@ class BookedSeat(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE)
     seat_number = models.ForeignKey(Seat, on_delete=models.CASCADE)
     event = models.ForeignKey(Event, on_delete=models.CASCADE)
-    booked_status = models.BooleanField()
+    booked_status = models.BooleanField(default=True)

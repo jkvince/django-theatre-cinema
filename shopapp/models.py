@@ -7,7 +7,7 @@ class Order(models.Model):
     order_id = models.UUIDField(primary_key=True)
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     total = models.FloatField()
-    date_ordered = models.DateField(auto_now_add=True)
+    date_ordered = models.DateTimeField(auto_now_add=True)
 
     billing_name = models.CharField(max_length=250)
     billing_address = models.CharField(max_length=250)
