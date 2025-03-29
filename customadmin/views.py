@@ -9,20 +9,20 @@ from shows.models import Show, ShowMember, MemberJunction, Comment, Rating, Foll
 from venues.models import Event
 
 
-class AdminBaseView(PermissionRequiredMixin, TemplateView):
+class AdminAbstractView(PermissionRequiredMixin, TemplateView):
 	# Abstract class for admin pages
 	permission_required = 'accounts.CustomUser'
 
 
-class AdminMainView(AdminBaseView):
+class AdminMainView(AdminAbstractView):
 	template_name = 'main.html'
 
-class AdminUserListView(AdminBaseView):
+class AdminUserListView(AdminAbstractView):
 	def get(self, request):
 		context = {'users': CustomUser.objects.all()}
 		return render(request, 'user/list.html', context)
 
-class AdminUserView(AdminBaseView):
+class AdminUserView(AdminAbstractView):
 	def get(self, request, pk):
 		context = {
 			'current_user': CustomUser.objects.get(pk=pk),
@@ -30,12 +30,12 @@ class AdminUserView(AdminBaseView):
 			}
 		return render(request, 'user/user.html', context)
 
-class AdminShowListView(AdminBaseView):
+class AdminShowListView(AdminAbstractView):
 	def get(self, request):
 		context = {'shows': Show.objects.all().order_by('-show_release_date')}
 		return render(request, 'show/list.html', context)
 
-class AdminShowView(AdminBaseView):
+class AdminShowView(AdminAbstractView):
 	def get(self, request, pk):
 		context = {
 			'current_show': Show.objects.get(pk=pk),
@@ -48,12 +48,12 @@ class AdminShowView(AdminBaseView):
 			}
 		return render(request, 'show/show.html', context)
 
-class AdminEventListView(AdminBaseView):
+class AdminEventListView(AdminAbstractView):
 	def get(self, request):
 		context = {'events': Event.objects.all()}
 		return render(request, 'event/list.html', context)
 
-class AdminEventView(AdminBaseView):
+class AdminEventView(AdminAbstractView):
 	def get(self, request, pk):
 		context = {
 			'event': Event.objects.get(pk=pk)

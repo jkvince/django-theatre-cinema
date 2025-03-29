@@ -64,17 +64,16 @@
         </table>
         <aside>
             <p>Seats selected: </p>
-            <p id="seat-selected-list"></p>
+            <p id="seat-selected-pretty">
             <p>Total:</p>
             <p id="total-cost"></p>
-            
-            <!--
-            <form action="" method="POST">
+        
+            <form action="{% url 'shopapp:event' event.event_id %}" method="POST">
                 {% csrf_token %}
+                <input id="seat-input" type="hidden" name="seats" value="">
                 <button type="submit">Book</button>
             </form>
-            -->
-            
+
         </aside>
     </main>
 

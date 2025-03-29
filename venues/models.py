@@ -2,6 +2,7 @@ from django.db import models
 import uuid
 
 from shows.models import Show
+from shopapp.models import Order
 
 class Venue(models.Model):
     venue_id = models.SlugField(
@@ -74,11 +75,11 @@ class Event(models.Model):
     room_number = models.ForeignKey(Room, on_delete=models.CASCADE)
     price = models.FloatField()
 
-#class BookedSeat(models.Model):
-#    booking_id = models.UUIDField(
-#        primary_key=True
-#    )
-#    order_id = models.ForeignKey(Order, on_delete=models.CASCADE)
-#    seat_number = models.ForeignKey(Seat, on_delete=models.CASCADE)
-#    event_id = models.ForeignKey(Event, on_delete=models.CASCADE)
-#    booked_status = models.BooleanField()
+class BookedSeat(models.Model):
+    booking_id = models.UUIDField(
+        primary_key=True
+    )
+    order = models.ForeignKey(Order, on_delete=models.CASCADE)
+    seat_number = models.ForeignKey(Seat, on_delete=models.CASCADE)
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    booked_status = models.BooleanField()

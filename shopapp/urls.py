@@ -1,17 +1,16 @@
 from django.urls import path
 from .views import (
     HomePageView, 
-    TrendingPageView,
-    EventPageView,
-    VenuesPageView
+    trending_page_view,
+    event_page_view,
+    venues_page_view
 )
 
 app_name = 'shopapp'
 
 urlpatterns = [
     path('', HomePageView.as_view(), name='home'),
-    path('trending/', TrendingPageView.as_view(), name='trending'),
-    path('event/<int:pk>', EventPageView.as_view(), name='event'),
-    #path('event/<int:pk>/', name='book_processing'),
-    path('venues', VenuesPageView.as_view(), name='venues')
+    path('trending/', trending_page_view, name='trending'),
+    path('event/<int:pk>', event_page_view, name='event'),
+    path('venues', venues_page_view, name='venues')
 ]
