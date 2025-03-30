@@ -48,6 +48,9 @@ class AdminShowView(AdminAbstractView):
 			}
 		return render(request, 'show/show.html', context)
 
+	def post(self, request, pk):
+		print("posted", request.POST.get('rating_delete'))
+
 class AdminEventListView(AdminAbstractView):
 	def get(self, request):
 		context = {'events': Event.objects.all()}

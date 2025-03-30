@@ -2,43 +2,39 @@
 
 {% block content %}
 
-<style>
-    table {
-        width: 100%;
-    }
-    th, td {
-        border: 1px solid black;
-    }
-</style>
 
 <h1>Shows Management</h1>
+<a class="btn btn-primary" href="#" role="button">New Show</a>
 
-<p><a href="">New Show+</a></p>
-
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Id</th>
-        <th>Type</th>
-        <th>Duration</th>
-        <th>Description</th>
-        <th>Age Rating</th>
-        <th>Release Date</th>
-        <th>Language</th>
-    </tr>
-
-    {% for show in shows %}
+<table class="table table-striped table-hover">
+    <thead>
         <tr>
-            <td><a href="{% url 'customadmin:admin_show' show.show_id %}">{{ show.show_name }}</a></td>
-            <td>{{ show.show_id }}</td>
-            <td>{{ show.show_type }}</td>
-            <td>{{ show.show_duration }}</td>
-            <td>{{ show.show_description }}</td>
-            <td>{{ show.show_agerating }}</td>
-            <td>{{ show.show_release_date }}</td>
-            <td>{{ show.show_language }}</td>
+            <th>Name</th>
+            <th>Id</th>
+            <th>Type</th>
+            <th>Duration</th>
+            <th>Description</th>
+            <th>Age Rating</th>
+            <th>Release Date</th>
+            <th>Language</th>
         </tr>
-    {% endfor %}
+    </thead>
+
+    <tbody>
+        {% for show in shows %}
+            <tr>
+                <th scope="row"><a href="{% url 'customadmin:admin_show' show.show_id %}">{{ show.show_name }}</a></th>
+                <td>{{ show.show_id }}</td>
+                <td>{{ show.show_type }}</td>
+                <td>{{ show.show_duration }}</td>
+                <td>{{ show.show_description }}</td>
+                <td>{{ show.show_agerating }}</td>
+                <td>{{ show.show_release_date }}</td>
+                <td>{{ show.show_language }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
 </table>
 
 {% endblock content %}

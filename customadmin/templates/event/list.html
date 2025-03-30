@@ -2,35 +2,32 @@
 
 {% block content %}
 
-<style>
-    table {
-        width: 100%;
-    }
-    th, td {
-        border: 1px solid black;
-    }
-</style>
 
 <h1>Events Management</h1>
+<a class="btn btn-primary" href="#" role="button">New Event</a>
 
-<p><a href="">New Event+</a></p>
 
-<table>
-    <tr>
-        <th>Event Id</th>
-        <th>Show Id</th>
-        <th>Room Id</th>
-        <th>Event Time</th>
-    </tr>
-
-    {% for event in events %}
+<table class="table table-striped table-hover">
+    <thead>
         <tr>
-            <td><a href="{% url 'customadmin:admin_event' event.event_id %}">{{ event.event_id }}</a></td>
-            <td>{{ event.show }}</td>
-            <td>{{ event.room_number }}</td>
-            <td>{{ event.event_time }}</td>
+            <th>Event Id</th>
+            <th>Show Id</th>
+            <th>Room Id</th>
+            <th>Event Time</th>
         </tr>
-    {% endfor %}
+    </thead>
+
+    <tbody>
+        {% for event in events %}
+            <tr>
+                <th scope="row"><a href="{% url 'customadmin:admin_event' event.event_id %}">{{ event.event_id }}</a></th>
+                <td>{{ event.show }}</td>
+                <td>{{ event.room_number }}</td>
+                <td>{{ event.event_time }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
 </table>
 
 {% endblock content %}

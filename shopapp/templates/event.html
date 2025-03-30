@@ -73,32 +73,6 @@
                     {% endfor %}
                 </tr>
             {% endfor %}
-
-            <!--
-            {% for row in rows_list %}
-                <tr>
-                    {% for column in columns_list %}
-                        <td>
-                            {% for seat in seats %}
-                                {% if seat.location_row == row and seat.location_column == column %}
-                                    {% if seat.seat_premium %}
-                                        {% if user.is_premium %}
-                                            <img id="{{ seat.seat_number }}" src="{% static 'booking/premium.png' %}" alt="{{ seat.seat_number }}" class="clickable" onclick="seatClick('{{ seat.seat_number }}');">
-                                        {% else %}
-                                            <img id="{{ seat.seat_number }}" src="{% static 'booking/premium_booked.png' %}" alt="{{ seat.seat_number }}">
-                                        {% endif %}
-                                    {% elif seat.seat_accessible %}
-                                        <img id="{{ seat.seat_number }}" src="{% static 'booking/accessible.png' %}" alt="{{ seat.seat_number }}" class="clickable" onclick="seatClick('{{ seat.seat_number }}');">
-                                    {% else %}
-                                        <img id="{{ seat.seat_number }}" src="{% static 'booking/base.png' %}" alt="{{ seat.seat_number }}" class="clickable" onclick="seatClick('{{ seat.seat_number }}');">
-                                    {% endif %}
-                                {% endif %}
-                            {% endfor %}
-                        </td>
-                    {% endfor %}
-                </tr>
-            {% endfor %}
-            -->
         </table>
         <aside>
             <p>Seats selected: </p>
