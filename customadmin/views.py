@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.urls import reverse_lazy
-from django.shortcuts import render
+
+from django.shortcuts import render, redirect
 from django.db.models import Avg
 
 from accounts.models import CustomUser
@@ -11,7 +11,7 @@ from venues.models import Event
 
 class AdminAbstractView(PermissionRequiredMixin, TemplateView):
 	# Abstract class for admin pages
-	permission_required = 'accounts.CustomUser'
+	permission_required = 'accounts.CustomUser.is_staff'
 
 
 class AdminMainView(AdminAbstractView):
@@ -49,7 +49,18 @@ class AdminShowView(AdminAbstractView):
 		return render(request, 'show/show.html', context)
 
 	def post(self, request, pk):
-		print("posted", request.POST.get('rating_delete'))
+		context = {}
+		if 'delete_comment' in request.POST:
+			comment_id = request.POST.get('delete_comment')
+			Comment.objects.get(comment_id=comment_id, show_id=pk).delete()
+			print("Comment:", comment_id, "has been deleted")
+
+		elif 'delete_rating' in request.POST:
+			rating_id = request.POST.get('delete_rating')
+			Rating.objects.get(rating_id=rating_id, show_id=pk).delete()
+			print("Rating:", rating_id, "has been deleted")
+		
+		return redirect('customadmin:admin_show', pk)
 
 class AdminEventListView(AdminAbstractView):
 	def get(self, request):

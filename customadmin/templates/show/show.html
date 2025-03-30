@@ -67,7 +67,14 @@
                     <td><a href="{% url 'customadmin:admin_user' comment.user %}">{{ comment.user.username }}</a></td>
                     <td>{{ comment.comment_content }}</td>
                     <td>{{ comment.comment_id }}</td>
-                    <td><a class="btn btn-danger" href="#" role="button">Delete</a></td>
+
+                    <td>
+                        <form action="{% url 'customadmin:admin_show' current_show.show_id %}" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="delete_comment" value="{{ comment.comment_id }}">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             {% endfor %}
         </table>
@@ -81,13 +88,11 @@
             <tr>
                 <th>User Id</th>
                 <th>Follow Id</th>
-                <th>Options</th>
             </tr>
             {% for follower in show_followers %}
                 <tr>
                     <td><a href="{% url 'customadmin:admin_user' follower.username %}">{{ follower.user_id }}</a></td>
                     <td>{{ follower.following_id }}</td>
-                    <td><a class="btn btn-danger" href="#" role="button">Delete</a></td>
                 </tr>
             {% endfor %}
         </table>
@@ -114,7 +119,7 @@
                     <td>
                         <form action="{% url 'customadmin:admin_show' current_show.show_id %}" method="POST">
                             {% csrf_token %}
-                            <input type="hidden" name="rating_delete" value="{{ rating.rating_id }}">
+                            <input type="hidden" name="delete_rating" value="{{ rating.rating_id }}">
                             <button type="submit" class="btn btn-danger">Delete</button>
                         </form>
                     </td>

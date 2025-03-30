@@ -4,9 +4,6 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 
 class CustomUser(AbstractUser):
-    # username
-    # password
-    # email
     phone = models.CharField(max_length=15)
     is_premium = models.BooleanField(
         default=False

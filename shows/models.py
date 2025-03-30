@@ -81,8 +81,6 @@ class Rating(models.Model):
     show_id = models.ForeignKey(Show, on_delete=models.CASCADE)
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.rating_id
 
 
 class Following(models.Model):
