@@ -9,7 +9,12 @@ from .views import (
     AdminShowView,
 
     AdminEventListView,
-    AdminEventView
+    AdminEventView,
+
+    AdminVenueListView,
+    AdminVenueView,
+    AdminRoomView
+
     )
 
 app_name = 'customadmin'
@@ -25,4 +30,9 @@ urlpatterns = [
 
     path('events/', AdminEventListView.as_view(), name='admin_event_list'),
     path('events/<int:pk>', AdminEventView.as_view(), name='admin_event'),
+
+    path('venues/', AdminVenueListView.as_view(), name='admin_venue_list'),
+    path('venues/<str:pk>', AdminVenueView.as_view(), name='admin_venue'),
+
+    path('room/<str:pk>', AdminRoomView.as_view(), name='admin_room')
 ]

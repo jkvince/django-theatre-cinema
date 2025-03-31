@@ -1,0 +1,81 @@
+{% extends "base_admin.html" %}
+{% load static %}
+
+{% block additional_js %}
+    <script type="text/javascript" src="{% static 'js/room_editor.js' %}"></script>
+{% endblock additional_js %}
+
+{% block content %}
+
+<style>
+    main {
+        display: flex;
+        justify-content: center;
+    }
+    table {
+        table-layout: fixed;
+        border: solid;
+        padding: 1rem;
+    }
+    td {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    td img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+    .clickable {
+        cursor: pointer;
+    }
+</style>
+
+<article>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{% url 'customadmin:admin_venue' room.venue_id %}">{{ room.venue_id }}</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ room.room_number }}</li>
+        </ol>
+    </nav>
+
+    <form action="{% url 'customadmin:admin_room' room.venue_id %}" method="POST">
+        {% csrf_token %}
+    
+        Rows:<input type="number" min="0" value="{{ room.room_rows }}"><br>
+        Columns:<input type="number" min="0" value="{{ room.room_columns }}"><br>
+        <button type="submit" class="btn btn-warning">Update</button>
+    </form>
+
+
+    <main>
+        <table>
+            {% for row in grid %}
+                <tr>
+                    {% for cell in row %}
+                        <td>
+                            {% if cell != None %}
+                                {% if cell.seat.seat_premium %}
+                                    
+                                    <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/premium.png' %}" alt="{{ cell.seat.seat_number }}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
+                        
+                                {% elif cell.seat.seat_accessible %}
+                                    
+                                    <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/accessible.png' %}" alt="{{ cell.seat.seat_number }}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
+                        
+                                {% else %}
+                                    
+                                    <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/base.png' %}" alt="{{ cell.seat.seat_number }}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
+                        
+                                {% endif %}
+                            {% endif %}
+                        </td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </table>
+    </main>
+</article>
+
+
+
+{% endblock content %}

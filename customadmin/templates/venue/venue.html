@@ -1,0 +1,55 @@
+{% extends "base_admin.html" %}
+
+{% block content %}
+
+<style>
+    article {
+        width: 50em;
+        margin: auto;
+        text-align: center;
+    }
+</style>
+
+<article>
+    <p><a href="{% url 'customadmin:admin_venue_list' %}">Go Back</a></p>
+
+    <h1>{{ venue.venue_name }}</h1>
+
+    <table class="table table-striped table-hover">
+        <tr><td><span style="font-weight: bold;">Id</span></td><td>{{ venue.venue_id }}</td></tr>
+        <tr><td><span style="font-weight: bold;">Address</span></td><td>{{ venue.venue_address }}</td></tr>
+        <tr><td><span style="font-weight: bold;">Accessibility</span></td><td>{{ venue.venue_accessibility }}</td></tr>
+        <tr><td><span style="font-weight: bold;">Working Hours</span></td><td>{{ venue.working_hours }}</td></tr>
+        <tr><td><span style="font-weight: bold;">Latitude</span></td><td>{{ venue.venue_latitude }}</td></tr>
+        <tr><td><span style="font-weight: bold;">Longitude</span></td><td>{{ venue.venue_longitude }}</td></tr>
+        <tr><td><span style="font-weight: bold;">Contact</span></td><td>{{ venue.venue_contact }}</td></tr>
+    </table>
+    <a class="btn btn-warning" href="#" role="button">Edit</a>
+    <a class="btn btn-danger" href="#" role="button">Delete</a>
+
+
+    <h1>Rooms</h1>
+    <a class="btn btn-primary" href="#" role="button">New Room</a>
+    {% if rooms %}
+        <table class="table table-striped table-hover">
+            <tr>
+                <th>Id</th>
+                <th>Name/Number</th>
+                <th>Rows</th>
+                <th>Columns</th>
+            </tr>
+            {% for room in rooms %}
+                <tr>
+                    <td><a href="{% url 'customadmin:admin_room' room.room_id %}">{{ room.room_id }}</a></td>
+                    <td>{{ room.room_number }}</td>
+                    <td>{{ room.room_rows }}</td>
+                    <td>{{ room.room_columns }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No rooms for this venue.</p>
+    {% endif %}
+
+</article>
+{% endblock content %}

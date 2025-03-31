@@ -6,7 +6,7 @@ from django.db.models import Avg
 
 from accounts.models import CustomUser
 from shows.models import Show, ShowMember, MemberJunction, Comment, Rating, Following
-from venues.models import Event
+from venues.models import Venue, Room, Seat, Event, BookedSeat
 
 
 class AdminAbstractView(PermissionRequiredMixin, TemplateView):
@@ -78,3 +78,35 @@ class AdminEventView(AdminAbstractView):
 			'event': Event.objects.get(pk=pk)
 		}
 		return render(request, 'event/event.html', context)
+
+
+class AdminVenueListView(AdminAbstractView):
+	def get(self, request):
+		context = {'venues': Venue.objects.all()}
+		return render(request, 'venue/list.html', context)
+
+
+class AdminVenueView(AdminAbstractView):
+	def get(self, request, pk):
+		context = {
+			'venue': Venue.objects.get(pk=pk),
+			'rooms': Room.objects.filter(venue_id=pk)
+		}
+		return render(request, 'venue/venue.html', context)
+
+
+class AdminRoomView(AdminAbstractView):
+	def get(self, request, pk):
+		room = Room.objects.get(pk=pk)
+		grid = [[None for y in range(room.room_columns)] for x in range(room.room_rows)]
+
+		seats = Seat.objects.filter(room_number=room.room_id)
+
+		for seat in seats:
+			grid[seat.location_row][seat.location_column] = {'seat': seat}
+
+		context = {
+			'room': room,
+			'grid': grid
+		}
+		return render(request, 'venue/room.html', context)
