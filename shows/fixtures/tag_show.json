@@ -1,1 +1,138 @@
-[]
+[
+    {
+        "model": "shows.tag_show",
+        "pk": 1,
+        "fields": {
+            "tag": 1,
+            "show": "alien"
+        }
+    },
+    {
+        "model": "shows.tag_show",
+        "pk": 2,
+        "fields": {
+            "tag": 9,
+            "show": "alien"
+        }
+    },
+    {
+        "model": "shows.tag_show",
+        "pk": 3,
+        "fields": {
+            "tag": 2,
+            "show": "back-to-the-future"
+        }
+    },
+    {
+        "model": "shows.tag_show",
+        "pk": 4,
+        "fields": {
+            "tag": 16,
+            "show": "back-to-the-future"
+        }
+    },
+    {
+        "model": "shows.tag_show",
+        "pk": 5,
+        "fields": {
+            "tag": 1,
+            "show": "blade-runner"
+        }
+    },
+    {
+        "model": "shows.tag_show",
+        "pk": 6,
+        "fields": {
+            "tag": 19,
+            "show": "blade-runner"
+        }
+    },
+    {
+        "model": "shows.tag_show",
+        "pk": 7,
+        "fields": {
+            "tag": 14,
+            "show": "die-hard"
+        }
+    },
+    {
+        "model": "shows.tag_show",
+        "pk": 8,
+        "fields": {
+            "tag": 15,
+            "show": "die-hard"
+        }
+    },
+    {
+        "model": "shows.tag_show",
+        "pk": 9,
+        "fields": {
+            "tag": 2,
+            "show": "finding-nemo"
+        }
+    },
+    {
+        "model": "shows.tag_show",
+        "pk": 10,
+        "fields": {
+            "tag": 4,
+            "show": "finding-nemo"
+        }
+    },
+    {
+        "model": "shows.tag_show",
+        "pk": 11,
+        "fields": {
+            "tag": 16,
+            "show": "finding-nemo"
+        }
+    },
+    {
+        "model": "shows.tag_show",
+        "pk": 12,
+        "fields": {
+            "tag": 2,
+            "show": "forrest-gump"
+        }
+    },
+    {
+        "model": "shows.tag_show",
+        "pk": 13,
+        "fields": {
+            "tag": 16,
+            "show": "forrest-gump"
+        }
+    },
+    {
+        "model": "shows.tag_show",
+        "pk": 14,
+        "fields": {
+            "tag": 12,
+            "show": "forrest-gump"
+        }
+    },
+    {
+        "model": "shows.tag_show",
+        "pk": 15,
+        "fields": {
+            "tag": 6,
+            "show": "inception"
+        }
+    },
+    {
+        "model": "shows.tag_show",
+        "pk": 16,
+        "fields": {
+            "tag": 14,
+            "show": "inception"
+        }
+    },
+    {
+        "model": "shows.tag_show",
+        "pk": 17,
+        "fields": {
+            "tag": 18,
+            "show": "inception"
+        }
+    }
+]

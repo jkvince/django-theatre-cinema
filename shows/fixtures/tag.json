@@ -1,1 +1,182 @@
-[]
+[
+    {
+        "model": "shows.tag",
+        "pk": 1,
+        "fields": {
+            "tag_name": "Sci-Fi",
+            "show": [
+                "alien",
+                "blade-runner"
+            ]
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 2,
+        "fields": {
+            "tag_name": "Adventure",
+            "show": [
+                "back-to-the-future",
+                "finding-nemo",
+                "forrest-gump"
+            ]
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 3,
+        "fields": {
+            "tag_name": "Drama",
+            "show": []
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 4,
+        "fields": {
+            "tag_name": "Animation",
+            "show": [
+                "finding-nemo"
+            ]
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 6,
+        "fields": {
+            "tag_name": "Thriller",
+            "show": [
+                "inception"
+            ]
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 7,
+        "fields": {
+            "tag_name": "Musical",
+            "show": []
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 8,
+        "fields": {
+            "tag_name": "Romance",
+            "show": []
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 9,
+        "fields": {
+            "tag_name": "Horror",
+            "show": [
+                "alien"
+            ]
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 10,
+        "fields": {
+            "tag_name": "War",
+            "show": []
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 11,
+        "fields": {
+            "tag_name": "Documentary",
+            "show": []
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 12,
+        "fields": {
+            "tag_name": "History",
+            "show": [
+                "forrest-gump"
+            ]
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 13,
+        "fields": {
+            "tag_name": "Western",
+            "show": []
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 14,
+        "fields": {
+            "tag_name": "Action",
+            "show": [
+                "die-hard",
+                "inception"
+            ]
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 15,
+        "fields": {
+            "tag_name": "Crime",
+            "show": [
+                "die-hard"
+            ]
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 16,
+        "fields": {
+            "tag_name": "Comedy",
+            "show": [
+                "back-to-the-future",
+                "finding-nemo",
+                "forrest-gump"
+            ]
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 17,
+        "fields": {
+            "tag_name": "Fantasy",
+            "show": []
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 18,
+        "fields": {
+            "tag_name": "Mystery",
+            "show": [
+                "inception"
+            ]
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 19,
+        "fields": {
+            "tag_name": "Noir",
+            "show": [
+                "blade-runner"
+            ]
+        }
+    },
+    {
+        "model": "shows.tag",
+        "pk": 20,
+        "fields": {
+            "tag_name": "Sport",
+            "show": []
+        }
+    }
+]

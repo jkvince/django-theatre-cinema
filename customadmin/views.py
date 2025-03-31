@@ -32,7 +32,7 @@ class AdminUserView(AdminAbstractView):
 
 class AdminShowListView(AdminAbstractView):
 	def get(self, request):
-		context = {'shows': Show.objects.all().order_by('-show_release_date')}
+		context = {'shows': Show.objects.all().order_by('show_name')}
 		return render(request, 'show/list.html', context)
 
 class AdminShowView(AdminAbstractView):
@@ -49,18 +49,23 @@ class AdminShowView(AdminAbstractView):
 		return render(request, 'show/show.html', context)
 
 	def post(self, request, pk):
-		context = {}
 		if 'delete_comment' in request.POST:
 			comment_id = request.POST.get('delete_comment')
 			Comment.objects.get(comment_id=comment_id, show_id=pk).delete()
 			print("Comment:", comment_id, "has been deleted")
+			return redirect('customadmin:admin_show', pk)
 
 		elif 'delete_rating' in request.POST:
 			rating_id = request.POST.get('delete_rating')
 			Rating.objects.get(rating_id=rating_id, show_id=pk).delete()
 			print("Rating:", rating_id, "has been deleted")
-		
-		return redirect('customadmin:admin_show', pk)
+			return redirect('customadmin:admin_show', pk)
+
+		elif 'delete_show' in request.POST and request.POST.get('delete_show') == pk:
+			Show.objects.get(pk=pk).delete()
+			print("Show:", pk, "has been deleted")
+			return redirect('customadmin:admin_show_list')
+
 
 class AdminEventListView(AdminAbstractView):
 	def get(self, request):

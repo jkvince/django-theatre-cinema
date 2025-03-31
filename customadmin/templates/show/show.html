@@ -34,10 +34,10 @@
                 <p>No banner has been set.</p>
             {% endif %}
         </aside>
-    
+
         <section>
             <p>{{ current_show.show_description }}</p>
-            
+
             <table class="table table-striped table-hover">
                 <tr><td><span style="font-weight: bold;">Id</span></td><td>{{ current_show.show_id }}</td></tr>
                 <tr><td><span style="font-weight: bold;">Type</span></td><td>{{ current_show.show_type }}</td></tr>
@@ -47,10 +47,16 @@
                 <tr><td><span style="font-weight: bold;">Language</span></td><td>{{ current_show.show_language }}</td></tr>
                 <tr><td><span style="font-weight: bold;">Public</span></td><td>{{ current_show.public }}</td></tr>
             </table>
-            <a class="btn btn-warning" href="#" role="button">Edit</a>
-            <a class="btn btn-danger" href="#" role="button">Delete</a>
 
-        </section>    
+            <div style="display: flex; justify-content: space-evenly;">
+                <a class="btn btn-warning" href="#" role="button">Edit</a>
+                <form action="{% url 'customadmin:admin_show' current_show.show_id %}" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="delete_show" value="{{ current_show.show_id }}">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </section>
     </main>
 
     <h1>Comments</h1>
@@ -91,7 +97,7 @@
             </tr>
             {% for follower in show_followers %}
                 <tr>
-                    <td><a href="{% url 'customadmin:admin_user' follower.username %}">{{ follower.user_id }}</a></td>
+                    <td><a href="{% url 'customadmin:admin_user' follower.user_id %}">{{ follower.user.username }}</a></td>
                     <td>{{ follower.following_id }}</td>
                 </tr>
             {% endfor %}
