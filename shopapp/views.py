@@ -22,7 +22,7 @@ def trending_page_view(request):
 
 def event_page_view(request, pk):
 	event = Event.objects.get(pk=pk)
-	room = Room.objects.get(room_id=event.room_number)
+	room = Room.objects.get(pk=event.room_number)
 
 	if request.method == "GET":
 		# generate an empty 2d list of the grid

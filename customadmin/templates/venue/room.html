@@ -20,10 +20,19 @@
     td {
         width: 2.5rem;
         height: 2.5rem;
+        border: gray 1px solid;
+        position: relative;
     }
     td img {
         width: 2.5rem;
         height: 2.5rem;
+        position: relative;
+    }
+    #cursor {
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
     .clickable {
         cursor: pointer;
@@ -47,7 +56,8 @@
     var imgLinks = {
         "premium": "{% static 'booking/premium.png' %}",
         "accessible": "{% static 'booking/accessible.png' %}",
-        "base": "{% static 'booking/base.png' %}"
+        "base": "{% static 'booking/base.png' %}",
+        "cursor": "{% static 'booking/cursor.png' %}"
     }
 </script>
 
@@ -68,12 +78,30 @@
     </form>
 
 
+    <div id="modify-section">
+        <div class="mb-3">
+            <label>Seat Number</label>
+            <input type="text" class="form-control" id="number-input">
+        </div>        
+        <div class="mb-3">
+            <select class="form-select" id="seat-type-input">
+                <option selected>Seat Type</option>
+                <option value="base">Base</option>
+                <option value="premium">Premium</option>
+                <option value="accessible">Accessible</option>
+            </select>
+        </div>
+        <button class="btn btn-success" id="create-seat">Create Seat</button>
+        <button class="btn btn-danger" id="delete-seat">Delete Seat</button>
+    </div>
+
+
     <main>
         <table id="table">
             {% for row in grid %}
                 <tr>
                     {% for cell in row %}
-                        <td>
+                        <td class="clickable">
                             {% if cell != None %}
                                 {% if cell.seat.seat_premium %}
                                     

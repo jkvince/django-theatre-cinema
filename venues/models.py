@@ -24,9 +24,6 @@ class Venue(models.Model):
         blank=True
     )
 
-    def __str__(self):
-        return self.venue_id
-
 
 class Room(models.Model):
     room_id = models.SlugField(
@@ -36,15 +33,8 @@ class Room(models.Model):
         max_length=15
     )
     venue_id = models.ForeignKey(Venue, on_delete=models.CASCADE)
-    room_rows = models.IntegerField()
-    room_columns = models.IntegerField()
-
-    class Meta:
-        # Compound key
-        unique_together = ('room_number', 'venue_id')
-
-    def __str__(self):
-        return self.room_id
+    room_rows = models.IntegerField(default=1)
+    room_columns = models.IntegerField(default=1)
 
 
 class Seat(models.Model):
@@ -58,12 +48,8 @@ class Seat(models.Model):
 
     seat_premium = models.BooleanField()
     seat_accessible = models.BooleanField()
-    location_row = models.IntegerField(default=1)
-    location_column = models.IntegerField(default=1)
-
-    class Meta:
-        # Compound key
-        unique_together = ('seat_number', 'room_number')
+    location_row = models.IntegerField()
+    location_column = models.IntegerField()
 
 
 class Event(models.Model):
