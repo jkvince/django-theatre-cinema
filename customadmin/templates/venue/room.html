@@ -30,6 +30,27 @@
     }
 </style>
 
+<script>
+    var grid_rows = {{ room.room_rows }};
+    var grid_columns = {{ room.room_columns }};
+    var grid = [
+        {% for seat in seats %}
+                {
+                    "number": "{{ seat.seat_number }}",
+                    "premium": {{ seat.seat_premium|lower }},
+                    "accessible": {{ seat.seat_accessible|lower }},
+                    "location_row": {{ seat.location_row }},
+                    "location_column": {{ seat.location_column }}
+                },
+        {% endfor %}
+    ]
+    var imgLinks = {
+        "premium": "{% static 'booking/premium.png' %}",
+        "accessible": "{% static 'booking/accessible.png' %}",
+        "base": "{% static 'booking/base.png' %}"
+    }
+</script>
+
 <article>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
@@ -41,14 +62,14 @@
     <form action="{% url 'customadmin:admin_room' room.venue_id %}" method="POST">
         {% csrf_token %}
     
-        Rows:<input type="number" min="0" value="{{ room.room_rows }}"><br>
-        Columns:<input type="number" min="0" value="{{ room.room_columns }}"><br>
+        Rows:<input onchange="gridChanged();" id="grid-row" type="number" min="1" value="{{ room.room_rows }}"><br>
+        Columns:<input onchange="gridChanged();" id="grid-col" type="number" min="1" value="{{ room.room_columns }}"><br>
         <button type="submit" class="btn btn-warning">Update</button>
     </form>
 
 
     <main>
-        <table>
+        <table id="table">
             {% for row in grid %}
                 <tr>
                     {% for cell in row %}
@@ -56,15 +77,15 @@
                             {% if cell != None %}
                                 {% if cell.seat.seat_premium %}
                                     
-                                    <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/premium.png' %}" alt="{{ cell.seat.seat_number }}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
+                                    <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/premium.png' %}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
                         
                                 {% elif cell.seat.seat_accessible %}
                                     
-                                    <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/accessible.png' %}" alt="{{ cell.seat.seat_number }}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
+                                    <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/accessible.png' %}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
                         
                                 {% else %}
                                     
-                                    <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/base.png' %}" alt="{{ cell.seat.seat_number }}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
+                                    <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/base.png' %}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
                         
                                 {% endif %}
                             {% endif %}

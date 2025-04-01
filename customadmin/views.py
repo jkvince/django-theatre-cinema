@@ -8,6 +8,7 @@ from accounts.models import CustomUser
 from shows.models import Show, ShowMember, MemberJunction, Comment, Rating, Following
 from venues.models import Venue, Room, Seat, Event, BookedSeat
 
+import json
 
 class AdminAbstractView(PermissionRequiredMixin, TemplateView):
 	# Abstract class for admin pages
@@ -107,6 +108,7 @@ class AdminRoomView(AdminAbstractView):
 
 		context = {
 			'room': room,
-			'grid': grid
+			'grid': grid,
+			'seats': seats
 		}
 		return render(request, 'venue/room.html', context)

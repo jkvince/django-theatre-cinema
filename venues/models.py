@@ -58,8 +58,8 @@ class Seat(models.Model):
 
     seat_premium = models.BooleanField()
     seat_accessible = models.BooleanField()
-    location_row = models.IntegerField()
-    location_column = models.IntegerField()
+    location_row = models.IntegerField(default=1)
+    location_column = models.IntegerField(default=1)
 
     class Meta:
         # Compound key
