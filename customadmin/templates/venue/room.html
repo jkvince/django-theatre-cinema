@@ -71,12 +71,17 @@
 
 
     <div style="display: flex; justify-content: center;">
-        <form action="{% url 'customadmin:admin_room' room.venue_id %}" method="POST">
+        <form action="{% url 'customadmin:admin_room' room.room_id %}" method="POST">
             {% csrf_token %}
         
-            Rows:<input onchange="gridChanged();" id="grid-row" type="number" min="1" value="{{ room.room_rows }}"><br>
-            Columns:<input onchange="gridChanged();" id="grid-col" type="number" min="1" value="{{ room.room_columns }}"><br>
-            <button type="submit" class="btn btn-warning btn-lg">Update</button>
+            <label>Rows</label>
+            <input onchange="gridChanged();" id="grid-row" type="number" min="1" value="{{ room.room_rows }}" name="grid-row"><br>
+
+            <label>Columns</label>
+            <input onchange="gridChanged();" id="grid-col" type="number" min="1" value="{{ room.room_columns }}" name="grid-col"><br>
+
+            <input type="hidden" name="grid-info" value="" id="grid-info">
+            <button type="submit" class="btn btn-warning btn-lg">Update Room</button>
         </form>
 
         <div id="modify-section" style="margin-left: 5rem;">
@@ -101,29 +106,6 @@
 
     <main>
         <table id="table" onload="refreshGrid();">
-            {% for row in grid %}
-                <tr>
-                    {% for cell in row %}
-                        <td class="clickable">
-                            {% if cell != None %}
-                                {% if cell.seat.seat_premium %}
-                                    
-                                    <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/premium.png' %}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
-                        
-                                {% elif cell.seat.seat_accessible %}
-                                    
-                                    <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/accessible.png' %}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
-                        
-                                {% else %}
-                                    
-                                    <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/base.png' %}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
-                        
-                                {% endif %}
-                            {% endif %}
-                        </td>
-                    {% endfor %}
-                </tr>
-            {% endfor %}
         </table>
     </main>
 </article>

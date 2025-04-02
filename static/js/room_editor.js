@@ -1,4 +1,5 @@
 loadData();
+refreshGrid();
 
 function loadData() {
     selection_row = null;
@@ -152,4 +153,7 @@ function refreshGrid() {
     }
 
     document.getElementById('table').innerHTML = string_elements;
+
+    // update form data
+    document.getElementById('grid-info').value = JSON.stringify(grid);
 }

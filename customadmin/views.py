@@ -1,5 +1,6 @@
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.template.defaultfilters import slugify
 
 from django.shortcuts import render, redirect
 from django.db.models import Avg
@@ -112,3 +113,30 @@ class AdminRoomView(AdminAbstractView):
 			'seats': seats
 		}
 		return render(request, 'venue/room.html', context)
+
+	def post(self, request, pk):
+		rows = int(request.POST.get('grid-row'))
+		columns = int(request.POST.get('grid-col'))
+		grid_info = json.loads(request.POST.get('grid-info'))
+
+		# update rows and columns of room
+		room = Room.objects.get(pk=pk)
+		room.room_rows = rows
+		room.room_columns = columns
+		room.save(update_fields=['room_rows', 'room_columns'])
+
+		# delete all previous seats
+		Seat.objects.filter(room_number=pk).delete()
+
+		# create database seats
+		for seat in grid_info:
+			Seat.objects.create(
+				room_number=pk,
+				seat_number=pk + "-" + slugify(seat.number),
+				seat_premium=seat.premium,
+				seat_accessible=seat.seat_accessible,
+				location_row=seat.location_row,
+				location_column=seat.location_column
+			)
+
+		return redirect('customadmin:admin_room', pk)
