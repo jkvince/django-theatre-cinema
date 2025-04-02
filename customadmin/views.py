@@ -130,13 +130,15 @@ class AdminRoomView(AdminAbstractView):
 
 		# create database seats
 		for seat in grid_info:
+			print(str(pk + "-" + slugify(seat["number"])))
 			Seat.objects.create(
-				room_number=pk,
-				seat_number=pk + "-" + slugify(seat.number),
-				seat_premium=seat.premium,
-				seat_accessible=seat.seat_accessible,
-				location_row=seat.location_row,
-				location_column=seat.location_column
+				room_number=room,
+				seat_id=pk + "-" + slugify(seat["number"]),
+				seat_number=seat["number"],
+				seat_premium=seat["premium"],
+				seat_accessible=seat["accessible"],
+				location_row=seat["location_row"],
+				location_column=seat["location_column"]
 			)
 
 		return redirect('customadmin:admin_room', pk)
