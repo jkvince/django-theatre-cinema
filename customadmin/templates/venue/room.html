@@ -69,31 +69,34 @@
         </ol>
     </nav>
 
-    <form action="{% url 'customadmin:admin_room' room.venue_id %}" method="POST">
-        {% csrf_token %}
-    
-        Rows:<input onchange="gridChanged();" id="grid-row" type="number" min="1" value="{{ room.room_rows }}"><br>
-        Columns:<input onchange="gridChanged();" id="grid-col" type="number" min="1" value="{{ room.room_columns }}"><br>
-        <button type="submit" class="btn btn-warning">Update</button>
-    </form>
 
+    <div style="display: flex; justify-content: center;">
+        <form action="{% url 'customadmin:admin_room' room.venue_id %}" method="POST">
+            {% csrf_token %}
+        
+            Rows:<input onchange="gridChanged();" id="grid-row" type="number" min="1" value="{{ room.room_rows }}"><br>
+            Columns:<input onchange="gridChanged();" id="grid-col" type="number" min="1" value="{{ room.room_columns }}"><br>
+            <button type="submit" class="btn btn-warning btn-lg">Update</button>
+        </form>
 
-    <div id="modify-section">
-        <div class="mb-3">
-            <label>Seat Number</label>
-            <input type="text" class="form-control" id="number-input">
-        </div>        
-        <div class="mb-3">
-            <select class="form-select" id="seat-type-input">
-                <option selected>Seat Type</option>
-                <option value="base">Base</option>
-                <option value="premium">Premium</option>
-                <option value="accessible">Accessible</option>
-            </select>
+        <div id="modify-section" style="margin-left: 5rem;">
+            <div class="mb-3">
+                <label>Seat Number</label>
+                <input onchange="numberInput();" type="text" class="form-control" id="number-input">
+            </div>
+            <div class="mb-3">
+                <label>Seat Type</label>
+                <select onchange="seatTypeInput();" class="form-select" id="seat-type-input">
+                    <option value="base">Base</option>
+                    <option value="premium">Premium</option>
+                    <option value="accessible">Accessible</option>
+                </select>
+            </div>
+            <button onclick="createSeat();" class="btn btn-success" id="create-seat">Create Seat</button>
+            <button onclick="deleteSeat();" class="btn btn-danger" id="delete-seat">Delete Seat</button>
         </div>
-        <button class="btn btn-success" id="create-seat">Create Seat</button>
-        <button class="btn btn-danger" id="delete-seat">Delete Seat</button>
     </div>
+    
 
 
     <main>

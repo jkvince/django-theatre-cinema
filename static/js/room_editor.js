@@ -30,7 +30,8 @@ function gridChanged() {
     grid_rows = document.getElementById('grid-row').value;
     grid_columns = document.getElementById('grid-col').value;
 
-    // add here removing seats out of bounds
+    grid = grid.filter(element => element.location_row < grid_rows && element.location_column < grid_columns);
+
     refreshGrid();
 }
 
@@ -73,6 +74,52 @@ function gridClick(id) {
     
     refreshGrid();
 }
+
+function numberInput() {
+    new_value = document.getElementById('number-input').value;
+    let seat = grid.find(item => item.location_row == selection_row && item.location_column == selection_column);
+    seat.number = new_value;
+}
+
+function seatTypeInput() {
+    new_value = document.getElementById('seat-type-input').value;
+    let seat = grid.find(item => item.location_row == selection_row && item.location_column == selection_column);
+
+    if (new_value == 'base') {
+        seat.premium = false;
+        seat.accessible = false;
+    } else if (new_value == 'premium') {
+        seat.premium = true;
+        seat.accessible = false;
+    } else if (new_value == 'accessible') {
+        seat.premium = false;
+        seat.accessible = true;
+    }
+    refreshGrid();
+}
+
+function createSeat() {
+    grid.push(
+        {
+            "number": null,
+            "premium": false,
+            "accessible": false,
+            "location_row": selection_row,
+            "location_column": selection_column
+        }
+    )
+    updateStateForm('filledcell');
+    refreshGrid();
+}
+
+function deleteSeat() {
+    let seat = grid.find(item => item.location_row == selection_row && item.location_column == selection_column);
+    grid = grid.filter(element => element !== seat);
+
+    updateStateForm('emptycell');
+    refreshGrid();
+}
+
 
 function refreshGrid() {
     string_elements = "";
