@@ -100,7 +100,7 @@
 
 
     <main>
-        <table id="table">
+        <table id="table" onload="refreshGrid();">
             {% for row in grid %}
                 <tr>
                     {% for cell in row %}
