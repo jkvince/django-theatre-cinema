@@ -130,7 +130,6 @@ class AdminRoomView(AdminAbstractView):
 
 		# create database seats
 		for seat in grid_info:
-			print(str(pk + "-" + slugify(seat["number"])))
 			Seat.objects.create(
 				room_number=room,
 				seat_id=pk + "-" + slugify(seat["number"]),

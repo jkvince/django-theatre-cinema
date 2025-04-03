@@ -131,12 +131,12 @@ function refreshGrid() {
             string_elements += `<td class="clickable" onclick="gridClick('` + row + "-" + column + `');">`;
 
             if (row == selection_row && column == selection_column) {
-                string_elements += `<img id='cursor' src="` + imgLinks["cursor"] + `">`;
+                string_elements += `<img draggable=false id='cursor' src="` + imgLinks["cursor"] + `">`;
             }
             
             let seat = grid.find(item => item.location_row == row && item.location_column == column);
             if (seat != null) {
-                string_elements += `<img id="` + seat.number + `" src="`;
+                string_elements += `<img draggable=false id="` + seat.number + `" src="`;
                 if (seat.premium == true) {
                     string_elements += imgLinks["premium"];
                 } else if (seat.accessible == true) {

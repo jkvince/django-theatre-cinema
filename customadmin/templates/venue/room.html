@@ -37,6 +37,9 @@
     .clickable {
         cursor: pointer;
     }
+    #warnings {
+        color: coral;
+    }
 </style>
 
 <script>
@@ -64,7 +67,7 @@
 <article>
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'customadmin:admin_venue' room.venue_id %}">{{ room.venue_id }}</a></li>
+            <li class="breadcrumb-item"><a href="{% url 'customadmin:admin_venue' room.venue_id.venue_id %}">{{ room.venue_id.venue_id }}</a></li>
             <li class="breadcrumb-item active" aria-current="page">{{ room.room_number }}</li>
         </ol>
     </nav>
@@ -75,10 +78,10 @@
             {% csrf_token %}
         
             <label>Rows</label>
-            <input onchange="gridChanged();" id="grid-row" type="number" min="1" value="{{ room.room_rows }}" name="grid-row"><br>
+            <input onchange="gridChanged();" class="form-control" id="grid-row" type="number" min="1" value="{{ room.room_rows }}" name="grid-row"><br>
 
             <label>Columns</label>
-            <input onchange="gridChanged();" id="grid-col" type="number" min="1" value="{{ room.room_columns }}" name="grid-col"><br>
+            <input onchange="gridChanged();" class="form-control" id="grid-col" type="number" min="1" value="{{ room.room_columns }}" name="grid-col"><br>
 
             <input type="hidden" name="grid-info" value="" id="grid-info">
             <button type="submit" class="btn btn-warning btn-lg">Update Room</button>
@@ -102,12 +105,12 @@
         </div>
     </div>
     
-
-
     <main>
-        <table id="table" onload="refreshGrid();">
+        <table id="table">
         </table>
     </main>
+
+    <script>refreshGrid();</script>
 </article>
 
 

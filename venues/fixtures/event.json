@@ -6,6 +6,7 @@
             "show": "inception",
             "event_time": "2025-08-22T14:36:47.541Z",
             "room_number": "the-lighthouse-2",
+            "public": true,
             "price": 10.0
         }
     }

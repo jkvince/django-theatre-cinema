@@ -9,7 +9,8 @@
             "working_hours": "Open 24h",
             "venue_latitude": 53.34880739495465,
             "venue_longitude": -6.279053446866457,
-            "venue_contact": "mail@lighthousecinema.ie"
+            "venue_contact": "mail@lighthousecinema.ie",
+            "public": true
         }
     }
 ]

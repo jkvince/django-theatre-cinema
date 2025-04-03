@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponseNotFound
 from datetime import datetime
 
 from .models import Show
@@ -15,4 +16,4 @@ def show_page(request, pk):
 			}
 			return render(request, 'show.html', context)
 		else:
-			return render(request, '404.html')
+			return HttpResponseNotFound()

@@ -1,7 +1,7 @@
 [
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-10A",
+        "pk": "the-lighthouse-2-10a",
         "fields": {
             "seat_number": "10A",
             "room_number": "the-lighthouse-2",
@@ -13,7 +13,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-10B",
+        "pk": "the-lighthouse-2-10b",
         "fields": {
             "seat_number": "10B",
             "room_number": "the-lighthouse-2",
@@ -25,7 +25,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-10C",
+        "pk": "the-lighthouse-2-10c",
         "fields": {
             "seat_number": "10C",
             "room_number": "the-lighthouse-2",
@@ -37,7 +37,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-10D",
+        "pk": "the-lighthouse-2-10d",
         "fields": {
             "seat_number": "10D",
             "room_number": "the-lighthouse-2",
@@ -49,7 +49,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-10E",
+        "pk": "the-lighthouse-2-10e",
         "fields": {
             "seat_number": "10E",
             "room_number": "the-lighthouse-2",
@@ -61,7 +61,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-10F",
+        "pk": "the-lighthouse-2-10f",
         "fields": {
             "seat_number": "10F",
             "room_number": "the-lighthouse-2",
@@ -73,7 +73,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-11A",
+        "pk": "the-lighthouse-2-11a",
         "fields": {
             "seat_number": "11A",
             "room_number": "the-lighthouse-2",
@@ -85,7 +85,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-11B",
+        "pk": "the-lighthouse-2-11b",
         "fields": {
             "seat_number": "11B",
             "room_number": "the-lighthouse-2",
@@ -97,7 +97,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-11C",
+        "pk": "the-lighthouse-2-11c",
         "fields": {
             "seat_number": "11C",
             "room_number": "the-lighthouse-2",
@@ -109,7 +109,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-11D",
+        "pk": "the-lighthouse-2-11d",
         "fields": {
             "seat_number": "11D",
             "room_number": "the-lighthouse-2",
@@ -121,7 +121,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-11E",
+        "pk": "the-lighthouse-2-11e",
         "fields": {
             "seat_number": "11E",
             "room_number": "the-lighthouse-2",
@@ -133,7 +133,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-11F",
+        "pk": "the-lighthouse-2-11f",
         "fields": {
             "seat_number": "11F",
             "room_number": "the-lighthouse-2",
@@ -145,7 +145,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-1A",
+        "pk": "the-lighthouse-2-1a",
         "fields": {
             "seat_number": "1A",
             "room_number": "the-lighthouse-2",
@@ -157,7 +157,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-1B",
+        "pk": "the-lighthouse-2-1b",
         "fields": {
             "seat_number": "1B",
             "room_number": "the-lighthouse-2",
@@ -169,7 +169,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-1C",
+        "pk": "the-lighthouse-2-1c",
         "fields": {
             "seat_number": "1C",
             "room_number": "the-lighthouse-2",
@@ -181,7 +181,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-1D",
+        "pk": "the-lighthouse-2-1d",
         "fields": {
             "seat_number": "1D",
             "room_number": "the-lighthouse-2",
@@ -193,7 +193,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-1E",
+        "pk": "the-lighthouse-2-1e",
         "fields": {
             "seat_number": "1E",
             "room_number": "the-lighthouse-2",
@@ -205,7 +205,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-1F",
+        "pk": "the-lighthouse-2-1f",
         "fields": {
             "seat_number": "1F",
             "room_number": "the-lighthouse-2",
@@ -217,7 +217,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-2A",
+        "pk": "the-lighthouse-2-2a",
         "fields": {
             "seat_number": "2A",
             "room_number": "the-lighthouse-2",
@@ -229,7 +229,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-2B",
+        "pk": "the-lighthouse-2-2b",
         "fields": {
             "seat_number": "2B",
             "room_number": "the-lighthouse-2",
@@ -241,7 +241,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-2C",
+        "pk": "the-lighthouse-2-2c",
         "fields": {
             "seat_number": "2C",
             "room_number": "the-lighthouse-2",
@@ -253,7 +253,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-2D",
+        "pk": "the-lighthouse-2-2d",
         "fields": {
             "seat_number": "2D",
             "room_number": "the-lighthouse-2",
@@ -265,7 +265,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-2E",
+        "pk": "the-lighthouse-2-2e",
         "fields": {
             "seat_number": "2E",
             "room_number": "the-lighthouse-2",
@@ -277,7 +277,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-2F",
+        "pk": "the-lighthouse-2-2f",
         "fields": {
             "seat_number": "2F",
             "room_number": "the-lighthouse-2",
@@ -289,7 +289,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-3A",
+        "pk": "the-lighthouse-2-3a",
         "fields": {
             "seat_number": "3A",
             "room_number": "the-lighthouse-2",
@@ -301,7 +301,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-3B",
+        "pk": "the-lighthouse-2-3b",
         "fields": {
             "seat_number": "3B",
             "room_number": "the-lighthouse-2",
@@ -313,7 +313,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-3C",
+        "pk": "the-lighthouse-2-3c",
         "fields": {
             "seat_number": "3C",
             "room_number": "the-lighthouse-2",
@@ -325,7 +325,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-3D",
+        "pk": "the-lighthouse-2-3d",
         "fields": {
             "seat_number": "3D",
             "room_number": "the-lighthouse-2",
@@ -337,7 +337,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-3E",
+        "pk": "the-lighthouse-2-3e",
         "fields": {
             "seat_number": "3E",
             "room_number": "the-lighthouse-2",
@@ -349,7 +349,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-3F",
+        "pk": "the-lighthouse-2-3f",
         "fields": {
             "seat_number": "3F",
             "room_number": "the-lighthouse-2",
@@ -361,7 +361,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-4A",
+        "pk": "the-lighthouse-2-4a",
         "fields": {
             "seat_number": "4A",
             "room_number": "the-lighthouse-2",
@@ -373,7 +373,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-4B",
+        "pk": "the-lighthouse-2-4b",
         "fields": {
             "seat_number": "4B",
             "room_number": "the-lighthouse-2",
@@ -385,7 +385,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-4C",
+        "pk": "the-lighthouse-2-4c",
         "fields": {
             "seat_number": "4C",
             "room_number": "the-lighthouse-2",
@@ -397,7 +397,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-4D",
+        "pk": "the-lighthouse-2-4d",
         "fields": {
             "seat_number": "4D",
             "room_number": "the-lighthouse-2",
@@ -409,7 +409,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-4E",
+        "pk": "the-lighthouse-2-4e",
         "fields": {
             "seat_number": "4E",
             "room_number": "the-lighthouse-2",
@@ -421,7 +421,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-4F",
+        "pk": "the-lighthouse-2-4f",
         "fields": {
             "seat_number": "4F",
             "room_number": "the-lighthouse-2",
@@ -433,7 +433,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-5A",
+        "pk": "the-lighthouse-2-5a",
         "fields": {
             "seat_number": "5A",
             "room_number": "the-lighthouse-2",
@@ -445,7 +445,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-5B",
+        "pk": "the-lighthouse-2-5b",
         "fields": {
             "seat_number": "5B",
             "room_number": "the-lighthouse-2",
@@ -457,7 +457,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-5C",
+        "pk": "the-lighthouse-2-5c",
         "fields": {
             "seat_number": "5C",
             "room_number": "the-lighthouse-2",
@@ -469,7 +469,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-5D",
+        "pk": "the-lighthouse-2-5d",
         "fields": {
             "seat_number": "5D",
             "room_number": "the-lighthouse-2",
@@ -481,7 +481,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-5E",
+        "pk": "the-lighthouse-2-5e",
         "fields": {
             "seat_number": "5E",
             "room_number": "the-lighthouse-2",
@@ -493,7 +493,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-5F",
+        "pk": "the-lighthouse-2-5f",
         "fields": {
             "seat_number": "5F",
             "room_number": "the-lighthouse-2",
@@ -505,7 +505,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-6A",
+        "pk": "the-lighthouse-2-6a",
         "fields": {
             "seat_number": "6A",
             "room_number": "the-lighthouse-2",
@@ -517,7 +517,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-6B",
+        "pk": "the-lighthouse-2-6b",
         "fields": {
             "seat_number": "6B",
             "room_number": "the-lighthouse-2",
@@ -529,7 +529,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-6C",
+        "pk": "the-lighthouse-2-6c",
         "fields": {
             "seat_number": "6C",
             "room_number": "the-lighthouse-2",
@@ -541,7 +541,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-6D",
+        "pk": "the-lighthouse-2-6d",
         "fields": {
             "seat_number": "6D",
             "room_number": "the-lighthouse-2",
@@ -553,7 +553,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-6E",
+        "pk": "the-lighthouse-2-6e",
         "fields": {
             "seat_number": "6E",
             "room_number": "the-lighthouse-2",
@@ -565,7 +565,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-6F",
+        "pk": "the-lighthouse-2-6f",
         "fields": {
             "seat_number": "6F",
             "room_number": "the-lighthouse-2",
@@ -577,7 +577,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-7A",
+        "pk": "the-lighthouse-2-7a",
         "fields": {
             "seat_number": "7A",
             "room_number": "the-lighthouse-2",
@@ -589,7 +589,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-7B",
+        "pk": "the-lighthouse-2-7b",
         "fields": {
             "seat_number": "7B",
             "room_number": "the-lighthouse-2",
@@ -601,7 +601,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-7C",
+        "pk": "the-lighthouse-2-7c",
         "fields": {
             "seat_number": "7C",
             "room_number": "the-lighthouse-2",
@@ -613,7 +613,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-7D",
+        "pk": "the-lighthouse-2-7d",
         "fields": {
             "seat_number": "7D",
             "room_number": "the-lighthouse-2",
@@ -625,7 +625,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-7E",
+        "pk": "the-lighthouse-2-7e",
         "fields": {
             "seat_number": "7E",
             "room_number": "the-lighthouse-2",
@@ -637,7 +637,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-7F",
+        "pk": "the-lighthouse-2-7f",
         "fields": {
             "seat_number": "7F",
             "room_number": "the-lighthouse-2",
@@ -649,7 +649,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-8A",
+        "pk": "the-lighthouse-2-8a",
         "fields": {
             "seat_number": "8A",
             "room_number": "the-lighthouse-2",
@@ -661,7 +661,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-8B",
+        "pk": "the-lighthouse-2-8b",
         "fields": {
             "seat_number": "8B",
             "room_number": "the-lighthouse-2",
@@ -673,7 +673,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-8C",
+        "pk": "the-lighthouse-2-8c",
         "fields": {
             "seat_number": "8C",
             "room_number": "the-lighthouse-2",
@@ -685,7 +685,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-8D",
+        "pk": "the-lighthouse-2-8d",
         "fields": {
             "seat_number": "8D",
             "room_number": "the-lighthouse-2",
@@ -697,7 +697,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-8E",
+        "pk": "the-lighthouse-2-8e",
         "fields": {
             "seat_number": "8E",
             "room_number": "the-lighthouse-2",
@@ -709,7 +709,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-8F",
+        "pk": "the-lighthouse-2-8f",
         "fields": {
             "seat_number": "8F",
             "room_number": "the-lighthouse-2",
@@ -721,7 +721,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-9A",
+        "pk": "the-lighthouse-2-9a",
         "fields": {
             "seat_number": "9A",
             "room_number": "the-lighthouse-2",
@@ -733,7 +733,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-9B",
+        "pk": "the-lighthouse-2-9b",
         "fields": {
             "seat_number": "9B",
             "room_number": "the-lighthouse-2",
@@ -745,7 +745,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-9C",
+        "pk": "the-lighthouse-2-9c",
         "fields": {
             "seat_number": "9C",
             "room_number": "the-lighthouse-2",
@@ -757,7 +757,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-9D",
+        "pk": "the-lighthouse-2-9d",
         "fields": {
             "seat_number": "9D",
             "room_number": "the-lighthouse-2",
@@ -769,7 +769,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-9E",
+        "pk": "the-lighthouse-2-9e",
         "fields": {
             "seat_number": "9E",
             "room_number": "the-lighthouse-2",
@@ -781,7 +781,7 @@
     },
     {
         "model": "venues.seat",
-        "pk": "the-lighthouse-2-9F",
+        "pk": "the-lighthouse-2-9f",
         "fields": {
             "seat_number": "9F",
             "room_number": "the-lighthouse-2",

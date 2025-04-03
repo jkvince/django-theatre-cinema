@@ -23,6 +23,7 @@ class Venue(models.Model):
     venue_contact = models.EmailField(
         blank=True
     )
+    public = models.BooleanField()
 
 
 class Room(models.Model):
@@ -35,6 +36,9 @@ class Room(models.Model):
     venue_id = models.ForeignKey(Venue, on_delete=models.CASCADE)
     room_rows = models.IntegerField(default=1)
     room_columns = models.IntegerField(default=1)
+
+    def __str__(self):
+        return self.room_id
 
 
 class Seat(models.Model):
@@ -59,6 +63,7 @@ class Event(models.Model):
     show = models.ForeignKey(Show, on_delete=models.CASCADE)
     event_time = models.DateTimeField()
     room_number = models.ForeignKey(Room, on_delete=models.CASCADE)
+    public = models.BooleanField()
     price = models.FloatField()
 
 class BookedSeat(models.Model):
