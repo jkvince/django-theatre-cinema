@@ -1,6 +1,7 @@
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.template.defaultfilters import slugify
+from django.http import HttpResponseBadRequest
 
 from django.shortcuts import render, redirect
 from django.db.models import Avg
@@ -100,16 +101,10 @@ class AdminVenueView(AdminAbstractView):
 class AdminRoomView(AdminAbstractView):
 	def get(self, request, pk):
 		room = Room.objects.get(pk=pk)
-		grid = [[None for y in range(room.room_columns)] for x in range(room.room_rows)]
-
 		seats = Seat.objects.filter(room_number=room.room_id)
-
-		for seat in seats:
-			grid[seat.location_row][seat.location_column] = {'seat': seat}
 
 		context = {
 			'room': room,
-			'grid': grid,
 			'seats': seats
 		}
 		return render(request, 'venue/room.html', context)
@@ -118,6 +113,17 @@ class AdminRoomView(AdminAbstractView):
 		rows = int(request.POST.get('grid-row'))
 		columns = int(request.POST.get('grid-col'))
 		grid_info = json.loads(request.POST.get('grid-info'))
+
+		number_list = [x["number"] for x in grid_info]
+
+		# check if all seat numbers are not empty
+		for seat in grid_info:
+			if seat["number"] == "":
+				return HttpResponseBadRequest("There has been an error. A seat had an empty name.")
+
+		# check if there are any matching seat numbers
+		if len(number_list) != len(set(number_list)):
+			return HttpResponseBadRequest("There has been an error. Multiple seats had matching names.")
 
 		# update rows and columns of room
 		room = Room.objects.get(pk=pk)

@@ -12,6 +12,11 @@
         display: flex;
         justify-content: center;
     }
+    section {
+        display: flex; 
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
     table {
         table-layout: fixed;
         border: solid;
@@ -36,9 +41,6 @@
     }
     .clickable {
         cursor: pointer;
-    }
-    #warnings {
-        color: coral;
     }
 </style>
 
@@ -73,7 +75,7 @@
     </nav>
 
 
-    <div style="display: flex; justify-content: center;">
+    <section>
         <form action="{% url 'customadmin:admin_room' room.room_id %}" method="POST">
             {% csrf_token %}
         
@@ -103,7 +105,7 @@
             <button onclick="createSeat();" class="btn btn-success" id="create-seat">Create Seat</button>
             <button onclick="deleteSeat();" class="btn btn-danger" id="delete-seat">Delete Seat</button>
         </div>
-    </div>
+    </section>
     
     <main>
         <table id="table">
@@ -112,7 +114,5 @@
 
     <script>refreshGrid();</script>
 </article>
-
-
 
 {% endblock content %}

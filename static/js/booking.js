@@ -1,27 +1,59 @@
 loadData();
 
 function loadData() {
-    seats = [];
+    seatsSelected = [];
     totalPrice = 0.0;
 }
 
 function refreshData() {
-    document.getElementById('seat-selected-pretty').innerHTML = seats;
+    document.getElementById('seat-selected-pretty').innerHTML = seatsSelected;
     document.getElementById('total-cost').innerHTML = totalPrice;
 
-    document.getElementById('seat-input').value = seats.join("-");
+    document.getElementById('seat-input').value = seatsSelected.join("-");
 }
 
 function seatClick(id) {
-    if (seats.includes(id)) {
+    if (seatsSelected.includes(id)) {
         // remove seat
-        seats.splice(seats.indexOf(id), 1);
+        seatsSelected.splice(seatsSelected.indexOf(id), 1);
         document.getElementById(id).style.filter = null;
     } else {
         // add seat
-        seats.push(id);
+        seatsSelected.push(id);
         document.getElementById(id).style.filter = "drop-shadow(4px 4px 0 #febd10)";
     }
-    totalPrice = seats.length * parseFloat(document.getElementById("price").innerHTML);
+    totalPrice = seatsSelected.length * parseFloat(document.getElementById("price").innerHTML);
     refreshData();
+}
+
+function createGrid() {
+    let string_elements = "";
+
+    for (row = 0; row < grid_rows; row++) {
+        string_elements += "<tr>";
+        for (column = 0; column < grid_columns; column++) {
+            string_elements += "<td>";
+
+            let seat = grid.find(item => item.location_row == row && item.location_column == column);
+            if (seat != null) {
+                string_elements += `<img class="clickable" draggable=false id="` + seat.number + `"`;
+                string_elements += `onclick="seatClick('` + seat.number + `');"`;
+                
+                string_elements += `src="`;
+                if (seat.premium == true) {
+                    string_elements += imgLinks["premium"];
+                } else if (seat.accessible == true) {
+                    string_elements += imgLinks["accessible"];
+                } else {
+                    string_elements += imgLinks["base"];
+                }
+                string_elements += `">`;
+            }
+
+            string_elements += "</td>";
+        }
+        string_elements += "</tr>";
+    }
+
+    document.getElementById('table').innerHTML = string_elements;
 }

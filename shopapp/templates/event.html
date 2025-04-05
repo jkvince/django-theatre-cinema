@@ -28,6 +28,33 @@
     }
 </style>
 
+<script>
+    var grid_rows = {{ room.room_rows }};
+    var grid_columns = {{ room.room_columns }};
+    var grid = [
+        {% for seat in seats %}
+                {
+                    "number": "{{ seat.seat_number }}",
+                    "premium": {{ seat.seat_premium|lower }},
+                    "accessible": {{ seat.seat_accessible|lower }},
+                    "location_row": {{ seat.location_row }},
+                    "location_column": {{ seat.location_column }}
+                },
+        {% endfor %}
+    ]
+    var imgLinks = {
+        "premium": "{% static 'booking/premium.png' %}",
+        "premium_booked": "{% static 'booking/premium_booked.png' %}",
+
+        "accessible": "{% static 'booking/accessible.png' %}",
+        "accessible_booked": "{% static 'booking/accessible_booked.png' %}",
+
+        "base": "{% static 'booking/base.png' %}",
+        "base_booked": "{% static 'booking/base_booked.png' %}"
+    }
+</script>
+
+
 <article>
     <h1>{{ event.show.show_name }}</h1>
     <p>Location: {{ room.venue_id.venue_name }}</p>
@@ -37,43 +64,9 @@
     <p>Price: <span id="price">{{ event.price }}</span></p>
     
     <main>
-        <table>
-            {% for row in grid %}
-                <tr>
-                    {% for cell in row %}
-                        <td>
-                            {% if cell != None %}
-                                {% if cell.seat.seat_premium %}
-                                    
-                                    {% if cell.booking == None and user.is_premium %}
-                                        <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/premium.png' %}" alt="{{ cell.seat.seat_number }}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
-                                    {% else %}
-                                        <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/premium_booked.png' %}" alt="{{ cell.seat.seat_number }}">
-                                    {% endif %}
-
-                                {% elif cell.seat.seat_accessible %}
-
-                                    {% if cell.booking == None %}
-                                        <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/accessible.png' %}" alt="{{ cell.seat.seat_number }}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
-                                    {% else %}
-                                        <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/accessible_booked.png' %}" alt="{{ cell.seat.seat_number }}">
-                                    {% endif %}
-
-                                {% else %}
-
-                                    {% if cell.booking == None %}
-                                        <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/base.png' %}" alt="{{ cell.seat.seat_number }}" class="clickable" onclick="seatClick('{{ cell.seat.seat_number }}');">
-                                    {% else %}
-                                        <img id="{{ cell.seat.seat_number }}" src="{% static 'booking/base_booked.png' %}" alt="{{ cell.seat.seat_number }}">
-                                    {% endif %}
-
-                                {% endif %}
-                            {% endif %}
-                        </td>
-                    {% endfor %}
-                </tr>
-            {% endfor %}
+        <table id="table">
         </table>
+
         <aside>
             <p>Seats selected: </p>
             <p id="seat-selected-pretty">
@@ -89,7 +82,7 @@
         </aside>
     </main>
 
-
+    <script>createGrid();</script>
 
 </article>
 

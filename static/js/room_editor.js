@@ -1,5 +1,4 @@
 loadData();
-refreshGrid();
 
 function loadData() {
     selection_row = null;
@@ -80,6 +79,7 @@ function numberInput() {
     new_value = document.getElementById('number-input').value;
     let seat = grid.find(item => item.location_row == selection_row && item.location_column == selection_column);
     seat.number = new_value;
+    refreshGrid();
 }
 
 function seatTypeInput() {
@@ -123,7 +123,7 @@ function deleteSeat() {
 
 
 function refreshGrid() {
-    string_elements = "";
+    let string_elements = "";
 
     for (row=0; row<grid_rows; row++) {
         string_elements += "<tr>";
