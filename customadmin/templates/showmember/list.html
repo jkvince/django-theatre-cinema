@@ -1,0 +1,33 @@
+{% extends "base_admin.html" %}
+
+{% block content %}
+
+
+<h1>ShowMember Management</h1>
+<a class="btn btn-primary" href="#" role="button">New ShowMember</a>
+
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Banner</th>
+            <th scope="col">Name</th>
+            <th scope="col">Type</th>
+            <th scope="col">Public</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for showmember in showmembers%}
+            <tr>
+                <td><img style="width: 10rem;" src="{{ showmember.show_member_banner.url }}" alt="{{ showmember.show_member_id }}"></td>
+                <th scope="row"><a href="{% url 'customadmin:admin_showmember' showmember.show_member_id %}">{{ showmember.show_member_name }}</a></td>
+                <td>{{ showmember.show_member_type }}</td>
+                <td>{{ showmember.public }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock content %}

@@ -43,20 +43,10 @@ class ShowMember(models.Model):
     )
     show_member_banner = models.ImageField()
     public = models.BooleanField()
+    shows = models.ManyToManyField(Show)
 
     def __str__(self):
         return self.show_member_id
-
-
-class MemberJunction(models.Model):
-    member_junction_id = models.AutoField(
-        primary_key=True
-    )
-    show_id = models.ForeignKey(Show, on_delete=models.CASCADE)
-    show_member = models.ForeignKey(ShowMember, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.member_junction_id
 
 
 class Comment(models.Model):

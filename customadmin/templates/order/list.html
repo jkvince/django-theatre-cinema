@@ -1,0 +1,32 @@
+{% extends "base_admin.html" %}
+
+{% block content %}
+
+
+<h1>Orders Management</h1>
+
+
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <th>Order Id</th>
+            <th>User</th>
+            <th>Total Charged</th>
+            <th>Date Ordered</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for order in orders %}
+            <tr>
+                <th scope="row"><a href="">{{ order.order_id }}</a></th>
+                <td>{{ order.user.username }}</td>
+                <td>{{ order.total }}</td>
+                <td>{{ order.date_ordered }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
+
+{% endblock content %}

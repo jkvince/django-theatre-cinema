@@ -18,12 +18,11 @@
     <table class="table table-striped table-hover">
         <tr><td><span style="font-weight: bold;">Event Id: </span></td><td>{{ event.event_id }}</td></tr>
         <tr><td><span style="font-weight: bold;">Show Id: </span></td><td>{{ event.show }}</td></tr>
-        <tr><td><span style="font-weight: bold;">Room Number: </span></td><td>{{ event.room_number }}</td></tr>
+        <tr><td><span style="font-weight: bold;">Room Number: </span></td><td><a href="{% url 'customadmin:admin_room' event.room_number %}">{{ event.room_number }}</a></td></tr>
         <tr><td><span style="font-weight: bold;">Event Time: </span></td><td>{{ event.event_time }}</td></tr>
     </table>
     <a class="btn btn-warning" href="#" role="button">Edit</a>
     <a class="btn btn-danger" href="#" role="button">Delete</a>
-
 
 
 </article>

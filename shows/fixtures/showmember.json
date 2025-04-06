@@ -6,7 +6,10 @@
             "show_member_type": "Director",
             "show_member_name": "Andrew Adamson",
             "show_member_banner": "showmember/andrew-adamson.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "shrek"
+            ]
         }
     },
     {
@@ -16,7 +19,10 @@
             "show_member_type": "Director",
             "show_member_name": "Andrew Stanton",
             "show_member_banner": "showmember/andrew-stanton.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "wall-e"
+            ]
         }
     },
     {
@@ -26,7 +32,10 @@
             "show_member_type": "Actor",
             "show_member_name": "Ellen DeGeneres",
             "show_member_banner": "showmember/ellen-degeneres.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "finding-nemo"
+            ]
         }
     },
     {
@@ -36,7 +45,10 @@
             "show_member_type": "Actor",
             "show_member_name": "Joaquin Phoenix",
             "show_member_banner": "showmember/joaquin-phoenix.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "joker"
+            ]
         }
     },
     {
@@ -46,7 +58,10 @@
             "show_member_type": "Actor",
             "show_member_name": "John Goodman",
             "show_member_banner": "showmember/john-goodman.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "monsters-inc"
+            ]
         }
     },
     {
@@ -56,7 +71,10 @@
             "show_member_type": "Actor",
             "show_member_name": "Laura Dern",
             "show_member_banner": "showmember/laura-dern.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "jurassic-park"
+            ]
         }
     },
     {
@@ -66,7 +84,10 @@
             "show_member_type": "Actor",
             "show_member_name": "Leslie Odom Jr.",
             "show_member_banner": "showmember/leslie-odom-jr.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "hamilton"
+            ]
         }
     },
     {
@@ -76,7 +97,10 @@
             "show_member_type": "Director",
             "show_member_name": "Lin Manuel Miranda",
             "show_member_banner": "showmember/lin-manuel-miranda.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "hamilton"
+            ]
         }
     },
     {
@@ -86,7 +110,10 @@
             "show_member_type": "Actor",
             "show_member_name": "Michael J. Fox",
             "show_member_banner": "showmember/michael-j-fox.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "back-to-the-future"
+            ]
         }
     },
     {
@@ -96,7 +123,10 @@
             "show_member_type": "Actor",
             "show_member_name": "Mike Myers",
             "show_member_banner": "showmember/mike-myers.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "shrek"
+            ]
         }
     },
     {
@@ -106,7 +136,12 @@
             "show_member_type": "Director",
             "show_member_name": "Pete Docter",
             "show_member_banner": "showmember/pete-docter.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "inside-out",
+                "up",
+                "wall-e"
+            ]
         }
     },
     {
@@ -116,7 +151,10 @@
             "show_member_type": "Director",
             "show_member_name": "Quentin Tarantino",
             "show_member_banner": "showmember/quentin-tarantino.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "pulp-fiction"
+            ]
         }
     },
     {
@@ -126,7 +164,10 @@
             "show_member_type": "Director",
             "show_member_name": "Ridley Scott",
             "show_member_banner": "showmember/ridley-scott.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "blade-runner"
+            ]
         }
     },
     {
@@ -136,7 +177,11 @@
             "show_member_type": "Director",
             "show_member_name": "Robert Zemeckis",
             "show_member_banner": "showmember/robert-zemeckis.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "back-to-the-future",
+                "forrest-gump"
+            ]
         }
     },
     {
@@ -146,7 +191,10 @@
             "show_member_type": "Actor",
             "show_member_name": "Sigourney Weaver",
             "show_member_banner": "showmember/sigourney-weaver.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "alien"
+            ]
         }
     },
     {
@@ -156,7 +204,11 @@
             "show_member_type": "Director",
             "show_member_name": "Steven Spielberg",
             "show_member_banner": "showmember/steven-spielberg.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "back-to-the-future",
+                "jurassic-park"
+            ]
         }
     },
     {
@@ -166,7 +218,10 @@
             "show_member_type": "Director",
             "show_member_name": "Todd Phillips",
             "show_member_banner": "showmember/todd-philips.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "joker"
+            ]
         }
     },
     {
@@ -176,7 +231,10 @@
             "show_member_type": "Actor",
             "show_member_name": "Uma Thurman",
             "show_member_banner": "showmember/uma-thurman.jpg",
-            "public": true
+            "public": true,
+            "shows": [
+                "pulp-fiction"
+            ]
         }
     }
 ]

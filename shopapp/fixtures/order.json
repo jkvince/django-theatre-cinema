@@ -40,5 +40,19 @@
             "billing_postcode": "",
             "billing_country": ""
         }
+    },
+    {
+        "model": "shopapp.order",
+        "pk": "ec3466ed-1f95-4255-a8fd-3275ba67e3fe",
+        "fields": {
+            "user": 1,
+            "total": 20.0,
+            "date_ordered": "2025-04-05T23:21:06.934Z",
+            "billing_name": "",
+            "billing_address": "",
+            "billing_city": "",
+            "billing_postcode": "",
+            "billing_country": ""
+        }
     }
 ]

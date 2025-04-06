@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'crispy_forms',
+    'crispy_bootstrap4',
+
     'accounts',
     'customadmin',
     'shopapp',
@@ -133,6 +136,12 @@ MEDIA_ROOT = str(BASE_DIR.joinpath('media'))
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+# Crispy Forms
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
+# Authorization
 AUTH_USER_MODEL = "accounts.CustomUser"
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'

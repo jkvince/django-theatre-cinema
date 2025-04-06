@@ -28,15 +28,11 @@ def event_page_view(request, pk):
 		seats = Seat.objects.filter(room_number=room.room_id)
 		booked_seats = BookedSeat.objects.filter(event=event, booked_status=True)
 
-		for booked_seat in booked_seats:
-			for seat in seats:
-				if seat.seat_number == booked.seat_number:
-					booked_seat.booked = 'true'
-
 		context = {
 			'room': room,
 			'seats': seats,
 			'event': event,
+			'booked_seats': booked_seats
 		}
 		return render(request, 'event.html', context)
 	

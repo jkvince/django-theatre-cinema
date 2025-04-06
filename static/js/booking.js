@@ -36,20 +36,36 @@ function createGrid() {
 
             let seat = grid.find(item => item.location_row == row && item.location_column == column);
             if (seat != null) {
-                string_elements += `<img class="clickable" draggable=false id="` + seat.number + `"`;
-                string_elements += `onclick="seatClick('` + seat.number + `');"`;
-                
-                string_elements += `src="`;
-                if (seat.premium == true) {
-                    string_elements += imgLinks["premium"];
-                } else if (seat.accessible == true) {
-                    string_elements += imgLinks["accessible"];
-                } else {
-                    string_elements += imgLinks["base"];
-                }
-                string_elements += `">`;
-            }
+                string_elements += `<img draggable=false id="` + seat.number + `"`;
 
+                string_elements += `src="`;
+                if (bookedSeats.includes(seat.number)) {
+                    if (seat.premium == true) {
+                        string_elements += imgLinks["premium_booked"];
+                    } else if (seat.accessible == true) {
+                        string_elements += imgLinks["accessible_booked"];
+                    } else {
+                        string_elements += imgLinks["base_booked"];
+                    }
+                    string_elements += `">`;
+                } else {
+                    if (seat.premium == true) {
+                        if (premium == true) {
+                            string_elements += imgLinks["premium"] + `"`;
+                            string_elements += `class="clickable" onclick="seatClick('` + seat.number + `');"`;
+                        } else {
+                            string_elements += imgLinks["premium_booked"] + `"`;
+                        }
+                    } else if (seat.accessible == true) {
+                        string_elements += imgLinks["accessible"] + `"`;
+                        string_elements += `class="clickable" onclick="seatClick('` + seat.number + `');"`;
+                    } else {
+                        string_elements += imgLinks["base"] + `"`;
+                        string_elements += `class="clickable" onclick="seatClick('` + seat.number + `');"`;
+                    }
+                    string_elements += `>`;
+                }
+            }
             string_elements += "</td>";
         }
         string_elements += "</tr>";

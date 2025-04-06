@@ -31,6 +31,7 @@
 <script>
     var grid_rows = {{ room.room_rows }};
     var grid_columns = {{ room.room_columns }};
+    var premium = {{ user.is_premium|lower }};
     var grid = [
         {% for seat in seats %}
                 {
@@ -41,6 +42,9 @@
                     "location_column": {{ seat.location_column }}
                 },
         {% endfor %}
+    ]
+    var bookedSeats = [
+        {% for booked_seat in booked_seats %}'{{ booked_seat.seat_number.seat_number}}',{% endfor %}
     ]
     var imgLinks = {
         "premium": "{% static 'booking/premium.png' %}",

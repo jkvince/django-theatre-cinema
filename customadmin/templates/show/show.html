@@ -50,7 +50,7 @@
             </table>
 
             <div style="display: flex; justify-content: space-evenly;">
-                <a class="btn btn-warning" href="#" role="button">Edit</a>
+                <a class="btn btn-warning" href="{% url 'customadmin:admin_show_edit' current_show.show_id %}" role="button">Edit</a>
                 <form action="{% url 'customadmin:admin_show' current_show.show_id %}" method="POST">
                     {% csrf_token %}
                     <input type="hidden" name="delete_show" value="{{ current_show.show_id }}">
