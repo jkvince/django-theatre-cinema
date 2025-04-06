@@ -10,4 +10,4 @@ class ShowEdit(forms.Form):
     show_release_date = forms.DateField()
     show_language = forms.CharField(max_length=20)
     show_banner = forms.ImageField()
-    public = forms.BooleanField()
+    public = forms.BooleanField(required=False)
