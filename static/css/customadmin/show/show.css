@@ -1,0 +1,26 @@
+article {
+    text-align: center;
+}
+
+aside img {
+    width: 25rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    width: 30rem;
+}
+
+tr td span {
+    font-weight: bold;
+}
+
+.edit-delete {
+    display: flex; 
+    justify-content: space-evenly;
+}

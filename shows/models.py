@@ -15,17 +15,26 @@ class Show(models.Model):
     show_type = models.CharField(
         max_length=30
     )
-    show_duration = models.IntegerField()
+    show_duration = models.IntegerField(
+        help_text="Duration in minutes"
+    )
     show_description = models.TextField()
     show_agerating = models.CharField(
         max_length=20
     )
-    show_release_date = models.DateField()
+    show_release_date = models.DateField(
+        help_text="\"YYYY-MM-DD\""
+    )
     show_language = models.CharField(
         max_length=20
     )
-    show_banner = models.ImageField()
-    public = models.BooleanField()
+    show_banner = models.ImageField(
+        upload_to = "shows/",
+        blank=True
+    )
+    public = models.BooleanField(
+        blank=True
+    )
 
     def __str__(self):
         return self.show_id

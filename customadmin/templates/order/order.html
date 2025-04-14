@@ -1,0 +1,70 @@
+{% extends "base_admin.html" %}
+
+{% block content %}
+
+<style>
+    article {
+        text-align: center;
+    }
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    section {
+        width: 30rem;
+    }
+</style>
+
+
+
+<article>
+    <p><a href="{% url 'customadmin:admin_order_list' %}">Go Back</a></p>
+
+    <main>
+        <section>
+            <table class="table table-striped table-hover">
+                <tr><td><span style="font-weight: bold;">Id</span></td><td>{{ order.order_id }}</td></tr>
+                <tr><td><span style="font-weight: bold;">User</span></td><td><a href="{% url 'customadmin:admin_user' order.user %}">{{ order.user.username }}</a></td></tr>
+                <tr><td><span style="font-weight: bold;">Total</span></td><td>{{ order.total }}</td></tr>
+                <tr><td><span style="font-weight: bold;">Date Ordered</span></td><td>{{ order.date_ordered }}</td></tr>
+                <tr><td><span style="font-weight: bold;">Billing Name</span></td><td>{{ order.billing_name }}</td></tr>
+                <tr><td><span style="font-weight: bold;">Billing Address</span></td><td>{{ order.billing_address }}</td></tr>
+                <tr><td><span style="font-weight: bold;">Billing City</span></td><td>{{ order.billing_city }}</td></tr>
+                <tr><td><span style="font-weight: bold;">Billing Postcode</span></td><td>{{ order.billing_postcode }}</td></tr>
+                <tr><td><span style="font-weight: bold;">Billing Country</span></td><td>{{ order.billing_country }}</td></tr>
+            </table>
+
+            <div style="display: flex; justify-content: space-evenly;">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" name="delete_show" value="{{ current_show.show_id }}">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <h1>Seats Booked</h1>
+    <table class="table table-striped table-hover">
+        <tr>
+            <th>Seat Booking Id</th>
+            <th>Seat Number</th>
+            <th>Event Id</th>
+            <th>Show</th>
+            <th>Booked Status</th>
+        </tr>
+        {% for seat in seats %}
+            <tr>
+                <td>{{ seat.booking_id }}</td>
+                <td>{{ seat.seat_number.seat_number }}</td>
+                <td><a href="{% url 'customadmin:admin_event' seat.event_id %}">{{ seat.event_id }}</a></td>
+                <td>{{ seat.event.show_id }}</td>
+                <td>{{ seat.booked_status }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+
+</article>
+{% endblock content %}

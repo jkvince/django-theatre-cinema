@@ -1,6 +1,11 @@
+@font-face {
+    font-family: 'CSMorado';
+    src: url("/static/fonts/CSMorado-Regular_demo.otf") format('opentype');
+}
+
 body{
     background-color: blanchedalmond;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'CSMorado', Helvetica, sans-serif;
 }
 
 header {

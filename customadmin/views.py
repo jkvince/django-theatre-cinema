@@ -1,6 +1,7 @@
-from django.views.generic import View
+from django.views.generic import View, CreateView, UpdateView
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.template.defaultfilters import slugify
+from django.urls import reverse_lazy
 from django.http import HttpResponseBadRequest
 
 from django.shortcuts import render, redirect
@@ -10,8 +11,6 @@ from accounts.models import CustomUser
 from shows.models import Show, ShowMember, Comment, Rating, Following
 from venues.models import Venue, Room, Seat, Event, BookedSeat
 from shopapp.models import Order
-
-from .forms import ShowEdit
 
 import json
 
@@ -75,45 +74,54 @@ class AdminShowView(AdminAbstractView):
 			print("Show:", pk, "has been deleted")
 			return redirect('customadmin:admin_show_list')
 
+class AdminShowCreateView(CreateView, AdminAbstractView):
+	model = Show
+	fields = [
+		'show_name', 'show_duration', 'show_description', 'show_agerating', 'show_release_date',
+		'show_language', 'show_banner', 'public'
+	]
+	template_name = 'form.html'
+	extra_context={"form_title": "Create Show"}
+	success_url = reverse_lazy('admin_show_list')
 
-class AdminShowEdit(AdminAbstractView):
-	def get(self, request, pk):
-		show = Show.objects.get(pk=pk)
-		context = {}
-		context["form"] = ShowEdit(initial={
-			'show_name': show.show_name,
-			'show_duration': show.show_duration,
-			'show_type': show.show_type,
-			'show_description': show.show_description,
-			'show_agerating': show.show_agerating,
-			'show_release_date': show.show_release_date,
-			'show_language': show.show_language,
-			'show_banner': show.show_banner,
-			'public': show.public
-		})
-		return render(request, 'show/edit.html', context)
+	def form_valid(self, form):
+		form.instance.show_id = slugify(form.instance.show_name)
+		return super().form_valid(form)
 
-	def post(self, request, pk):
-		show = Show.objects.get(pk=pk)
-		show.show_name = request.POST.get('show_name')
-		show.show_duration = request.POST.get('show_duration')
-		show.show_type = request.POST.get('show_type')
-		show.show_description = request.POST.get('show_description')
-		show.show_agerating = request.POST.get('show_agerating')
-		show.show_release_date = request.POST.get('show_release_date')
-		show.show_language = request.POST.get('show_language')
+class AdminShowEditView(UpdateView, AdminAbstractView):
+	model = Show
+	fields = [
+		'show_name', 'show_duration', 'show_description', 'show_agerating', 'show_release_date',
+		'show_language', 'show_banner', 'public'
+	]
+	template_name = 'form.html'
+	extra_context={"form_title": "Edit Show"}
+	success_url = reverse_lazy('admin_show')
 
-		banner = request.POST.get('show_banner')
-		if banner != "":
-			show.show_banner = "shows/" + banner
-
-		public = request.POST.get('public')
-		if public == 'on':
-			show.public = True
-		elif public == None:
-			show.public = False
-		show.save()
-		return redirect('customadmin:admin_show', pk)
+#	def post(self, request, pk):
+#		show = Show.objects.get(pk=pk)
+#		show.show_name = request.POST.get('show_name')
+#		show.show_duration = request.POST.get('show_duration')
+#		show.show_type = request.POST.get('show_type')
+#		show.show_description = request.POST.get('show_description')
+#		show.show_agerating = request.POST.get('show_agerating')
+#		show.show_release_date = request.POST.get('show_release_date')
+#		show.show_language = request.POST.get('show_language')
+#
+#		banner = request.POST.get('show_banner')
+#		if banner != "":
+#			show.show_banner = {
+#				'name': banner,
+#				'img': request.FILES
+#			}
+#
+#		public = request.POST.get('public')
+#		if public == 'on':
+#			show.public = True
+#		elif public == None:
+#			show.public = False
+#		show.save()
+#		return redirect('customadmin:admin_show', pk)
 
 
 
@@ -161,14 +169,14 @@ class AdminRoomView(AdminAbstractView):
 		columns = int(request.POST.get('grid-col'))
 		grid_info = json.loads(request.POST.get('grid-info'))
 
-		number_list = [x["number"] for x in grid_info]
 
 		# check if all seat numbers are not empty
 		for seat in grid_info:
-			if seat["number"] == "":
+			if seat["number"] == "" or seat["number"] == None:
 				return HttpResponseBadRequest("There has been an error. A seat had an empty name.")
 
 		# check if there are any matching seat numbers
+		number_list = [x["number"] for x in grid_info]
 		if len(number_list) != len(set(number_list)):
 			return HttpResponseBadRequest("There has been an error. Multiple seats had matching names.")
 
@@ -196,12 +204,12 @@ class AdminRoomView(AdminAbstractView):
 		return redirect('customadmin:admin_room', pk)
 
 
-class ShowMemberListView(AdminAbstractView):
+class AdminShowMemberListView(AdminAbstractView):
 	def get(self, request):
 		context = {'showmembers': ShowMember.objects.all().order_by('show_member_name')}
 		return render(request, 'showmember/list.html', context)
 
-class ShowMemberView(AdminAbstractView):
+class AdminShowMemberView(AdminAbstractView):
 	def get(self, request, pk):
 		showmember = ShowMember.objects.get(pk=pk)
 		shows = showmember.shows.all()
@@ -211,8 +219,17 @@ class ShowMemberView(AdminAbstractView):
 		}
 		return render(request, 'showmember/showmember.html', context)
 
-
-class OrderListView(AdminAbstractView):
+class AdminOrderListView(AdminAbstractView):
 	def get(self, request):
 		context = {'orders': Order.objects.all()}
 		return render(request, 'order/list.html', context)
+
+class AdminOrderView(AdminAbstractView):
+	def get(self, request, pk):
+		order = Order.objects.get(pk=pk)
+		seats = BookedSeat.objects.filter(order_id=order)
+		context = {
+			'order': order,
+			'seats': seats
+		}
+		return render(request, 'order/order.html', context)

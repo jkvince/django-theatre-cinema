@@ -19,9 +19,9 @@
     <tbody>
         {% for order in orders %}
             <tr>
-                <th scope="row"><a href="">{{ order.order_id }}</a></th>
+                <th scope="row"><a href="{% url 'customadmin:admin_order' order.order_id %}">{{ order.order_id }}</a></th>
                 <td>{{ order.user.username }}</td>
-                <td>{{ order.total }}</td>
+                <td>€{{ order.total|floatformat:2 }}</td>
                 <td>{{ order.date_ordered }}</td>
             </tr>
         {% endfor %}

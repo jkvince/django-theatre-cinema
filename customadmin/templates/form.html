@@ -1,0 +1,22 @@
+{% extends "base_admin.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+{% block additional_css %}
+<link rel="stylesheet" href="{% static 'css/customadmin/form.css' %}">
+{% endblock additional_css%}
+
+{% block content %}
+
+<main>
+    <h1>{{ form_title }}</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input class="btn btn-success" type="submit" value="Create Show">
+    </form>
+</main>
+
+
+{% endblock content %}

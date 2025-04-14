@@ -34,8 +34,8 @@ class Room(models.Model):
         max_length=15
     )
     venue_id = models.ForeignKey(Venue, on_delete=models.CASCADE)
-    room_rows = models.IntegerField(default=1)
-    room_columns = models.IntegerField(default=1)
+    room_rows = models.IntegerField(default=8)
+    room_columns = models.IntegerField(default=19)
 
     def __str__(self):
         return self.room_id

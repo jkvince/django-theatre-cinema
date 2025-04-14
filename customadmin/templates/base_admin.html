@@ -9,6 +9,9 @@
     rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
     crossorigin="anonymous">
 
+    {% block additional_css %}
+    {% endblock additional_css%}
+
     {% block additional_js %}
     {% endblock additional_js %}
 </head>
@@ -19,7 +22,7 @@
                 <ul class="nav nav-tabs justify-content-center">
                     <li class="nav-item"><a class="nav-link {% if request.path == '/admin/' %}active{% endif %}" href="{% url 'customadmin:admin_main' %}">Main</a></li>
                     <li class="nav-item"><a class="nav-link {% if '/users/' in request.path %}active{% endif %}" href="{% url 'customadmin:admin_user_list' %}">Users</a></li>
-                    <li class="nav-item"><a class="nav-link {% if '/venues/' in request.path %}active{% endif %}" href="{% url 'customadmin:admin_venue_list' %}">Venues</a></li>
+                    <li class="nav-item"><a class="nav-link {% if '/venues/' in request.path or '/room/' in request.path %}active{% endif %}" href="{% url 'customadmin:admin_venue_list' %}">Venues</a></li>
                     <li class="nav-item"><a class="nav-link {% if '/shows/' in request.path %}active{% endif %}" href="{% url 'customadmin:admin_show_list' %}">Shows</a></li>
                     <li class="nav-item"><a class="nav-link {% if '/events/' in request.path %}active{% endif %}" href="{% url 'customadmin:admin_event_list' %}">Events</a></li>
                     <li class="nav-item"><a class="nav-link {% if '/showmembers/' in request.path %}active{% endif %}" href="{% url 'customadmin:admin_showmember_list' %}">Show Members</a></li>
@@ -28,10 +31,11 @@
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">{{ user.username }}</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="{% url 'accounts:profile' %}">Return to Website</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Separated link</a></li>
+                            <li><form action="{% url 'accounts:logout' %}" method="POST">
+                                {% csrf_token %}
+                                <button class="dropdown-item" type="submit">Logout</button>
+                            </form></li>
                         </ul>
                     </li>
                 </ul>
