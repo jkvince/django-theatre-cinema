@@ -1,11 +1,12 @@
 from django.views.generic import View, CreateView, UpdateView
+from django.core.files.uploadedfile import SimpleUploadedFile
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.template.defaultfilters import slugify
 from django.urls import reverse_lazy
 from django.http import HttpResponseBadRequest
 
 from django.shortcuts import render, redirect
-from django.db.models import Avg
+from django.db.models import Avg, Count
 
 from accounts.models import CustomUser
 from shows.models import Show, ShowMember, Comment, Rating, Following
@@ -21,7 +22,18 @@ class AdminAbstractView(PermissionRequiredMixin, View):
 
 class AdminMainView(AdminAbstractView):
 	def get(self, request):
-		return render(request, 'main.html')
+		# 10 most booked shows of all time
+		most_booked = Show.objects.annotate(
+			num_booked=Count('event__bookedseat')
+		).order_by('-num_booked')[:10]
+
+
+
+
+		context = {
+			"most_booked": most_booked
+		}
+		return render(request, 'main.html', context)
 
 class AdminUserListView(AdminAbstractView):
 	def get(self, request):
@@ -35,6 +47,32 @@ class AdminUserView(AdminAbstractView):
 			'user_comments': Comment.objects.filter(user_id=pk)
 			}
 		return render(request, 'user/user.html', context)
+
+	def post(self, request, pk):
+		if 'delete_user' in request.POST:
+			user_id = request.POST.get('delete_user')
+			CustomUser.objects.get(pk=user_id).delete()
+			print("User `" + user_id +"` has been deleted")
+			return redirect('customadmin:admin_user_list')
+
+class AdminUserCreateView(CreateView, AdminAbstractView):
+	model = CustomUser
+	fields = [
+		'username', 'email', 'phone', 'is_premium', 'is_staff'
+	]
+	template_name = 'form.html'
+	extra_context = {"form_title": "Create User"}
+	success_url = reverse_lazy('customadmin:admin_user_list')
+
+
+class AdminUserEditView(UpdateView, AdminAbstractView):
+	model = CustomUser
+	fields = [
+		'username', 'email', 'phone', 'is_premium', 'is_staff'
+	]
+	template_name = 'form.html'
+	extra_context = {"form_title": "Edit User"}
+	success_url = reverse_lazy('customadmin:admin_user_list')
 
 class AdminShowListView(AdminAbstractView):
 	def get(self, request):
@@ -60,43 +98,49 @@ class AdminShowView(AdminAbstractView):
 		if 'delete_comment' in request.POST:
 			comment_id = request.POST.get('delete_comment')
 			Comment.objects.get(comment_id=comment_id, show_id=pk).delete()
-			print("Comment:", comment_id, "has been deleted")
+			print("Comment `" + str(comment_id) +"` has been deleted")
 			return redirect('customadmin:admin_show', pk)
 
 		elif 'delete_rating' in request.POST:
 			rating_id = request.POST.get('delete_rating')
 			Rating.objects.get(rating_id=rating_id, show_id=pk).delete()
-			print("Rating:", rating_id, "has been deleted")
+			print("Rating `" + str(rating_id) + "` has been deleted")
 			return redirect('customadmin:admin_show', pk)
 
 		elif 'delete_show' in request.POST and request.POST.get('delete_show') == pk:
 			Show.objects.get(pk=pk).delete()
-			print("Show:", pk, "has been deleted")
+			print("Show `" + str(pk) + "` has been deleted")
 			return redirect('customadmin:admin_show_list')
 
 class AdminShowCreateView(CreateView, AdminAbstractView):
 	model = Show
 	fields = [
 		'show_name', 'show_duration', 'show_description', 'show_agerating', 'show_release_date',
-		'show_language', 'show_banner', 'public'
+		'show_type', 'show_language', 'show_banner', 'public'
 	]
 	template_name = 'form.html'
-	extra_context={"form_title": "Create Show"}
-	success_url = reverse_lazy('admin_show_list')
+	extra_context = {"form_title": "Create Show"}
+	success_url = reverse_lazy('customadmin:admin_show_list')
 
 	def form_valid(self, form):
 		form.instance.show_id = slugify(form.instance.show_name)
+		#form.instance.show_banner = {'mugshot': SimpleUploadedFile('face.jpg', <file data>)}
+		print("Show created: `" + form.instance.show_id + "`")
 		return super().form_valid(form)
 
 class AdminShowEditView(UpdateView, AdminAbstractView):
 	model = Show
 	fields = [
 		'show_name', 'show_duration', 'show_description', 'show_agerating', 'show_release_date',
-		'show_language', 'show_banner', 'public'
+		'show_type', 'show_language', 'show_banner', 'public'
 	]
 	template_name = 'form.html'
-	extra_context={"form_title": "Edit Show"}
-	success_url = reverse_lazy('admin_show')
+	extra_context = {"form_title": "Edit Show"}
+	success_url = reverse_lazy('customadmin:admin_show_list')
+
+	#def get_success_url(self):
+	#	return reverse_lazy('customadmin:admin_show', kwargs={'pk': self.object.branch.id})
+
 
 #	def post(self, request, pk):
 #		show = Show.objects.get(pk=pk)
@@ -137,6 +181,23 @@ class AdminEventView(AdminAbstractView):
 		}
 		return render(request, 'event/event.html', context)
 
+class AdminEventCreateView(CreateView, AdminAbstractView):
+	model = Event
+	fields = [
+		'show', 'room_number', 'event_time', 'price', 'public'
+	]
+	template_name = 'form.html'
+	extra_context = {"form_title": "Create Event"}
+	success_url = reverse_lazy('customadmin:admin_event_list')
+
+class AdminEventEditView(UpdateView, AdminAbstractView):
+	model = Event
+	fields = [
+		'show', 'room_number', 'event_time', 'price', 'public'
+	]
+	template_name = 'form.html'
+	extra_context = {"form_title": "Edit Event"}
+	success_url = reverse_lazy('customadmin:admin_event_list')
 
 class AdminVenueListView(AdminAbstractView):
 	def get(self, request):
@@ -152,6 +213,55 @@ class AdminVenueView(AdminAbstractView):
 		}
 		return render(request, 'venue/venue.html', context)
 
+	def post(self, request, pk):
+		if 'create_room' in request.POST:
+			room_number = request.POST.get('create_room')
+			venue = Venue.objects.get(pk=pk)
+			Room.objects.create(
+				room_id=venue.venue_id + "-" + slugify(room_number),
+				venue_id=venue,
+				room_number=room_number
+			)
+			print("Room `" + room_number + "` has been created for venue `" + venue.venue_id + "`")
+			return redirect('customadmin:admin_venue', pk)
+
+		elif 'delete_room' in request.POST:
+			room_number = request.POST.get('delete_room')
+			Room.objects.get(pk=room_number).delete()
+			print("Room `" + room_number + "` has been deleted")
+			return redirect('customadmin:admin_venue', pk)
+
+		elif 'delete_venue' in request.POST:
+			venue_id = request.POST.get('delete_venue')
+			Venue.objects.get(pk=venue_id).delete()
+			print("Venue `" + venue_id + "` has been deleted")
+			return redirect('customadmin:admin_venue_list')
+
+
+class AdminVenueCreateView(CreateView, AdminAbstractView):
+	model = Venue
+	fields = [
+		'venue_name', 'venue_address', 'working_hours', 'venue_latitude', 'venue_longitude',
+		'venue_contact', 'venue_accessibility', 'public'
+	]
+	template_name = 'form.html'
+	extra_context = {"form_title": "Create Venue"}
+	success_url = reverse_lazy('customadmin:admin_venue_list')
+
+	def form_valid(self, form):
+		form.instance.venue_id = slugify(form.instance.venue_name)
+		print("Venue created: `" + form.instance.venue_id + "`")
+		return super().form_valid(form)
+
+class AdminVenueEditView(UpdateView, AdminAbstractView):
+	model = Venue
+	fields = [
+		'venue_name', 'venue_address', 'working_hours', 'venue_latitude', 'venue_longitude',
+		'venue_contact', 'venue_accessibility', 'public'
+	]
+	template_name = 'form.html'
+	extra_context = {"form_title": "Edit Venue"}
+	success_url = reverse_lazy('customadmin:admin_venue_list')
 
 class AdminRoomView(AdminAbstractView):
 	def get(self, request, pk):
@@ -218,6 +328,32 @@ class AdminShowMemberView(AdminAbstractView):
 			'shows': shows
 		}
 		return render(request, 'showmember/showmember.html', context)
+
+class AdminShowMemberCreateView(CreateView, AdminAbstractView):
+	model = ShowMember
+	fields = [
+		'show_member_name', 'show_member_type', 'shows', 'public',
+		'show_member_banner'
+	]
+	template_name = 'form.html'
+	extra_context = {"form_title": "Create ShowMember"}
+	success_url = reverse_lazy('customadmin:admin_showmember_list')
+
+	def form_valid(self, form):
+		form.instance.show_member_id = slugify(form.instance.show_member_name)
+		print("ShowMember created: `" + form.instance.show_member_id + "`")
+		return super().form_valid(form)
+
+class AdminShowMemberEditView(UpdateView, AdminAbstractView):
+	model = ShowMember
+	fields = [
+		'show_member_name', 'show_member_type', 'shows', 'public',
+		'show_member_banner'
+	]
+	template_name = 'form.html'
+	extra_context = {"form_title": "Edit ShowMember"}
+	success_url = reverse_lazy('customadmin:admin_showmember_list')
+
 
 class AdminOrderListView(AdminAbstractView):
 	def get(self, request):

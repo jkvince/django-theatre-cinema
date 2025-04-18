@@ -1,21 +1,12 @@
 {% extends "base_admin.html" %}
+{% load static %}
+
+{% block additional_head %}
+<link rel="stylesheet" href="{% static 'css/customadmin/order/order.css' %}">
+{% endblock additional_head %}
+
 
 {% block content %}
-
-<style>
-    article {
-        text-align: center;
-    }
-    main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    section {
-        width: 30rem;
-    }
-</style>
-
 
 
 <article>
@@ -26,7 +17,9 @@
             <table class="table table-striped table-hover">
                 <tr><td><span style="font-weight: bold;">Id</span></td><td>{{ order.order_id }}</td></tr>
                 <tr><td><span style="font-weight: bold;">User</span></td><td><a href="{% url 'customadmin:admin_user' order.user %}">{{ order.user.username }}</a></td></tr>
-                <tr><td><span style="font-weight: bold;">Total</span></td><td>{{ order.total }}</td></tr>
+                <tr><td><span style="font-weight: bold;">Show</span></td><td><a href="{% url 'customadmin:admin_show' seats.first.event.show_id %}">{{ seats.first.event.show_id }}</a></td></tr>
+                <tr><td><span style="font-weight: bold;">Event</span></td><td><a href="{% url 'customadmin:admin_event' seats.first.event_id %}">{{ seats.first.event_id }}</a></td></tr>
+                <tr><td><span style="font-weight: bold;">Total</span></td><td>€{{ order.total|floatformat:2 }}</td></tr>
                 <tr><td><span style="font-weight: bold;">Date Ordered</span></td><td>{{ order.date_ordered }}</td></tr>
                 <tr><td><span style="font-weight: bold;">Billing Name</span></td><td>{{ order.billing_name }}</td></tr>
                 <tr><td><span style="font-weight: bold;">Billing Address</span></td><td>{{ order.billing_address }}</td></tr>
@@ -50,16 +43,12 @@
         <tr>
             <th>Seat Booking Id</th>
             <th>Seat Number</th>
-            <th>Event Id</th>
-            <th>Show</th>
             <th>Booked Status</th>
         </tr>
         {% for seat in seats %}
             <tr>
                 <td>{{ seat.booking_id }}</td>
                 <td>{{ seat.seat_number.seat_number }}</td>
-                <td><a href="{% url 'customadmin:admin_event' seat.event_id %}">{{ seat.event_id }}</a></td>
-                <td>{{ seat.event.show_id }}</td>
                 <td>{{ seat.booked_status }}</td>
             </tr>
         {% endfor %}

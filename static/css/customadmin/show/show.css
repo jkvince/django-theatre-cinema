@@ -16,6 +16,10 @@ section {
     width: 30rem;
 }
 
+section p {
+    padding: 1em;
+}
+
 tr td span {
     font-weight: bold;
 }

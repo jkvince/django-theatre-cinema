@@ -2,9 +2,9 @@
 
 {% load static %}
 
-{% block additional_css %}
+{% block additional_head %}
 <link rel="stylesheet" href="{% static 'css/customadmin/show/show.css' %}">
-{% endblock additional_css %}
+{% endblock additional_head %}
 
 
 {% block content %}
@@ -40,7 +40,7 @@
 
             <div class="edit-delete">
                 <a class="btn btn-warning" href="{% url 'customadmin:admin_show_edit' current_show.show_id %}" role="button">Edit</a>
-                <form action="{% url 'customadmin:admin_show' current_show.show_id %}" method="POST">
+                <form method="POST">
                     {% csrf_token %}
                     <input type="hidden" name="delete_show" value="{{ current_show.show_id }}">
                     <button type="submit" class="btn btn-danger">Delete</button>
@@ -65,7 +65,7 @@
                     <td>{{ comment.comment_id }}</td>
 
                     <td>
-                        <form action="{% url 'customadmin:admin_show' current_show.show_id %}" method="POST">
+                        <form method="POST">
                             {% csrf_token %}
                             <input type="hidden" name="delete_comment" value="{{ comment.comment_id }}">
                             <button type="submit" class="btn btn-danger">Delete</button>
@@ -113,7 +113,7 @@
                     <td>{{ rating.rating_value }}</td>
 
                     <td>
-                        <form action="{% url 'customadmin:admin_show' current_show.show_id %}" method="POST">
+                        <form method="POST">
                             {% csrf_token %}
                             <input type="hidden" name="delete_rating" value="{{ rating.rating_id }}">
                             <button type="submit" class="btn btn-danger">Delete</button>

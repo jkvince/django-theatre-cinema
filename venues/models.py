@@ -16,7 +16,8 @@ class Venue(models.Model):
     )
     venue_accessibility = models.BooleanField()
     working_hours = models.CharField(
-        max_length=10
+        max_length=10,
+        help_text="\"HH:MM-HH:MM\"(opening-closing)"
     )
     venue_latitude = models.FloatField()
     venue_longitude = models.FloatField()

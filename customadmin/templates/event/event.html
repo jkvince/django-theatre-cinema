@@ -1,16 +1,12 @@
 {% extends "base_admin.html" %}
+{% load static %}
+
+{% block additional_head %}
+<link rel="stylesheet" href="{% static 'css/customadmin/event/event.css' %}">
+{% endblock additional_head %}
+
 
 {% block content %}
-
-<style>
-    article {
-        width: 50em;
-        margin: auto;
-        text-align: center;
-    }
-</style>
-
-
 
 <article>
     <p><a href="{% url 'customadmin:admin_event_list' %}">Go Back</a></p>
@@ -21,9 +17,10 @@
         <tr><td><span style="font-weight: bold;">Room Number: </span></td><td><a href="{% url 'customadmin:admin_room' event.room_number %}">{{ event.room_number }}</a></td></tr>
         <tr><td><span style="font-weight: bold;">Event Time: </span></td><td>{{ event.event_time }}</td></tr>
     </table>
-    <a class="btn btn-warning" href="#" role="button">Edit</a>
+    <a class="btn btn-warning" href="{% url 'customadmin:admin_event_edit' event.event_id %}" role="button">Edit</a>
     <a class="btn btn-danger" href="#" role="button">Delete</a>
 
 
 </article>
+
 {% endblock content %}

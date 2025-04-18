@@ -1,13 +1,15 @@
 {% extends "base_admin.html" %}
+{% load static %}
+
+{% block additional_head %}
+<link rel="stylesheet" href="{% static 'css/customadmin/venue/venue.css' %}">
+{% endblock additional_head %}
+
 
 {% block content %}
 
 <style>
-    article {
-        width: 50em;
-        margin: auto;
-        text-align: center;
-    }
+
 </style>
 
 <article>
@@ -24,12 +26,22 @@
         <tr><td><span style="font-weight: bold;">Longitude</span></td><td>{{ venue.venue_longitude }}</td></tr>
         <tr><td><span style="font-weight: bold;">Contact</span></td><td>{{ venue.venue_contact }}</td></tr>
     </table>
-    <a class="btn btn-warning" href="#" role="button">Edit</a>
-    <a class="btn btn-danger" href="#" role="button">Delete</a>
+    <a class="btn btn-warning" href="{% url 'customadmin:admin_venue_edit' venue.venue_id %}" role="button">Edit</a>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="delete_venue" value="{{ venue.venue_id }}">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
 
 
     <h1>Rooms</h1>
-    <a class="btn btn-primary" href="#" role="button">New Room</a>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input class="form-control" name="create_room" placeholder="Room Number">
+        <button class="btn btn-primary">New Room</button>
+    </form>
+
     {% if rooms %}
         <table class="table table-striped table-hover">
             <tr>
@@ -37,6 +49,7 @@
                 <th>Name/Number</th>
                 <th>Rows</th>
                 <th>Columns</th>
+                <th>Options</th>
             </tr>
             {% for room in rooms %}
                 <tr>
@@ -44,6 +57,13 @@
                     <td>{{ room.room_number }}</td>
                     <td>{{ room.room_rows }}</td>
                     <td>{{ room.room_columns }}</td>
+                    <td>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="delete_room" value="{{ room.room_id }}">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
                 </tr>
             {% endfor %}
         </table>

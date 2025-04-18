@@ -1,48 +1,12 @@
 {% extends "base_admin.html" %}
 {% load static %}
 
-{% block additional_js %}
-    <script type="text/javascript" src="{% static 'js/room_editor.js' %}"></script>
-{% endblock additional_js %}
+{% block additional_head %}
+<script type="text/javascript" src="{% static 'js/room_editor.js' %}"></script>
+<link rel="stylesheet" href="{% static 'css/customadmin/venue/room.css' %}">
+{% endblock additional_head %}
 
 {% block content %}
-
-<style>
-    main {
-        display: flex;
-        justify-content: center;
-    }
-    section {
-        display: flex; 
-        justify-content: center;
-        margin-bottom: 2rem;
-    }
-    table {
-        table-layout: fixed;
-        border: solid;
-        padding: 1rem;
-    }
-    td {
-        width: 2.5rem;
-        height: 2.5rem;
-        border: gray 1px solid;
-        position: relative;
-    }
-    td img {
-        width: 2.5rem;
-        height: 2.5rem;
-        position: relative;
-    }
-    #cursor {
-        z-index: 1;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    .clickable {
-        cursor: pointer;
-    }
-</style>
 
 <script>
     var grid_rows = {{ room.room_rows }};
@@ -106,7 +70,7 @@
             <button onclick="deleteSeat();" class="btn btn-danger" id="delete-seat">Delete Seat</button>
         </div>
     </section>
-    
+
     <main>
         <table id="table">
         </table>

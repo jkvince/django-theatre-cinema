@@ -1,15 +1,64 @@
 {% extends "base_admin.html" %}
+{% load static %}
+
+{% block additional_head %}
+<script>
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {
+            theme: "light1", 
+            animationEnabled: true,
+            exportEnabled: true,
+            title:{
+                text: "Most Booked Shows"
+            },
+            axisX: {
+                reversed: true
+            },
+            legend: {
+                cursor: "pointer",
+                itemclick: function (e) {
+                    if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                        e.dataSeries.visible = false;
+                    } else {
+                        e.dataSeries.visible = true;
+                    }
+                    e.chart.render();
+                }
+            },
+            data: [{
+                type: "bar",
+                name: "Booked Seats",
+                axisYType: "primary",
+                showInLegend: true,
+                color: "#51CDA0",
+                yValueFormatString: "#,##",
+                dataPoints: [
+                {% for show in most_booked %}
+                    {
+                    "label": "{{ show.show_name }}", "y": {{ show.num_booked }}
+                    },
+                {% endfor %}
+                ]
+            }]
+        });
+        chart.render();
+    }
+</script>
+{% endblock additional_head %}
+
 
 {% block content %}
 
 <h1>Common Actions</h1>
 
-<a class="btn btn-primary" href="#" role="button">New Event</a>
-<a class="btn btn-primary" href="{% url 'customadmin:admin_show_create' %}" role="button">New Show</a>
-<a class="btn btn-primary" href="#" role="button">New ShowMember</a>
-<a class="btn btn-primary" href="#" role="button">New Venue</a>
+<a class="btn btn-primary" href="{% url 'customadmin:admin_event_create' %}" role="button">Create Event</a>
+<a class="btn btn-primary" href="{% url 'customadmin:admin_show_create' %}" role="button">Create Show</a>
+<a class="btn btn-primary" href="{% url 'customadmin:admin_showmember_create' %}" role="button">Create ShowMember</a>
+<a class="btn btn-primary" href="{% url 'customadmin:admin_venue_create' %}" role="button">Create Venue</a>
 
 
-<h1>Stats will be here.</h1>
+<div id="chartContainer" style="width: 100%; height: 360px;"></div>
 
+
+<script src="{% static 'js/canvasjs.min.js' %}"></script>
 {% endblock content %}

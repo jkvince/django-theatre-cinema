@@ -2,9 +2,9 @@
 {% load crispy_forms_tags %}
 {% load static %}
 
-{% block additional_css %}
+{% block additional_head %}
 <link rel="stylesheet" href="{% static 'css/customadmin/form.css' %}">
-{% endblock additional_css%}
+{% endblock additional_head %}
 
 {% block content %}
 
@@ -14,7 +14,7 @@
     <form method="POST">
         {% csrf_token %}
         {{ form|crispy }}
-        <input class="btn btn-success" type="submit" value="Create Show">
+        <input class="btn btn-success" type="submit" value="{{ form_title }}">
     </form>
 </main>
 

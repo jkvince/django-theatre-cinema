@@ -4,6 +4,14 @@ main {
     align-items: center;
 }
 
+form {
+    margin-bottom: 3rem;
+}
+
 form div {
     margin-bottom: 1.5rem;
+}
+
+select[multiple] {
+    height: 20rem;
 }

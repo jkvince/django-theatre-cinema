@@ -1,14 +1,13 @@
 {% extends "base_admin.html" %}
+{% load static %}
+
+{% block additional_head %}
+<link rel="stylesheet" href="{% static 'css/customadmin/showmember/showmember.css' %}">
+{% endblock additional_head %}
+
 
 {% block content %}
 
-<style>
-    article {
-        width: 50em;
-        margin: auto;
-        text-align: center;
-    }
-</style>
 
 <article>
     <p><a href="{% url 'customadmin:admin_showmember_list' %}">Go Back</a></p>
@@ -20,7 +19,7 @@
         <tr><td><span style="font-weight: bold;">Type</span></td><td>{{ showmember.show_member_type }}</td></tr>
         <tr><td><span style="font-weight: bold;">Public</span></td><td>{{ showmember.public }}</td></tr>
     </table>
-    <a class="btn btn-warning" href="#" role="button">Edit</a>
+    <a class="btn btn-warning" href="{% url 'customadmin:admin_showmember_edit' showmember.show_member_id %}" role="button">Edit</a>
     <a class="btn btn-danger" href="#" role="button">Delete</a>
 
 

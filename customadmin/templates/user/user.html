@@ -1,14 +1,13 @@
 {% extends "base_admin.html" %}
+{% load static %}
+
+{% block additional_head %}
+<link rel="stylesheet" href="{% static 'css/customadmin/user/user.css' %}">
+{% endblock additional_head %}
+
 
 {% block content %}
 
-<style>
-    article {
-        width: 50em;
-        margin: auto;
-        text-align: center;
-    }
-</style>
 
 <article>
     <p><a href="{% url 'customadmin:admin_user_list' %}">Go Back</a></p>
@@ -23,8 +22,12 @@
         <tr><td><span style="font-weight: bold;">Last Login</span></td><td>{{ current_user.last_login }}</td></tr>
         <tr><td><span style="font-weight: bold;">Date Joined</span></td><td>{{ current_user.date_joined }}</td></tr>
     </table>
-    <a class="btn btn-warning" href="#" role="button">Edit</a>
-    <a class="btn btn-danger" href="#" role="button">Delete</a>
+    <a class="btn btn-warning" href="{% url 'customadmin:admin_user_edit' current_user.id %}" role="button">Edit</a>
+    <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="delete_user" value="{{ current_user.id }}">
+        <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
 
 
     <h1>Comments</h1>
