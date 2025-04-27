@@ -1,30 +1,48 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}Your Account{% endblock title %}
+
+{% block additional_head %}
+<link rel="stylesheet" href="{% static 'css/accounts/profile.css' %}">
+{% endblock additional_head %}
 
 {% block content %}
 {% load static %}
-<article style="margin-top: 2em; border-radius: 1em; border: solid;">
 
-    <h1 style="font-weight: bold;">{{user.username}}
-        {% if user.is_staff %}
-            (<a href="{% url 'customadmin:admin_main' %}">Admin</a>)
-        {% endif %}
-        {% if user.is_premium %}
-            <img src="{% static 'interface/premium.svg' %}" alt="email-icon" style="height: 1rem;" title="You are a premium user!">
-        {% endif %}
-    </h1>
-    <p>
-        <img src="{% static 'interface/email.svg' %}" alt="email-icon" style="height: 1rem;">
-        <span style="font-weight: bold;">{{user.email}}</span>
-    </p>
-    <p>
-        <img src="{% static 'interface/phone.svg' %}" alt="email-icon" style="height: 1rem;">
-        <span style="font-weight: bold;">{{user.phone}}</span>
-    </p>
-    <form action="{% url 'accounts:logout' %}" method="POST" style="margin: auto; width: min-content;">
-        {% csrf_token %}
-        <h2><button type="submit">Logout</button></h2>
-    </form>
+<div>
+    <article>
 
-</article>
+        <h1>{{user.username}}
+            {% if user.is_staff %}
+                (<a href="{% url 'customadmin:admin_main' %}">Admin</a>)
+            {% endif %}
+            {% if user.is_premium %}
+                <img src="{% static 'interface/premium.svg' %}" alt="email-icon" title="You are a premium user!">
+            {% endif %}
+        </h1>
+        <p>
+            <img src="{% static 'interface/email.svg' %}" alt="email-icon">
+            <span style="font-weight: bold;">{{user.email}}</span>
+        </p>
+        <p>
+            <img src="{% static 'interface/phone.svg' %}" alt="email-icon">
+            <span style="font-weight: bold;">{{user.phone}}</span>
+        </p>
+        <form action="{% url 'accounts:logout' %}" method="POST">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form>
+    
+    </article>
+</div>
+
+<div>
+    <article>
+        <h1>Order History</h1>
+        {% for order in orders %}
+            {{ order.order_id }}
+        {% endfor %}
+    </article>
+</div>
+
 {% endblock %}

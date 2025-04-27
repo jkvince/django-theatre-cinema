@@ -1,6 +1,11 @@
 from django.views.generic import TemplateView
 from django.views.generic.edit import CreateView
+from django.shortcuts import render
+
 from .models import CustomUser
+from shopapp.models import Order
+from venues.models import Seat
+
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
@@ -24,5 +29,10 @@ class SignUpView(CreateView):
 
 
 class ProfileView(LoginRequiredMixin, TemplateView):
-	model = CustomUser
-	template_name = 'profile.html'
+	def get(self, request):
+		orders = Order.objects.filter(user=request.user)
+
+		context = {
+			"orders": orders
+		}
+		return render(request, 'profile.html', context)
