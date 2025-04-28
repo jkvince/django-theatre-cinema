@@ -148,36 +148,6 @@ class AdminShowEditView(UpdateView, AdminAbstractView):
 	extra_context = {"form_title": "Edit Show"}
 	success_url = reverse_lazy('customadmin:admin_show_list')
 
-	#def get_success_url(self):
-	#	return reverse_lazy('customadmin:admin_show', kwargs={'pk': self.object.branch.id})
-
-
-#	def post(self, request, pk):
-#		show = Show.objects.get(pk=pk)
-#		show.show_name = request.POST.get('show_name')
-#		show.show_duration = request.POST.get('show_duration')
-#		show.show_type = request.POST.get('show_type')
-#		show.show_description = request.POST.get('show_description')
-#		show.show_agerating = request.POST.get('show_agerating')
-#		show.show_release_date = request.POST.get('show_release_date')
-#		show.show_language = request.POST.get('show_language')
-#
-#		banner = request.POST.get('show_banner')
-#		if banner != "":
-#			show.show_banner = {
-#				'name': banner,
-#				'img': request.FILES
-#			}
-#
-#		public = request.POST.get('public')
-#		if public == 'on':
-#			show.public = True
-#		elif public == None:
-#			show.public = False
-#		show.save()
-#		return redirect('customadmin:admin_show', pk)
-
-
 
 class AdminEventListView(AdminAbstractView):
 	def get(self, request):

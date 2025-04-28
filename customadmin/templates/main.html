@@ -33,7 +33,7 @@
                 color: "#51CDA0",
                 yValueFormatString: "#,##",
                 dataPoints: [
-                {% for show in most_booked %}
+                {% for show in most_booked_shows %}
                     {
                     "label": "{{ show.show_name }}", "y": {{ show.num_booked }}
                     },

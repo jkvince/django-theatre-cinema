@@ -1,0 +1,38 @@
+article div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+aside {
+    margin-right: 7em;
+}
+
+aside img {
+    width: 25rem;
+}
+
+main {
+    text-align: left;
+    width: 25rem;
+}
+
+main h1 {
+    font-size: 5ch;
+    margin-top: 0;
+}
+
+main div {
+    display: flex;
+    justify-content: space-around;
+}
+
+main div div {
+    border: solid;
+    padding: 0.5rem;
+}
+
+main div div img {
+    height: 1em;
+    margin-right: 0.5rem;
+}

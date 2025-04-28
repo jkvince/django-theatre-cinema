@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.validators import MinValueValidator
+
 import uuid
 
 from shows.models import Show
@@ -35,8 +37,14 @@ class Room(models.Model):
         max_length=15
     )
     venue_id = models.ForeignKey(Venue, on_delete=models.CASCADE)
-    room_rows = models.IntegerField(default=8)
-    room_columns = models.IntegerField(default=19)
+    room_rows = models.IntegerField(
+        default=8,
+        validators=[MinValueValidator(1)]
+        )
+    room_columns = models.IntegerField(
+        default=19,
+        validators=[MinValueValidator(1)]
+        )
 
     def __str__(self):
         return self.room_id

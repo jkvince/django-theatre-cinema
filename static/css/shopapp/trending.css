@@ -1,0 +1,12 @@
+main {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+main div {
+    margin: 1rem;
+}
+main img {
+    width: 10rem;
+}

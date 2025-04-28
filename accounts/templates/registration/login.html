@@ -1,9 +1,15 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block additional_head %}
+<link rel="stylesheet" href="{% static 'css/accounts/signup.css' %}">
+{% endblock additional_head %}
+
 {% block title %}Log In{% endblock title %}
 
 {% block content %}
-{% load static %}
-<article style="margin-top: 2em; border-radius: 1em; border: solid;">
+
+<article>
     
     {% if not user.is_authenticated %}
         <h1>Log In</h1>

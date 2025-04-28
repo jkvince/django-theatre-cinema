@@ -23,3 +23,7 @@ div {
     display: flex;
     justify-content: center;
 }
+
+p span {
+    font-weight: bold;
+}

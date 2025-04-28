@@ -1,51 +1,13 @@
 {% extends "base.html" %}
-{% block title %}{{ current_show.show_name }}{% endblock title %}
-
-{% block content %}
 {% load static %}
 
-<style>
-    article div {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+{% block title %}{{ current_show.show_name }}{% endblock title %}
 
-    aside {
-        margin-right: 7em;
-    }
+{% block additional_head %}
+<link rel="stylesheet" href="{% static 'css/shows/show.css' %}">
+{% endblock additional_head %}
 
-    aside img {
-        width: 25rem;
-    }
-
-    main {
-        text-align: left;
-        width: 25rem;
-    }
-
-    main h1 {
-        font-size: 5ch;
-        margin-top: 0;
-    }
-
-    main div {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    main div div {
-        border: solid;
-        padding: 0.5rem;
-    }
-
-    main div div img {
-        height: 1em;
-        margin-right: 0.5rem;
-    }
-
-
-</style>
+{% block content %}
 
 <article>
     <div>
@@ -80,7 +42,7 @@
             {% if events %}
                 {% for event in events %}
                     <a href="{% url 'shopapp:event' event.event_id %}"><p>
-                        {{ event.event_time | date:'d M Y' }} at {{ event.room_number.venue_id.venue_name }}, price € {{ event.price }}
+                        {{ event.event_time | date:'d M Y' }} at {{ event.room_number.venue_id.venue_name }}, price € {{ event.price|floatformat:2 }}
                     </p></a>
                 {% endfor %}
             {% else %}

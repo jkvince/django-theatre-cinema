@@ -22,11 +22,11 @@
         </h1>
         <p>
             <img src="{% static 'interface/email.svg' %}" alt="email-icon">
-            <span style="font-weight: bold;">{{user.email}}</span>
+            <span>{{user.email}}</span>
         </p>
         <p>
             <img src="{% static 'interface/phone.svg' %}" alt="email-icon">
-            <span style="font-weight: bold;">{{user.phone}}</span>
+            <span>{{user.phone}}</span>
         </p>
         <form action="{% url 'accounts:logout' %}" method="POST">
             {% csrf_token %}

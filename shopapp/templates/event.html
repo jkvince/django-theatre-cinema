@@ -4,29 +4,10 @@
 
 {% block additional_head %}
     <script type="text/javascript" src="{% static 'js/booking.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/shopapp/event.css' %}">
 {% endblock additional_head %}
 
 {% block content %}
-
-<style>
-    main {
-        display: flex;
-        justify-content: center;
-    }
-    table {
-        table-layout: fixed;
-        border: solid;
-        padding: 1rem;
-    }
-    td {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-    td img {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-</style>
 
 <script>
     var grid_rows = {{ room.room_rows }};

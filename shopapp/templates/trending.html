@@ -1,28 +1,15 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block additional_head %}
+<link rel="stylesheet" href="{% static 'css/shopapp/trending.css' %}">
+{% endblock additional_head %}
+
 {% block title %}Trending{% endblock title %}
 
 {% block content %}
 
-<style>
-    main {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        align-items: flex-end;
-    }
-    main div {
-        margin: 1rem;
-    }
-    main img {
-        width: 10rem;
-    }
-</style>
-
 <article>
-    <h1>This is the trending page</h1>
-
-    <!-- for now show all shows, later on only popular ones -->
-
     <main>
         {% for show in shows %}
             <div>
