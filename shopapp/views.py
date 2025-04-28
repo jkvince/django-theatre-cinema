@@ -1,6 +1,8 @@
 from datetime import datetime
 import uuid
+#import stripe
 
+from django.conf import settings
 from django.shortcuts import render
 from django.views.generic import TemplateView
 
@@ -58,6 +60,23 @@ def event_page_view(request, pk):
 		total = float(len(seats) * event.price)
 		
 		# add stripe payment here
+		checkout_session = stripe.checkout.Session.create(
+                payment_method_types=['card'],
+                line_items=[{
+                    'price_data': {
+                        'currency': 'eur',
+                        'product_data': {'name': 'Make waves with WaveNetork'},
+                        'unit_amount': total,
+                    },
+                    'quantity': 1,
+                }],
+                mode='payment',
+                billing_address_collection='required',
+                payment_intent_data={'description': description},
+                success_url=request.build_absolute_uri(reverse('cart:new_order')) +
+                             f"?session_id={{CHECKOUT_SESSION_ID}}&voucher_id={voucher_id}&cart_total={total}",
+                cancel_url=request.build_absolute_uri(reverse('cart:cart_detail')),
+            )
 
 		# if payment is successful
 		order_id = uuid.uuid4()

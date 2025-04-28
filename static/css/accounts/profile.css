@@ -1,0 +1,25 @@
+article {
+    margin-top: 2em; 
+    border-radius: 1em; 
+    border: solid; 
+    width: fit-content;
+    padding: 1em;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+img {
+    height: 1rem;
+}
+
+form {
+    margin: auto; 
+    width: min-content;
+}
+
+div {
+    display: flex;
+    justify-content: center;
+}
