@@ -6,7 +6,8 @@ from django.urls import reverse_lazy
 from django.http import HttpResponseBadRequest
 
 from django.shortcuts import render, redirect
-from django.db.models import Avg, Count
+from django.db.models import Avg, Count, Sum
+from django.db.models.functions import TruncMonth
 
 from accounts.models import CustomUser
 from shows.models import Show, ShowMember, Comment, Rating, Following
@@ -23,15 +24,24 @@ class AdminAbstractView(PermissionRequiredMixin, View):
 class AdminMainView(AdminAbstractView):
 	def get(self, request):
 		# 10 most booked shows of all time
-		most_booked = Show.objects.annotate(
+		most_booked_shows = Show.objects.annotate(
 			num_booked=Count('event__bookedseat')
 		).order_by('-num_booked')[:10]
 
+		# most booked venues
+		most_booked_venues = Venue.objects.annotate(
+			num_booked=Count('room__seat__bookedseat')
+		).order_by('-num_booked')
 
-
+		# orders: revenue and how many for each month
+		monthly_revenue = Order.objects.annotate(month=TruncMonth('date_ordered')).values('month').annotate(
+			total_revenue=Sum('total')
+			).order_by('month')
 
 		context = {
-			"most_booked": most_booked
+			"most_booked_shows": most_booked_shows,
+			"most_booked_venues": most_booked_venues,
+			"monthly_revenue": monthly_revenue
 		}
 		return render(request, 'main.html', context)
 

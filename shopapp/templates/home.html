@@ -3,9 +3,37 @@
 
 {% block content %}
 <article>
-    <h1>Welcome to our website!</h1>
-    {% if user.is_authenticated %}
-        <p>Hello, {{user.username}}</p>
-    {% endif %}
+
+    <div class="wirebox">
+        <form class="d-flex" action="{% url 'shopapp:home' %}" method="get">
+            <input class="form-control me-2" type="search" placeholder="" aria-label="Search" name="q">
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">
+                Search
+            </button>
+          </form>
+    </div>
+
+
+    <div class="container">
+        <div class="row mx-auto">
+            {% for show in show_list %}
+            <div class="my_bottom_margin col-9 col-sm-12 col-md-4 col-md-12 col-lg-4">
+                <div class="card text-center">
+                    <a href="{% url 'shows:show_page' show.show_id %}">
+                        <img class="card-img-top my_image" src="{{ show.show_banner.url }}"
+                            alt="{{ show.show_name }}">
+                    </a>
+                    <div class="card-body">
+                        <p>{{ show.show_description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="row mx-auto">
+                <p class="text-center my_search_text">0 results found.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
 </article>
 {% endblock %}

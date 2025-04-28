@@ -16,3 +16,7 @@
 
 # Resources
 - flaticon.com: Free Vector Icons
+- [Canvas Js](https://canvasjs.com/python-charts/): Used to generate charts in the admin panel.
+
+https://forum.djangoproject.com/t/image-does-not-save/4664
+https://docs.djangoproject.com/en/3.1/ref/forms/api/#binding-uploaded-files-to-a-form

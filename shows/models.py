@@ -39,6 +39,10 @@ class Show(models.Model):
     def __str__(self):
         return self.show_id
 
+    class Meta:
+        ordering = ["show_name"]
+
+
 
 class ShowMember(models.Model):
     show_member_id = models.SlugField(
