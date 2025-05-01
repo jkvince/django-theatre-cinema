@@ -31,7 +31,7 @@
             <div style="display: flex; justify-content: space-evenly;">
                 <form action="" method="POST">
                     {% csrf_token %}
-                    <input type="hidden" name="delete_show" value="{{ current_show.show_id }}">
+                    <input type="hidden" name="delete_order" value="{{ order.order_id }}">
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
             </div>

@@ -1,6 +1,16 @@
 [
     {
         "model": "venues.bookedseat",
+        "pk": "12478f56-8965-437b-8234-220dbe12d3e1",
+        "fields": {
+            "order": "637130f3-2445-4cf6-abc1-487baf234a94",
+            "seat_number": "the-lighthouse-2-7c",
+            "event": 1,
+            "booked_status": true
+        }
+    },
+    {
+        "model": "venues.bookedseat",
         "pk": "5ecef145-f0d6-4042-b44d-d5c8b6fcca9c",
         "fields": {
             "order": "ec3466ed-1f95-4255-a8fd-3275ba67e3fe",

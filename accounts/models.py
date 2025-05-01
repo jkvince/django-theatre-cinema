@@ -10,6 +10,9 @@ class CustomUser(AbstractUser):
     )
     profile_pic = models.ImageField(upload_to="media/profile_pic", max_length=200)
 
+    first_name = None
+    last_name = None
+
     class Meta:
         ordering = ('username',)
         verbose_name = 'user'

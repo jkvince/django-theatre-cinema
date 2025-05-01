@@ -9,5 +9,16 @@
             "public": true,
             "price": 10.0
         }
+    },
+    {
+        "model": "venues.event",
+        "pk": 2,
+        "fields": {
+            "show": "alien",
+            "event_time": "2025-08-22T14:36:47Z",
+            "room_number": "movies-the-square-1",
+            "public": true,
+            "price": 7.5
+        }
     }
 ]

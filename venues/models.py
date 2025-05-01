@@ -28,6 +28,9 @@ class Venue(models.Model):
     )
     public = models.BooleanField()
 
+    class Meta:
+        ordering = ["venue_name"]
+
 
 class Room(models.Model):
     room_id = models.SlugField(

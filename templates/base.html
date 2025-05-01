@@ -11,28 +11,35 @@
     rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" 
     crossorigin="anonymous">
 
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/CSMorado-Regular.woff' %}">
 
     {% block additional_head %}
     {% endblock additional_head %}
 </head>
 <body>
     <header>
-        <h1>The Ticket Booth</h1>
+        <h1>The Ticket
+        <img src="{% static 'interface/ticket-office.png' %}" alt="logo">     
+        Booth</h1>
     </header>
-    <nav>
+    <nav class="gold-box">
         <ul>
-            <li><a href="{% url 'shopapp:home' %}">Home</a></li>
-            <li><a href="{% url 'shopapp:venues' %}">Venues</a></li>
-            <li><a href="{% url 'shopapp:trending' %}">Trending Movies</a></li>
+            <li class="gold-box"><a href="{% url 'shopapp:home' %}">Search</a></li>
+            <li class="gold-box"><a href="{% url 'shopapp:venues' %}">Venues</a></li>
+            <li class="gold-box"><a href="{% url 'shopapp:trending' %}">Trending</a></li>
             {% if user.is_authenticated %}
-                <li><a href="{% url 'accounts:profile' %}">{{user.username}}</a></li>
+                <li class="gold-box"><a href="{% url 'accounts:profile' %}">{{user.username}}</a></li>
             {% else %}
-                <li><a href="{% url 'accounts:login' %}">Account</a></li>
+                <li class="gold-box"><a href="{% url 'accounts:login' %}">Account</a></li>
             {% endif %}
         </ul>
     </nav>
-    {% block content %}
-    {% endblock %}
+
+    <div class="black-background">
+        {% block content %}
+        {% endblock %}
+    </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

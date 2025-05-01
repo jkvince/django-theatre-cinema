@@ -1,39 +1,11 @@
 [
     {
         "model": "shopapp.order",
-        "pk": "6a945b6c-e877-44ec-9029-1baf6e6f73e0",
+        "pk": "637130f3-2445-4cf6-abc1-487baf234a94",
         "fields": {
-            "user": 1,
-            "total": 20.0,
-            "date_ordered": "2025-03-29T20:07:26.974Z",
-            "billing_name": "",
-            "billing_address": "",
-            "billing_city": "",
-            "billing_postcode": "",
-            "billing_country": ""
-        }
-    },
-    {
-        "model": "shopapp.order",
-        "pk": "86421167-9935-4c32-8524-7782dcd59957",
-        "fields": {
-            "user": 1,
-            "total": 20.0,
-            "date_ordered": "2025-03-29T17:07:37.439Z",
-            "billing_name": "",
-            "billing_address": "",
-            "billing_city": "",
-            "billing_postcode": "",
-            "billing_country": ""
-        }
-    },
-    {
-        "model": "shopapp.order",
-        "pk": "b7eb4605-92d7-4f0c-9f86-daa1ef6a9d4d",
-        "fields": {
-            "user": 1,
-            "total": 20.0,
-            "date_ordered": "2025-03-29T20:07:21.573Z",
+            "user": 2,
+            "total": 10.0,
+            "date_ordered": "2025-04-26T23:49:36.451Z",
             "billing_name": "",
             "billing_address": "",
             "billing_city": "",

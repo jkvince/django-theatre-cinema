@@ -1,10 +1,13 @@
 @font-face {
     font-family: 'CSMorado';
-    src: url("/static/fonts/CSMorado-Regular_demo.otf") format('opentype');
+    src: url('/static/fonts/CSMorado-Regular.woff');
 }
 
 body{
-    background-color: blanchedalmond;
+    background-image: url("/static/interface/20029585_6225190.svg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
     font-family: 'CSMorado', Helvetica, sans-serif;
 }
 
@@ -12,10 +15,14 @@ header {
     display: flex;
     justify-content: center;
     padding: 1em;
+    background-image: linear-gradient(yellow, #e39b3eff);
+}
+
+h1 img {
+    height: 1em;
 }
 
 nav {
-    background-color: rgb(104, 184, 138);
     padding: 1em;
     margin-bottom: 3em;
 }
@@ -25,11 +32,18 @@ nav ul{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding-left: 25rem;
+    padding-right: 25rem;
+}
+
+ul li {
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 nav a{
     text-decoration: none;
-    font-family: Arial, Helvetica, sans-serif;
+    font-size: x-large;
 }
 
 article {
@@ -38,4 +52,18 @@ article {
 
 .clickable {
     cursor: pointer;
+}
+
+.gold-box {
+    background-color: black;
+    border: solid #e39b3eff;
+}
+
+.black-background {
+    background-color: black;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    color: white;
 }

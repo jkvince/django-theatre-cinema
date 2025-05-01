@@ -9,13 +9,16 @@
 
 {% block content %}
 
-<article>
+<article class="gold-box">
+    <h1>What people are watching🔭</h1>
     <main>
         {% for show in shows %}
-            <div>
+            <div class="border border-5">
+                <h1>#{{ forloop.counter }}</h1>
                 <a href="{% url 'shows:show_page' show.show_id %}">
                     <img src="{{ show.show_banner.url }}" alt="{{ show.show_name }}">
                 </a>
+                <p>{{ show.show_description }}</p>
             </div>
         {% endfor %}
     </main>

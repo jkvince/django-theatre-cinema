@@ -1,12 +1,272 @@
 [
     {
         "model": "venues.room",
+        "pk": "carrick-cineplex-1",
+        "fields": {
+            "room_number": "1",
+            "venue_id": "carrick-cineplex",
+            "room_rows": 7,
+            "room_columns": 23
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "carrick-cineplex-2",
+        "fields": {
+            "room_number": "2",
+            "venue_id": "carrick-cineplex",
+            "room_rows": 8,
+            "room_columns": 8
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "imc-cinema-clonmel-1",
+        "fields": {
+            "room_number": "1",
+            "venue_id": "imc-cinema-clonmel",
+            "room_rows": 8,
+            "room_columns": 20
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "imc-cinema-clonmel-2",
+        "fields": {
+            "room_number": "2",
+            "venue_id": "imc-cinema-clonmel",
+            "room_rows": 8,
+            "room_columns": 8
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "imc-cinema-thurles-1",
+        "fields": {
+            "room_number": "1",
+            "venue_id": "imc-cinema-thurles",
+            "room_rows": 9,
+            "room_columns": 19
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "imc-cinema-thurles-2",
+        "fields": {
+            "room_number": "2",
+            "venue_id": "imc-cinema-thurles",
+            "room_rows": 8,
+            "room_columns": 8
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "movies-dundrum-1",
+        "fields": {
+            "room_number": "1",
+            "venue_id": "movies-dundrum",
+            "room_rows": 12,
+            "room_columns": 5
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "movies-dundrum-2",
+        "fields": {
+            "room_number": "2",
+            "venue_id": "movies-dundrum",
+            "room_rows": 9,
+            "room_columns": 9
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "movies-dungarvan-1",
+        "fields": {
+            "room_number": "1",
+            "venue_id": "movies-dungarvan",
+            "room_rows": 9,
+            "room_columns": 13
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "movies-dungarvan-2",
+        "fields": {
+            "room_number": "2",
+            "venue_id": "movies-dungarvan",
+            "room_rows": 8,
+            "room_columns": 1
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "movies-the-square-1",
+        "fields": {
+            "room_number": "1",
+            "venue_id": "movies-the-square",
+            "room_rows": 10,
+            "room_columns": 18
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "movies-the-square-2",
+        "fields": {
+            "room_number": "2",
+            "venue_id": "movies-the-square",
+            "room_rows": 12,
+            "room_columns": 13
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "odeon-cavan-1",
+        "fields": {
+            "room_number": "1",
+            "venue_id": "odeon-cavan",
+            "room_rows": 8,
+            "room_columns": 19
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "odeon-cavan-2",
+        "fields": {
+            "room_number": "2",
+            "venue_id": "odeon-cavan",
+            "room_rows": 8,
+            "room_columns": 3
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "odeon-limerick-1",
+        "fields": {
+            "room_number": "1",
+            "venue_id": "odeon-limerick",
+            "room_rows": 7,
+            "room_columns": 19
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "odeon-limerick-2",
+        "fields": {
+            "room_number": "2",
+            "venue_id": "odeon-limerick",
+            "room_rows": 9,
+            "room_columns": 9
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "odeon-naas-1",
+        "fields": {
+            "room_number": "1",
+            "venue_id": "odeon-naas",
+            "room_rows": 9,
+            "room_columns": 19
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "odeon-naas-2",
+        "fields": {
+            "room_number": "2",
+            "venue_id": "odeon-naas",
+            "room_rows": 9,
+            "room_columns": 12
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "odeon-portlaoise-1",
+        "fields": {
+            "room_number": "1",
+            "venue_id": "odeon-portlaoise",
+            "room_rows": 9,
+            "room_columns": 19
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "odeon-portlaoise-2",
+        "fields": {
+            "room_number": "2",
+            "venue_id": "odeon-portlaoise",
+            "room_rows": 9,
+            "room_columns": 13
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "omniplex-cinema-monaghan-1",
+        "fields": {
+            "room_number": "1",
+            "venue_id": "omniplex-cinema-monaghan",
+            "room_rows": 13,
+            "room_columns": 17
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "omniplex-cinema-monaghan-2",
+        "fields": {
+            "room_number": "2",
+            "venue_id": "omniplex-cinema-monaghan",
+            "room_rows": 9,
+            "room_columns": 15
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "omniplex-cinema-tralee-1",
+        "fields": {
+            "room_number": "1",
+            "venue_id": "omniplex-cinema-tralee",
+            "room_rows": 9,
+            "room_columns": 19
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "omniplex-cinema-tralee-2",
+        "fields": {
+            "room_number": "2",
+            "venue_id": "omniplex-cinema-tralee",
+            "room_rows": 8,
+            "room_columns": 11
+        }
+    },
+    {
+        "model": "venues.room",
         "pk": "the-lighthouse-2",
         "fields": {
             "room_number": "2",
             "venue_id": "the-lighthouse",
             "room_rows": 7,
             "room_columns": 15
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "vue-cinema-dublin-1",
+        "fields": {
+            "room_number": "1",
+            "venue_id": "vue-cinema-dublin",
+            "room_rows": 13,
+            "room_columns": 17
+        }
+    },
+    {
+        "model": "venues.room",
+        "pk": "vue-cinema-dublin-2",
+        "fields": {
+            "room_number": "2",
+            "venue_id": "vue-cinema-dublin",
+            "room_rows": 8,
+            "room_columns": 11
         }
     }
 ]

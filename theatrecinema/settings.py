@@ -155,3 +155,6 @@ LOGOUT_REDIRECT_URL = '/'
 # Email backend
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+# Stripe keys
+STRIPE_SECRET_KEY = "sk_test_51RJJRh2VZLwT1Zkfwv3VupYk0yN552uQVANzBWMEjU70rhFLVA4dDRoik6XxQehCphiy7eysxDpCu5IImFdfURvP005gIIkWgG"
+STRIPE_PUBLISHABLE_KEY = "pk_test_51RJJRh2VZLwT1ZkfnSRvNPUToOSU4jIamcSsdsCX0PLwKEqchOOjtgZh5yPyhArDcWMC1TVoYXFzQcv80mfndd5G00yCPXYyqL"

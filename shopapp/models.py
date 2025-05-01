@@ -14,3 +14,6 @@ class Order(models.Model):
     billing_city = models.CharField(max_length=250)
     billing_postcode = models.CharField(max_length=10)
     billing_country = models.CharField(max_length=50)
+
+    class Meta:
+        ordering = ('-date_ordered',)

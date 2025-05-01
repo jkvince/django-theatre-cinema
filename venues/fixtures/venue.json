@@ -1,6 +1,174 @@
 [
     {
         "model": "venues.venue",
+        "pk": "carrick-cineplex",
+        "fields": {
+            "venue_name": "Carrick Cineplex",
+            "venue_address": "Co. Roscommon, N41 E6P7",
+            "venue_accessibility": true,
+            "working_hours": "16:00-23:00",
+            "venue_latitude": 53.94335453057775,
+            "venue_longitude": -8.104569601404272,
+            "venue_contact": "info@carrickcineplex.ie",
+            "public": true
+        }
+    },
+    {
+        "model": "venues.venue",
+        "pk": "imc-cinema-clonmel",
+        "fields": {
+            "venue_name": "IMC Cinema Clonmel",
+            "venue_address": "Kickham Street, Clonmel",
+            "venue_accessibility": true,
+            "working_hours": "15:30-22:00",
+            "venue_latitude": 52.36003418823122,
+            "venue_longitude": -7.701901825970675,
+            "venue_contact": "",
+            "public": true
+        }
+    },
+    {
+        "model": "venues.venue",
+        "pk": "imc-cinema-thurles",
+        "fields": {
+            "venue_name": "IMC Cinema Thurles",
+            "venue_address": "Thurles Co. Tipperary E41 A6P1",
+            "venue_accessibility": true,
+            "working_hours": "06:00-21:00",
+            "venue_latitude": 52.678489671869876,
+            "venue_longitude": -7.812509583003868,
+            "venue_contact": "",
+            "public": true
+        }
+    },
+    {
+        "model": "venues.venue",
+        "pk": "movies-dundrum",
+        "fields": {
+            "venue_name": "Movies @ Dundrum",
+            "venue_address": "Sandyford Road, Dublin 16",
+            "venue_accessibility": true,
+            "working_hours": "11:00-23:00",
+            "venue_latitude": 53.287685927744015,
+            "venue_longitude": -6.2429899240377935,
+            "venue_contact": "",
+            "public": true
+        }
+    },
+    {
+        "model": "venues.venue",
+        "pk": "movies-dungarvan",
+        "fields": {
+            "venue_name": "Movies @ Dungarvan",
+            "venue_address": "High Street, Dungarvan",
+            "venue_accessibility": true,
+            "working_hours": "10:00-22:00",
+            "venue_latitude": 52.091649749704324,
+            "venue_longitude": -7.622181676185117,
+            "venue_contact": "",
+            "public": true
+        }
+    },
+    {
+        "model": "venues.venue",
+        "pk": "movies-the-square",
+        "fields": {
+            "venue_name": "Movies @ The Square",
+            "venue_address": "The Square, Dublin 24",
+            "venue_accessibility": true,
+            "working_hours": "09:00-18:00",
+            "venue_latitude": 53.290384900851365,
+            "venue_longitude": -6.371694242766028,
+            "venue_contact": "",
+            "public": true
+        }
+    },
+    {
+        "model": "venues.venue",
+        "pk": "odeon-cavan",
+        "fields": {
+            "venue_name": "ODEON Cavan",
+            "venue_address": "Off Main St, Townparks, Cavan",
+            "venue_accessibility": true,
+            "working_hours": "11:00-22:00",
+            "venue_latitude": 53.98976163894425,
+            "venue_longitude": -7.358783256527837,
+            "venue_contact": "info@odeon.dk",
+            "public": true
+        }
+    },
+    {
+        "model": "venues.venue",
+        "pk": "odeon-limerick",
+        "fields": {
+            "venue_name": "ODEON Limerick",
+            "venue_address": "Newcastle, Limerick",
+            "venue_accessibility": true,
+            "working_hours": "8:30-9:45",
+            "venue_latitude": 52.66790036033443,
+            "venue_longitude": -8.553594546933558,
+            "venue_contact": "info@odeon.dk",
+            "public": true
+        }
+    },
+    {
+        "model": "venues.venue",
+        "pk": "odeon-naas",
+        "fields": {
+            "venue_name": "ODEON Naas",
+            "venue_address": "Dublin Road, Naas, Kildare",
+            "venue_accessibility": true,
+            "working_hours": "12:00-22:00",
+            "venue_latitude": 53.23222563735559,
+            "venue_longitude": -6.6395355962306475,
+            "venue_contact": "info@odeon.dk",
+            "public": true
+        }
+    },
+    {
+        "model": "venues.venue",
+        "pk": "odeon-portlaoise",
+        "fields": {
+            "venue_name": "ODEON Portlaoise",
+            "venue_address": "Church St, Maryborough, Laois",
+            "venue_accessibility": true,
+            "working_hours": "11:00-22:00",
+            "venue_latitude": 53.040313096836286,
+            "venue_longitude": -7.2982233678879895,
+            "venue_contact": "info@odeon.dk",
+            "public": true
+        }
+    },
+    {
+        "model": "venues.venue",
+        "pk": "omniplex-cinema-monaghan",
+        "fields": {
+            "venue_name": "Omniplex Cinema Monaghan",
+            "venue_address": "Killyconigan, Co. Monaghan",
+            "venue_accessibility": true,
+            "working_hours": "09:00-23:00",
+            "venue_latitude": 54.259910163521866,
+            "venue_longitude": -6.9958575942930095,
+            "venue_contact": "",
+            "public": true
+        }
+    },
+    {
+        "model": "venues.venue",
+        "pk": "omniplex-cinema-tralee",
+        "fields": {
+            "venue_name": "Omniplex Cinema Tralee",
+            "venue_address": "Fels Point Apartments,",
+            "venue_accessibility": true,
+            "working_hours": "16:00-22:00",
+            "venue_latitude": 52.26455922955416,
+            "venue_longitude": -9.707664739992424,
+            "venue_contact": "",
+            "public": true
+        }
+    },
+    {
+        "model": "venues.venue",
         "pk": "the-lighthouse",
         "fields": {
             "venue_name": "The Lighthouse",
@@ -10,6 +178,20 @@
             "venue_latitude": 53.34880739495465,
             "venue_longitude": -6.279053446866457,
             "venue_contact": "mail@lighthousecinema.ie",
+            "public": true
+        }
+    },
+    {
+        "model": "venues.venue",
+        "pk": "vue-cinema-dublin",
+        "fields": {
+            "venue_name": "Vue Cinema Dublin",
+            "venue_address": "Liffey Valley Shopping Centre,",
+            "venue_accessibility": true,
+            "working_hours": "10:00-23:00",
+            "venue_latitude": 53.35228480805677,
+            "venue_longitude": -6.39366298968096,
+            "venue_contact": "events@vuemail.com",
             "public": true
         }
     }

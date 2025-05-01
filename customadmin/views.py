@@ -349,3 +349,10 @@ class AdminOrderView(AdminAbstractView):
 			'seats': seats
 		}
 		return render(request, 'order/order.html', context)
+
+	def post(self, request, pk):
+		if 'delete_order' in request.POST:
+			order = request.POST.get('delete_order')
+			Order.objects.get(pk=order).delete()
+			print("Order `" + str(order.order_id) +"` has been deleted")
+			return redirect('customadmin:admin_order', pk)

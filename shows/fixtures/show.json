@@ -101,7 +101,7 @@
             "show_release_date": "2025-01-31",
             "show_language": "English",
             "show_banner": "shows/dog-man.jpg",
-            "public": false
+            "public": true
         }
     },
     {
@@ -266,7 +266,7 @@
             "show_release_date": "2025-03-07",
             "show_language": "English",
             "show_banner": "shows/mickey-17.jpg",
-            "public": false
+            "public": true
         }
     },
     {
